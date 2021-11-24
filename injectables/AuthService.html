@@ -481,7 +481,7 @@ export class AuthService {
 		const data &#x3D; await this.fileSystem.readFile(&#x60;users/${id}.lthn&#x60;);
 
 		const decrypted &#x3D; JSON.parse(
-			await this.cryptService.dencryptPGPSingle(id, password, data)
+			await this.cryptService.decryptPGPSingle(id, password, data)
 		);
 		this.user &#x3D; decrypted.username;
 		this.id &#x3D; decrypted.id;

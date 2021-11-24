@@ -86,7 +86,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#dencryptPGPSingle" >dencryptPGPSingle</a>
+                                <a href="#decryptPGPSingle" >decryptPGPSingle</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -94,9 +94,6 @@
                             </li>
                             <li>
                                 <a href="#generateKey" >generateKey</a>
-                            </li>
-                            <li>
-                                <a href="#randString" >randString</a>
                             </li>
                             <li>
                                 <a href="#sha256Salty" >sha256Salty</a>
@@ -201,15 +198,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/services/crypt.service.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/services/crypt.service.ts:71</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Creates a armoured OpenPGP key pair with revoke cert</p>
+                    <div class="io-description"><p>Creates a Armoured OpenPGP key for the username protected with the password supplied</p>
 </div>
 
                     <div class="io-description">
@@ -277,16 +274,18 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/services/crypt.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/services/crypt.service.ts:25</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Takes the string and uses l337 speak conventions
-to create a reproducible salt unique to the input</p>
+                    <div class="io-description"><p>Transforms the input string with a lite l337 conversion
+this will always give you the same salt, im aware of the issues here
+Please start a GitHub issue if you have a good idea for knowledge-less reproducible salts</p>
+<p>Maybe allow people to set a custom salter? something for later.</p>
 </div>
 
                     <div class="io-description">
@@ -298,7 +297,6 @@ to create a reproducible salt unique to the input</p>
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -313,10 +311,6 @@ to create a reproducible salt unique to the input</p>
                                     </td>
 
 
-                                    <td>
-                                        <p>String to create a salt for</p>
-
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -338,32 +332,35 @@ to create a reproducible salt unique to the input</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="dencryptPGPSingle"></a>
+                    <a name="decryptPGPSingle"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
-                        <span ><b>dencryptPGPSingle</b></span>
-                        <a href="#dencryptPGPSingle"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>decryptPGPSingle</b></span>
+                        <a href="#decryptPGPSingle"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>dencryptPGPSingle(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, passphrase: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, encrypted: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>decryptPGPSingle(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, passphrase: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, encrypted: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="96"
-                            class="link-to-prism">src/app/services/crypt.service.ts:96</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/services/crypt.service.ts:121</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Requires the users password, for this reason, you might want to make or interact with profiles
+they are like sub accounts, but not, multiple personality syndrome with split brain describes it well.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -374,6 +371,7 @@ to create a reproducible salt unique to the input</p>
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -388,6 +386,10 @@ to create a reproducible salt unique to the input</p>
                                     </td>
 
 
+                                    <td>
+                                        <p>cryptService.sha256Salty(username)</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>passphrase</td>
@@ -400,6 +402,8 @@ to create a reproducible salt unique to the input</p>
                                     </td>
 
 
+                                    <td>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>encrypted</td>
@@ -412,6 +416,8 @@ to create a reproducible salt unique to the input</p>
                                     </td>
 
 
+                                    <td>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -451,15 +457,17 @@ to create a reproducible salt unique to the input</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/app/services/crypt.service.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/services/crypt.service.ts:92</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Takes a ID and the string data, returns the string encrypted.</p>
+                    <div class="io-description"><p>Using a Lethean user public key, encrypt the supplied data</p>
+<p>Bigger the string, longer it&#39;ll take on slow devices... please provide UI feedback even if its
+&quot;quick for you&quot; it wont be on a Pi4 under load</p>
 </div>
 
                     <div class="io-description">
@@ -471,6 +479,7 @@ to create a reproducible salt unique to the input</p>
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -485,6 +494,10 @@ to create a reproducible salt unique to the input</p>
                                     </td>
 
 
+                                    <td>
+                                        <p>cryptService.sha256Salty(username)</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>data</td>
@@ -497,6 +510,8 @@ to create a reproducible salt unique to the input</p>
                                     </td>
 
 
+                                    <td>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -534,14 +549,16 @@ to create a reproducible salt unique to the input</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/app/services/crypt.service.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/services/crypt.service.ts:56</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Create a salted PBKDF2 key for encryption purposes using a random word array</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -583,78 +600,6 @@ to create a reproducible salt unique to the input</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="randString"></a>
-                    <span class="name">
-                        <span ><b>randString</b></span>
-                        <a href="#randString"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>randString(length: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">src/app/services/crypt.service.ts:126</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>This function is for paranoia sakes, do not use for crypto graphic seeds.
-the only purpose of this is to adjust memory values of sensitive data</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>length</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="sha256Salty"></a>
                     <span class="name">
                         <span ><b>sha256Salty</b></span>
@@ -671,15 +616,15 @@ the only purpose of this is to adjust memory values of sensitive data</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/services/crypt.service.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/services/crypt.service.ts:44</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>performs a sha256 hash but uses the input to create a reproducible salt</p>
+                    <div class="io-description"><p>sha256 hash that uses itself converted as a reproducable salt</p>
 </div>
 
                     <div class="io-description">
@@ -739,10 +684,14 @@ export class CryptService {
 	}
 
 	/**
-	 * Takes the string and uses l337 speak conventions
-	 * to create a reproducible salt unique to the input
+	 * Transforms the input string with a lite l337 conversion
+	 * this will always give you the same salt, im aware of the issues here
+	 * Please start a GitHub issue if you have a good idea for knowledge-less reproducible salts
 	 *
-	 * @param input String to create a salt for
+	 * Maybe allow people to set a custom salter? something for later.
+	 *
+	 * @param {string} input
+	 * @returns {string}
 	 */
 	createSalt(input: string): string {
 		if (!input) {
@@ -758,10 +707,10 @@ export class CryptService {
 	}
 
 	/**
-	 * performs a sha256 hash but uses the input to create a reproducible salt
+	 * sha256 hash that uses itself converted as a reproducable salt
 	 *
 	 * @param input
-	 * @returns
+	 * @returns {string}
 	 */
 	sha256Salty(input): string {
 		return this.appService.crypto
@@ -769,6 +718,12 @@ export class CryptService {
 			.toString();
 	}
 
+	/**
+	 * Create a salted PBKDF2 key for encryption purposes using a random word array
+	 *
+	 * @param input
+	 * @returns {any}
+	 */
 	generateKey(input) {
 		const salt &#x3D; this.appService.crypto.lib.WordArray.random(128 / 8);
 		return this.appService.crypto.PBKDF2(input, salt, {
@@ -776,11 +731,13 @@ export class CryptService {
 		});
 	}
 
+
 	/**
-	 * Creates a armoured OpenPGP key pair with revoke cert
+	 * Creates a Armoured OpenPGP key for the username protected with the password supplied
 	 *
 	 * @param username
 	 * @param password
+	 * @returns {Promise&lt;any&gt;}
 	 */
 	async createOpenPGP(username, password) {
 		return await this.appService.openpgp.generateKey({
@@ -792,12 +749,16 @@ export class CryptService {
 		});
 	}
 
+
 	/**
-	 * Takes a ID and the string data, returns the string encrypted.
+	 * Using a Lethean user public key, encrypt the supplied data
 	 *
-	 * @param id
-	 * @param data
-	 * @returns
+	 * Bigger the string, longer it&#x27;ll take on slow devices... please provide UI feedback even if its
+	 * &quot;quick for you&quot; it wont be on a Pi4 under load
+	 *
+	 * @param {string} id cryptService.sha256Salty(username)
+	 * @param {string} data
+	 * @returns {Promise&lt;any&gt;}
 	 */
 	async encryptPGPSingle(id: string, data: string) {
 		const encryptionKey &#x3D; await this.fileSystem.readFile(
@@ -819,39 +780,44 @@ export class CryptService {
 		return encrypted;
 	}
 
-	async dencryptPGPSingle(id: string, passphrase: string, encrypted: string) {
-		const encryptionKey &#x3D; await this.fileSystem.readFile(
+	/**
+	 * Requires the users password, for this reason, you might want to make or interact with profiles
+	 * they are like sub accounts, but not, multiple personality syndrome with split brain describes it well.
+	 *
+	 * @param {string} id cryptService.sha256Salty(username)
+	 * @param {string} passphrase
+	 * @param {string} encrypted
+	 * @returns {Promise&lt;any&gt;}
+	 */
+	async decryptPGPSingle(id: string, passphrase: string, encrypted: string) {
+		/**
+		 * @type string OpenPGP Armoured private key
+		 */
+		let encryptionKey &#x3D; await this.fileSystem.readFile(
 			&#x60;users/${id}.lthn.private.asc&#x60;
 		);
-
-		const privateKey &#x3D; await this.appService.openpgp.decryptKey({
+		// decrypt the private key
+		let privateKey &#x3D; await this.appService.openpgp.decryptKey({
 			privateKey: await this.appService.openpgp.readPrivateKey({
 				armoredKey: encryptionKey
 			}),
 			passphrase
 		});
-		const message &#x3D; await this.appService.openpgp.readMessage({
-			armoredMessage: encrypted // parse armored message
-		});
+
 		const {data: decrypted, signatures} &#x3D;
 			await this.appService.openpgp.decrypt({
-				message,
+				await this.appService.openpgp.readMessage({
+					armoredMessage: encrypted // parse armored message
+				}),
 				decryptionKeys: privateKey
 			});
-		console.log(decrypted);
+		// Leave nothing to chance
+		privateKey &#x3D; null
+		encryptionKey &#x3D; null
 
 		return decrypted;
 	}
 
-	/**
-	 * This function is for paranoia sakes, do not use for crypto graphic seeds.
-	 * the only purpose of this is to adjust memory values of sensitive data
-	 *
-	 * @returns {string}
-	 */
-	randString(length: number): string {
-		return &#x27;&#x27;.padEnd(length, &#x27;1&#x27;);
-	}
 }
 </code></pre>
     </div>
