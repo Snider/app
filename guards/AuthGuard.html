@@ -193,14 +193,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/modules/auth/route.guard.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/modules/auth/route.guard.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Handles logged out access
+Run during routing to check if the user is logged in or not, we do this check if
+getAuthStatus() returns true, the username variable is set, to logout simply clear the username</p>
+<p>If the user is not authenticated this function acts in one of two ways</p>
+<ol>
+<li>if ~/Lethean/users is empty perform first run / welcome</li>
+<li>if users do exsist, take to the /login page</li>
+</ol>
+<p>if APP_CONFIG.production === false auth check is bypassed, but without login decryption cant happen
+you may or may not have to login to develop, for now at least</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -274,6 +285,23 @@ export class AuthGuard implements CanActivate {
 	) {
 	}
 
+	/**
+	 * Handles logged out access
+	 * Run during routing to check if the user is logged in or not, we do this check if
+	 * getAuthStatus() returns true, the username variable is set, to logout simply clear the username
+	 *
+	 * If the user is not authenticated this function acts in one of two ways
+	 *
+	 * 1) if ~/Lethean/users is empty perform first run / welcome
+	 * 2) if users do exsist, take to the /login page
+	 *
+	 * if APP_CONFIG.production &#x3D;&#x3D;&#x3D; false auth check is bypassed, but without login decryption cant happen
+	 * you may or may not have to login to develop, for now at least
+	 *
+	 * @param {ActivatedRouteSnapshot} route
+	 * @param {RouterStateSnapshot} state
+	 * @returns {boolean | Promise&lt;boolean&gt;}
+	 */
 	canActivate(
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
