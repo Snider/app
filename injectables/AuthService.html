@@ -204,18 +204,29 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/modules/auth/auth.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/modules/auth/auth.service.ts:30</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>User auth check is (this.user.length &gt; 0) we only need to store how to access the data.</p>
+<p>Please do not add identifiable data or anything here, data like that should live in the users encrypted
+json profiles.</p>
+<p>If extra data is required here, it should be kept to a min, not expose, not persist and only be for user benefit
+not because it would just be easier to code</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -243,14 +254,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/modules/auth/auth.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/modules/auth/auth.service.ts:49</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Takes a username and password and tries to decrypt data files with a name id matching</p>
+<p>It either works and that was the right password, or it does not and then it wont.</p>
+<p>We are using OpenPGP so adding a backup key that can decrypt the current password, that we update using the public key.
+so if the worst happens, they can decrypt using a HSM/encrypted file stored passwordless private key</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -317,14 +333,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/modules/auth/auth.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/modules/auth/auth.service.ts:63</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Clear the user prop by setting to a empty string, making auth checks fail.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -428,6 +446,17 @@ export class AuthService {
 	) {
 	}
 
+	/**
+	 * User auth check is (this.user.length &gt; 0) we only need to store how to access the data.
+	 *
+	 * Please do not add identifiable data or anything here, data like that should live in the users encrypted
+	 * json profiles.
+	 *
+	 * If extra data is required here, it should be kept to a min, not expose, not persist and only be for user benefit
+	 * not because it would just be easier to code
+	 *
+	 * @returns {boolean}
+	 */
 	getAuthStatus() {
 		if (!APP_CONFIG.production) {
 			return true;
@@ -435,6 +464,18 @@ export class AuthService {
 		return this.user.length &gt; 0;
 	}
 
+	/**
+	 * Takes a username and password and tries to decrypt data files with a name id matching
+	 *
+	 * It either works and that was the right password, or it does not and then it wont.
+	 *
+	 * We are using OpenPGP so adding a backup key that can decrypt the current password, that we update using the public key.
+	 * so if the worst happens, they can decrypt using a HSM/encrypted file stored passwordless private key
+	 *
+	 * @param username
+	 * @param password
+	 * @returns {Promise&lt;void&gt;}
+	 */
 	async login(username, password) {
 		const id &#x3D; this.cryptService.sha256Salty(username);
 		const data &#x3D; await this.fileSystem.readFile(&#x60;users/${id}.lthn&#x60;);
@@ -446,6 +487,9 @@ export class AuthService {
 		this.id &#x3D; decrypted.id;
 	}
 
+	/**
+	 * Clear the user prop by setting to a empty string, making auth checks fail.
+	 */
 	logout() {
 		this.user &#x3D; &#x27;&#x27;;
 	}
