@@ -804,16 +804,19 @@ export class CryptService {
 			passphrase
 		});
 
+		let message &#x3D; await this.appService.openpgp.readMessage({
+			armoredMessage: encrypted
+		})
+
 		const {data: decrypted, signatures} &#x3D;
 			await this.appService.openpgp.decrypt({
-				await this.appService.openpgp.readMessage({
-					armoredMessage: encrypted // parse armored message
-				}),
+				message,
 				decryptionKeys: privateKey
 			});
 		// Leave nothing to chance
 		privateKey &#x3D; null
 		encryptionKey &#x3D; null
+		message &#x3D; null
 
 		return decrypted;
 	}
