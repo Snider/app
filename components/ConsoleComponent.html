@@ -173,45 +173,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(appService: <a href="../injectables/AppService.html" target="_self">AppService</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/plugins/console/console.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/plugins/console/console.component.ts:12</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>appService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/AppService.html" target="_self" >AppService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -245,8 +215,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/plugins/console/console.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/plugins/console/console.component.ts:16</a></div>
                 </td>
             </tr>
 
@@ -296,7 +266,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/plugins/console/console.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/plugins/console/console.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -311,7 +281,6 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, ViewChild, ViewEncapsulation } from &#x27;@angular/core&#x27;;
 import { NgTerminal } from &#x27;ng-terminal&#x27;;
-import { AppService } from &#x27;../../app.service&#x27;;
 
 @Component({
 	selector: &#x27;lthn-app-console&#x27;,
@@ -323,31 +292,29 @@ import { AppService } from &#x27;../../app.service&#x27;;
 export class ConsoleComponent implements AfterViewInit {
 	@ViewChild(&#x27;term&#x27;, { static: true }) child: NgTerminal;
 
-	constructor(private appService: AppService) {}
+	constructor() {}
 
 	ngAfterViewInit() {
-		//...
 
+		if(this.child.keyEventInput) {
 
-		//this.child.underlying.setOption(&#x27;lineHeight&#x27;, &#x27;&#x27;);
+			this.child.keyEventInput.subscribe((e) &#x3D;&gt; {
+				console.log(&#x27;keyboard event:&#x27; + e.domEvent.keyCode + &#x27;, &#x27; + e.key);
 
-		this.child.keyEventInput.subscribe((e) &#x3D;&gt; {
-			console.log(&#x27;keyboard event:&#x27; + e.domEvent.keyCode + &#x27;, &#x27; + e.key);
+				const ev &#x3D; e.domEvent;
+				const printable &#x3D; !ev.altKey &amp;&amp; !ev.ctrlKey &amp;&amp; !ev.metaKey;
 
-			const ev &#x3D; e.domEvent;
-			const printable &#x3D; !ev.altKey &amp;&amp; !ev.ctrlKey &amp;&amp; !ev.metaKey;
-
-			if (ev.keyCode &#x3D;&#x3D;&#x3D; 13) {
-				this.child.write(&#x27;\r\n$ &#x27;);
-			} else if (ev.keyCode &#x3D;&#x3D;&#x3D; 8) {
-				if (this.child.underlying.buffer.active.cursorX &gt; 2) {
-					this.child.write(&#x27;\b \b&#x27;);
+				if (ev.keyCode &#x3D;&#x3D;&#x3D; 13) {
+					this.child.write(&#x27;\r\n$ &#x27;);
+				} else if (ev.keyCode &#x3D;&#x3D;&#x3D; 8) {
+					if (this.child.underlying.buffer.active.cursorX &gt; 2) {
+						this.child.write(&#x27;\b \b&#x27;);
+					}
+				} else if (printable) {
+					this.child.write(e.key);
 				}
-			} else if (printable) {
-				this.child.write(e.key);
-			}
-		});
-		//...
+			});
+		}
 	}
 }
 </code></pre>
