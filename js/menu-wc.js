@@ -551,9 +551,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/MakeUriIn.html" data-type="entity-link" >MakeUriIn</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/Message.html" data-type="entity-link" >Message</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/OpenWallet.html" data-type="entity-link" >OpenWallet</a>
                             </li>
                             <li class="link">

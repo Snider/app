@@ -77,11 +77,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Static</span>
-                                <a href="#connection$" >connection$</a>
-                            </li>
-                            <li>
-                                <a href="#RETRY_SECONDS" >RETRY_SECONDS</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#socket$" >socket$</a>
                             </li>
                         </ul>
                     </td>
@@ -99,7 +96,15 @@
                                 <a href="#closeConnection" >closeConnection</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#connect" >connect</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataUpdates$" >dataUpdates$</a>
+                            </li>
+                            <li>
+                                <a href="#sendMessage" >sendMessage</a>
                             </li>
                         </ul>
                     </td>
@@ -113,6 +118,24 @@
     </table>
 </section>
 
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/websocket.service.ts:12</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
 
             <section>
     
@@ -139,8 +162,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/services/websocket.service.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/services/websocket.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -162,6 +185,7 @@
                 <td class="col-md-4">
                     <a name="connect"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>connect</b></span>
                         <a href="#connect"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -169,15 +193,16 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>connect()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>connect()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/services/websocket.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/services/websocket.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -186,8 +211,116 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+                        <b>Returns : </b>    <code>WebSocketSubject&lt;any&gt;</code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataUpdates$"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>dataUpdates$</b></span>
+                        <a href="#dataUpdates$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>dataUpdates$()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/services/websocket.service.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendMessage"></a>
+                    <span class="name">
+                        <span ><b>sendMessage</b></span>
+                        <a href="#sendMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendMessage(msg: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/services/websocket.service.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>msg</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -203,11 +336,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="connection$"></a>
+                    <a name="socket$"></a>
                     <span class="name">
-                            <span class="modifier">Static</span>
-                        <span ><b>connection$</b></span>
-                        <a href="#connection$"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Private</span>
+                        <span ><b>socket$</b></span>
+                        <a href="#socket$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -219,38 +352,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/websocket.service.ts:16</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="RETRY_SECONDS"></a>
-                    <span class="name">
-                        <span ><b>RETRY_SECONDS</b></span>
-                        <a href="#RETRY_SECONDS"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>10</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/websocket.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/websocket.service.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -263,52 +365,51 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { webSocket, WebSocketSubject } from &#x27;rxjs/webSocket&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-
-export const WS_ENDPOINT &#x3D; &#x27;ws://127.0.0.1:36911/&#x27;;
-
-export interface Message {
-	author: string;
-	message: string;
-}
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Inject } from &#x27;@angular/core&#x27;;
+export const WS_ENDPOINT &#x3D; &#x27;ws://localhost:36909&#x27;;
+import { Socket } from &#x27;ngx-socket-io&#x27;;
+import {map} from &#x27;rxjs/operators&#x27;;
+import {webSocket, WebSocketSubject} from &#x27;rxjs/webSocket&#x27;;
 
 @Injectable({
 	providedIn: &#x27;root&#x27;
 })
 export class WebsocketService {
-	static connection$: WebSocketSubject&lt;any&gt;;
-	RETRY_SECONDS &#x3D; 10;
 
-	connect(): Observable&lt;any&gt; {
-		if (WebsocketService.connection$) {
-			return WebsocketService.connection$;
-		} else {
-			WebsocketService.connection$ &#x3D; webSocket({
-				url: WS_ENDPOINT,
-				deserializer: ({ data }) &#x3D;&gt; data
-			});
-			return WebsocketService.connection$;
+	private socket$: WebSocketSubject&lt;any&gt;;
+
+	constructor() {}
+
+	public connect(): WebSocketSubject&lt;any&gt; {
+		if (!this.socket$ || this.socket$.closed) {
+			this.socket$ &#x3D; webSocket(WS_ENDPOINT);
 		}
+		return this.socket$;
 	}
 
-	//
-	// send(data: any) {
-	//   if (this.connection$) {
-	//     this.connection$.next(data);
-	//   } else {
-	//     console.error(&#x27;Did not send data, open a connection first&#x27;);
-	//   }
-	// }
+	public dataUpdates$() {
+		return this.connect().asObservable();
+	}
 
 	closeConnection() {
-		if (WebsocketService.connection$) {
-			console.log(&#x27;close&#x27;);
-			WebsocketService.connection$.complete();
-			WebsocketService.connection$ &#x3D; null;
-		}
+		this.connect().complete();
 	}
+
+	sendMessage(msg: string) {
+		this.socket$.next(msg);
+	}
+
+
+	/**
+	import { webSocket } from &quot;rxjs/webSocket&quot;;
+const subject &#x3D; webSocket(&quot;ws://localhost:8081&quot;);
+
+subject.subscribe(
+   msg &#x3D;&gt; console.log(&#x27;message received: &#x27; + msg), // Called whenever there is a message from the server.
+   err &#x3D;&gt; console.log(err), // Called if at any point WebSocket API signals some kind of error.
+   () &#x3D;&gt; console.log(&#x27;complete&#x27;) // Called when connection is closed (for whatever reason).
+ );
+	 */
 }
 </code></pre>
     </div>
