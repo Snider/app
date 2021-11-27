@@ -1846,7 +1846,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;http://localhost:36910/json_rpc&#x27;</code>
+                        <i>Default value : </i><code>&#x27;https://localhost:36911/daemon/wallet/json_rpc&#x27;</code>
                     </td>
                 </tr>
                     <tr>
@@ -1880,7 +1880,7 @@ const axios &#x3D; require(&#x27;axios&#x27;).default;
 	providedIn: &#x27;root&#x27;
 })
 export class WalletService {
-	private url &#x3D; &#x27;http://localhost:36910/json_rpc&#x27;;
+	private url &#x3D; &#x27;https://localhost:36911/daemon/wallet/json_rpc&#x27;;
 
 	constructor(private http: HttpClient) {
 	}
@@ -1893,7 +1893,7 @@ export class WalletService {
 			responseType: &#x27;text&#x27; as &#x27;json&#x27;
 		};
 
-		const request &#x3D; {rpcBindPort: &#x27;36910&#x27;, disableRpcLogin: true};
+		const request &#x3D; {rpcBindPort: &#x27;36963&#x27;, disableRpcLogin: false};
 
 		return this.http
 			.post&lt;any&gt;(
