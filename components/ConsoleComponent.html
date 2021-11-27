@@ -84,6 +84,10 @@
     <table class="table table-sm table-hover metadata">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.Default</code></td>
+            </tr>
 
             <tr>
                 <td class="col-md-3">encapsulation</td>
@@ -205,12 +209,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(ws: <a href="../injectables/WebsocketService.html" target="_self">WebsocketService</a>)</code>
+<code>constructor(ws: <a href="../injectables/WebsocketService.html" target="_self">WebsocketService</a>, ref: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/plugins/console/console.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/plugins/console/console.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -232,6 +236,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/WebsocketService.html" target="_self" >WebsocketService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ref</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -271,7 +287,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/plugins/console/console.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/plugins/console/console.component.ts:18</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -305,8 +321,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/plugins/console/console.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/plugins/console/console.component.ts:47</a></div>
                 </td>
             </tr>
 
@@ -374,8 +390,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/plugins/console/console.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/plugins/console/console.component.ts:43</a></div>
                 </td>
             </tr>
 
@@ -411,8 +427,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/app/plugins/console/console.component.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/plugins/console/console.component.ts:52</a></div>
                 </td>
             </tr>
 
@@ -448,8 +464,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/plugins/console/console.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/plugins/console/console.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -499,7 +515,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/plugins/console/console.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/plugins/console/console.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -531,7 +547,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/plugins/console/console.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/plugins/console/console.component.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -552,7 +568,7 @@
             </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/plugins/console/console.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/plugins/console/console.component.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -565,17 +581,18 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {AfterViewInit, Component, Input, OnInit, ViewChild, ViewEncapsulation} from &#x27;@angular/core&#x27;;
-import { NgTerminal } from &#x27;ng-terminal&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild, ViewEncapsulation} from &#x27;@angular/core&#x27;;
+import {NgTerminal} from &#x27;ng-terminal&#x27;;
 import {WebsocketService} from &#x27;@service/websocket.service&#x27;;
-import { webSocket } from &quot;rxjs/webSocket&quot;;
 
 
 @Component({
 	selector: &#x27;lthn-app-console&#x27;,
 	templateUrl: &#x27;./console.component.html&#x27;,
 	styleUrls: [&#x27;./console.component.scss&#x27;],
-	encapsulation: ViewEncapsulation.None
+	encapsulation: ViewEncapsulation.None,
+	changeDetection: ChangeDetectionStrategy.Default
+
 
 })
 export class ConsoleComponent implements OnInit, AfterViewInit {
@@ -584,14 +601,23 @@ export class ConsoleComponent implements OnInit, AfterViewInit {
 	@Input() attach  &#x3D; &#x27;lethean-wallet-rpc&#x27;;
 	private command: string[] &#x3D; []
 	private sub$;
-	constructor(private ws: WebsocketService) {
-console.log(&quot;console&quot;)
+	constructor(private ws: WebsocketService, private ref: ChangeDetectorRef) {
+		this.ref.detach()
+		setInterval(() &#x3D;&gt; {
+			this.ref.detectChanges();
+		}, 1000);
 
 	}
 
 	ngOnInit(): void {
+		let that &#x3D; this;
+		this.ref.detectChanges();
 		this.ws.connect().subscribe((data) &#x3D;&gt; {
-			if(this.attach &#x3D;&#x3D;&#x3D; data[0]) this.child.write(data[1] + &#x27;\r\n&#x27;)
+			if(this.attach &#x3D;&#x3D;&#x3D; data[0]) {
+				this.child.write(data[1] + &#x27;\r\n&#x27;);
+				that.ref.markForCheck()
+			}
+
 		})
 
 			this.changeStream(this.attach)
@@ -603,10 +629,10 @@ console.log(&quot;console&quot;)
 
 	changeStream(channel:string){
 		this.ws.sendMessage(&#x60;daemon:${this.attach}&#x60;)
+		this.ref.markForCheck()
 	}
 
 	ngAfterViewInit() {
-
 		const that &#x3D; this;
 		this.child.write(&#x27;$ &#x27;);
 		if(this.child.keyEventInput) {
@@ -623,14 +649,17 @@ console.log(&quot;console&quot;)
 					that.ws.sendMessage(&#x60;cmd:letheand:${this.command.join(&#x27;&#x27;)}\n&#x60;)
 					this.command &#x3D; []
 					this.child.write(&#x27;\r\n$ &#x27;);
+					this.ref.detectChanges();
 				} else if (ev.keyCode &#x3D;&#x3D;&#x3D; 8) {
 					 this.command.pop()
 					if (this.child.underlying.buffer.active.cursorX &gt; 0) {
 						this.child.write(&#x27;\b \b&#x27;);
+						this.ref.detectChanges();
 					}
 				} else if (printable) {
 					this.command.push(e.key);
 					this.child.write(e.key);
+					this.ref.detectChanges();
 				}
 				//console.log(this.command.join(&quot;&quot;))
 			});
