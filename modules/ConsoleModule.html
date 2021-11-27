@@ -164,6 +164,7 @@ import { CommonModule } from &#x27;@angular/common&#x27;;
 import { ConsoleComponent } from &#x27;./console.component&#x27;;
 import { NgTerminalModule } from &#x27;ng-terminal&#x27;;
 import { MatCardModule } from &#x27;@angular/material/card&#x27;;
+import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 
 @NgModule({
 	declarations: [ConsoleComponent],
@@ -173,7 +174,8 @@ import { MatCardModule } from &#x27;@angular/material/card&#x27;;
 	imports: [
 		CommonModule,
 		NgTerminalModule,
-		MatCardModule
+		MatCardModule,
+		MatButtonModule
 	]
 })
 export class ConsoleModule {}
