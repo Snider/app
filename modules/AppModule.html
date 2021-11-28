@@ -264,6 +264,9 @@ import {AppComponent} from &#x27;./app.component&#x27;;
 import {AppRoutingModule} from &#x27;./app-routing.module&#x27;;
 import {AuthModule} from &#x27;@module/auth/auth.module&#x27;;
 import {ConsoleModule} from &#x27;@plugin/console/console.module&#x27;;
+import {BlockchainService} from &#x27;@plugin/lthn/chain/blockchain.service&#x27;;
+import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
+import {date} from &#x27;random-js&#x27;;
 
 
 @NgModule({
@@ -296,6 +299,19 @@ import {ConsoleModule} from &#x27;@plugin/console/console.module&#x27;;
  * Application shell/bootstrap
  */
 export class AppModule {
+
+	/**
+	 * Start blockchain &amp; wallet service automatically on start
+	 *
+	 * @param {BlockchainService} chain
+	 * @param {WalletService} wallet
+	 */
+	constructor(private chain: BlockchainService, private wallet: WalletService) {
+		this.chain.startDaemon().then((data) &#x3D;&gt; {
+			console.log(&quot;blockchain started&quot;)
+			this.wallet.startWallet().then((data) &#x3D;&gt; console.log(&#x27;wallet started&#x27;))
+		})
+	}
 }
 </code></pre>
     </div>
