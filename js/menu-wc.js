@@ -337,13 +337,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/WalletModule.html" data-type="entity-link" >WalletModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-WalletModule-6b510f6a94705f28e5760571af74e6d47c2f1836f8d495ad86971f1fdfced2f8f5e27edc41d1ee0e5ff0864c757cde8381ad93475edca1799bdc6049a3bbdf4f"' : 'data-target="#xs-components-links-module-WalletModule-6b510f6a94705f28e5760571af74e6d47c2f1836f8d495ad86971f1fdfced2f8f5e27edc41d1ee0e5ff0864c757cde8381ad93475edca1799bdc6049a3bbdf4f"' }>
+                                            'data-target="#components-links-module-WalletModule-34b19b69f36abe46a2fcf25d22e4442bb5714cf3a9485d042e88753874499d3fbdc39d054ff447badf7819f7b2020cc291f569e1776c37fa1131b9df658e5d30"' : 'data-target="#xs-components-links-module-WalletModule-34b19b69f36abe46a2fcf25d22e4442bb5714cf3a9485d042e88753874499d3fbdc39d054ff447badf7819f7b2020cc291f569e1776c37fa1131b9df658e5d30"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-WalletModule-6b510f6a94705f28e5760571af74e6d47c2f1836f8d495ad86971f1fdfced2f8f5e27edc41d1ee0e5ff0864c757cde8381ad93475edca1799bdc6049a3bbdf4f"' :
-                                            'id="xs-components-links-module-WalletModule-6b510f6a94705f28e5760571af74e6d47c2f1836f8d495ad86971f1fdfced2f8f5e27edc41d1ee0e5ff0864c757cde8381ad93475edca1799bdc6049a3bbdf4f"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-WalletModule-34b19b69f36abe46a2fcf25d22e4442bb5714cf3a9485d042e88753874499d3fbdc39d054ff447badf7819f7b2020cc291f569e1776c37fa1131b9df658e5d30"' :
+                                            'id="xs-components-links-module-WalletModule-34b19b69f36abe46a2fcf25d22e4442bb5714cf3a9485d042e88753874499d3fbdc39d054ff447badf7819f7b2020cc291f569e1776c37fa1131b9df658e5d30"' }>
                                             <li class="link">
                                                 <a href="components/BackupComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >BackupComponent</a>
                                             </li>
