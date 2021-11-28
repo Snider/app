@@ -321,8 +321,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/app.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/app.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -390,8 +390,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/app.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/app.component.ts:51</a></div>
                 </td>
             </tr>
 
@@ -427,8 +427,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/app/app.component.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/app.component.ts:88</a></div>
                 </td>
             </tr>
 
@@ -496,8 +496,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/app.component.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/app.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -533,8 +533,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/app.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/app.component.ts:46</a></div>
                 </td>
             </tr>
 
@@ -570,8 +570,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/app.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/app.component.ts:56</a></div>
                 </td>
             </tr>
 
@@ -754,7 +754,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
 import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
-import { ActivatedRoute, NavigationEnd, Router } from &#x27;@angular/router&#x27;;
+import {ActivatedRoute, NavigationEnd, NavigationStart, Router} from &#x27;@angular/router&#x27;;
 import { Meta, Title } from &#x27;@angular/platform-browser&#x27;;
 import { filter } from &#x27;rxjs/operators&#x27;;
 import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
@@ -784,6 +784,9 @@ export class AppComponent implements OnInit {
 
 		// the lang to use, if the lang isn&#x27;t available, it will use the current loader to get them
 		translate.use(&#x27;en&#x27;);
+
+
+
 	}
 
 	ngOnInit(): void {
@@ -809,14 +812,13 @@ export class AppComponent implements OnInit {
 			.pipe(filter((event) &#x3D;&gt; event instanceof NavigationEnd))
 			.subscribe(() &#x3D;&gt; {
 				const rt &#x3D; this.getChild(this.activatedRoute);
-
 				rt.data.subscribe((data) &#x3D;&gt; {
-					this.titleService.setTitle(data.title);
+					this.titleService.setTitle(this.translate.instant(data.title));
 					this.heading &#x3D; data.heading;
 					if (data.description) {
 						this.metaService.updateTag({
 							name: &#x27;description&#x27;,
-							content: data.description
+							content: this.translate.instant(data.description)
 						});
 					} else {
 						this.metaService.removeTag(&quot;name&#x3D;&#x27;description&#x27;&quot;);
@@ -879,7 +881,7 @@ export class AppComponent implements OnInit {
                 &lt;button (click)&#x3D;&quot;openMenu()&quot; *ngIf&#x3D;&quot;!menu&quot; mat-button&gt;
                     &lt;mat-icon&gt;menu_open&lt;/mat-icon&gt;
                 &lt;/button&gt;
-                &lt;span&gt;{{heading}}&lt;/span&gt;
+                &lt;span&gt;{{heading | translate}}&lt;/span&gt;
                 &lt;span class&#x3D;&quot;flex-spacer&quot;&gt;&lt;/span&gt;
                 &lt;button [routerLink]&#x3D;&quot;[&#x27;/console&#x27;]&quot; mat-button&gt;
                     &lt;mat-icon&gt;terminal&lt;/mat-icon&gt;
@@ -1006,7 +1008,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="main-container">    <mat-sidenav #sidenav [(opened)]="menu"                 mode="side">        <div fxLayout="row">            <a [routerLink]="[\'/\']">                <img alt="Lethean Logo" class="logo" src="../assets/images/logo.png"/>            </a>            <button (click)="closeMenu()" *ngIf="menu" mat-button>                <mat-icon>menu</mat-icon>            </button>        </div>        <mat-divider></mat-divider>        <mat-nav-list>            <a [routerLink]="[\'/\'] " mat-list-item>{{ \'menu.text.dashboard\' | translate }}</a>            <a [routerLink]="[\'chain\'] " mat-list-item>{{ \'menu.text.blockchain\' | translate }}</a>            <a [routerLink]="[\'wallet\'] " mat-list-item>{{ \'menu.text.wallet\' | translate }}</a>            <a [routerLink]="[\'settings\'] " mat-list-item>{{ \'menu.text.settings\' | translate }}</a>        </mat-nav-list>        <span class="flex-spacer"></span>        <lthn-app-status></lthn-app-status>    </mat-sidenav>    <mat-sidenav-content>        <mat-toolbar>            <mat-toolbar-row>                <button (click)="openMenu()" *ngIf="!menu" mat-button>                    <mat-icon>menu_open</mat-icon>                </button>                <span>{{heading}}</span>                <span class="flex-spacer"></span>                <button [routerLink]="[\'/console\']" mat-button>                    <mat-icon>terminal</mat-icon>                </button>                <mat-menu #appMenu="matMenu">                    <ng-template let-name="name" matMenuContent>                        <mat-list-item>                            <button (click)="changeLanguage(\'en\')" mat-button color="accent">                                <img src="assets/flags/1x1/en.svg" width="16" alt="{{ \'lang.en\' | translate }}">&nbsp;&nbsp;{{ \'lang.en\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'ru\')" mat-button color="accent">                                <img src="assets/flags/1x1/ru.svg" width="16" alt="{{ \'lang.ru\' | translate }}">&nbsp;&nbsp;{{ \'lang.ru\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'zh\')" mat-button color="accent">                                <img src="assets/flags/1x1/zh.svg" width="16" alt="{{ \'lang.zh\' | translate }}">&nbsp;&nbsp;{{ \'lang.zh\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'es\')" mat-button color="accent">                                <img src="assets/flags/1x1/es.svg" width="16" alt="{{ \'lang.es\' | translate }}">&nbsp;&nbsp;{{ \'lang.es\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'de\')" mat-button color="accent">                                <img src="assets/flags/1x1/de.svg" width="16" alt="{{ \'lang.de\' | translate }}">&nbsp;&nbsp;{{ \'lang.de\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'fr\')" mat-button color="accent">                                <img src="assets/flags/1x1/fr.svg" width="16" alt="{{ \'lang.fr\' | translate }}">&nbsp;&nbsp;{{ \'lang.fr\' | translate }}                            </button>                        </mat-list-item>                    </ng-template>                </mat-menu>                <button [matMenuTriggerData]="{auth: \'dave\'}" [matMenuTriggerFor]="appMenu"                        mat-icon-button                        matTooltip="Click Me!">                    <img src="assets/flags/1x1/{{this.currentLanguage}}.svg" width="24">                </button>            </mat-toolbar-row>        </mat-toolbar>        <router-outlet></router-outlet>    </mat-sidenav-content></mat-sidenav-container></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="main-container">    <mat-sidenav #sidenav [(opened)]="menu"                 mode="side">        <div fxLayout="row">            <a [routerLink]="[\'/\']">                <img alt="Lethean Logo" class="logo" src="../assets/images/logo.png"/>            </a>            <button (click)="closeMenu()" *ngIf="menu" mat-button>                <mat-icon>menu</mat-icon>            </button>        </div>        <mat-divider></mat-divider>        <mat-nav-list>            <a [routerLink]="[\'/\'] " mat-list-item>{{ \'menu.text.dashboard\' | translate }}</a>            <a [routerLink]="[\'chain\'] " mat-list-item>{{ \'menu.text.blockchain\' | translate }}</a>            <a [routerLink]="[\'wallet\'] " mat-list-item>{{ \'menu.text.wallet\' | translate }}</a>            <a [routerLink]="[\'settings\'] " mat-list-item>{{ \'menu.text.settings\' | translate }}</a>        </mat-nav-list>        <span class="flex-spacer"></span>        <lthn-app-status></lthn-app-status>    </mat-sidenav>    <mat-sidenav-content>        <mat-toolbar>            <mat-toolbar-row>                <button (click)="openMenu()" *ngIf="!menu" mat-button>                    <mat-icon>menu_open</mat-icon>                </button>                <span>{{heading | translate}}</span>                <span class="flex-spacer"></span>                <button [routerLink]="[\'/console\']" mat-button>                    <mat-icon>terminal</mat-icon>                </button>                <mat-menu #appMenu="matMenu">                    <ng-template let-name="name" matMenuContent>                        <mat-list-item>                            <button (click)="changeLanguage(\'en\')" mat-button color="accent">                                <img src="assets/flags/1x1/en.svg" width="16" alt="{{ \'lang.en\' | translate }}">&nbsp;&nbsp;{{ \'lang.en\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'ru\')" mat-button color="accent">                                <img src="assets/flags/1x1/ru.svg" width="16" alt="{{ \'lang.ru\' | translate }}">&nbsp;&nbsp;{{ \'lang.ru\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'zh\')" mat-button color="accent">                                <img src="assets/flags/1x1/zh.svg" width="16" alt="{{ \'lang.zh\' | translate }}">&nbsp;&nbsp;{{ \'lang.zh\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'es\')" mat-button color="accent">                                <img src="assets/flags/1x1/es.svg" width="16" alt="{{ \'lang.es\' | translate }}">&nbsp;&nbsp;{{ \'lang.es\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'de\')" mat-button color="accent">                                <img src="assets/flags/1x1/de.svg" width="16" alt="{{ \'lang.de\' | translate }}">&nbsp;&nbsp;{{ \'lang.de\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'fr\')" mat-button color="accent">                                <img src="assets/flags/1x1/fr.svg" width="16" alt="{{ \'lang.fr\' | translate }}">&nbsp;&nbsp;{{ \'lang.fr\' | translate }}                            </button>                        </mat-list-item>                    </ng-template>                </mat-menu>                <button [matMenuTriggerData]="{auth: \'dave\'}" [matMenuTriggerFor]="appMenu"                        mat-icon-button                        matTooltip="Click Me!">                    <img src="assets/flags/1x1/{{this.currentLanguage}}.svg" width="24">                </button>            </mat-toolbar-row>        </mat-toolbar>        <router-outlet></router-outlet>    </mat-sidenav-content></mat-sidenav-container></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-spp-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

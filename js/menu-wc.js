@@ -234,13 +234,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/RootModule.html" data-type="entity-link" >RootModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-RootModule-31fa944c17813d2f700c1ca7776d65c05061554cb8748145fe21decd5278dd2f23ce5093b003299517225612731136de1987938e86300d7cbe3c1cc739a1e1da"' : 'data-target="#xs-components-links-module-RootModule-31fa944c17813d2f700c1ca7776d65c05061554cb8748145fe21decd5278dd2f23ce5093b003299517225612731136de1987938e86300d7cbe3c1cc739a1e1da"' }>
+                                            'data-target="#components-links-module-RootModule-4ecedf5a6158acf9f6a12df0a0042927ce92a910ae3316f51fbb782c0e67b4d31261041c493010eabfadf9305003653f1d4db0ee0ba14d21dedcc0e636f5429d"' : 'data-target="#xs-components-links-module-RootModule-4ecedf5a6158acf9f6a12df0a0042927ce92a910ae3316f51fbb782c0e67b4d31261041c493010eabfadf9305003653f1d4db0ee0ba14d21dedcc0e636f5429d"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-RootModule-31fa944c17813d2f700c1ca7776d65c05061554cb8748145fe21decd5278dd2f23ce5093b003299517225612731136de1987938e86300d7cbe3c1cc739a1e1da"' :
-                                            'id="xs-components-links-module-RootModule-31fa944c17813d2f700c1ca7776d65c05061554cb8748145fe21decd5278dd2f23ce5093b003299517225612731136de1987938e86300d7cbe3c1cc739a1e1da"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-RootModule-4ecedf5a6158acf9f6a12df0a0042927ce92a910ae3316f51fbb782c0e67b4d31261041c493010eabfadf9305003653f1d4db0ee0ba14d21dedcc0e636f5429d"' :
+                                            'id="xs-components-links-module-RootModule-4ecedf5a6158acf9f6a12df0a0042927ce92a910ae3316f51fbb782c0e67b4d31261041c493010eabfadf9305003653f1d4db0ee0ba14d21dedcc0e636f5429d"' }>
                                             <li class="link">
                                                 <a href="components/RootComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RootComponent</a>
                                             </li>
