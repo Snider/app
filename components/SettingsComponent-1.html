@@ -52,9 +52,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -64,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/plugins/lthn/wallet/settings/settings.component.ts</code>
+    <code>src/app/plugins/lthn/wallet/components/settings.component.ts</code>
 </p>
 
 
@@ -98,10 +95,6 @@
                 <td class="col-md-9"><code>lthn-app-settings</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./settings.component.scss</code></td>
-            </tr>
 
 
 
@@ -160,7 +153,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/plugins/lthn/wallet/settings/settings.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/plugins/lthn/wallet/components/settings.component.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -197,8 +190,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/settings/settings.component.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/settings.component.ts:10</a></div>
                 </td>
             </tr>
 
@@ -224,8 +217,7 @@
 
 @Component({
 	selector: &#x27;lthn-app-settings&#x27;,
-	templateUrl: &#x27;./settings.component.html&#x27;,
-	styleUrls: [&#x27;./settings.component.scss&#x27;]
+	templateUrl: &#x27;./settings.component.html&#x27;
 })
 export class SettingsComponent implements OnInit {
 	constructor() {}
@@ -280,12 +272,6 @@ export class SettingsComponent implements OnInit {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./settings.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -313,7 +299,7 @@ export class SettingsComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="container" fxLayout="column">  <div fxFlex="100" style="padding: 12px 12px 3px 12px;">    <mat-toolbar>      <mat-toolbar-row>        <span class="lthn-brand">Wallet Manager</span>        <span class="flex-spacer"></span>        <button [routerLink]="[\'/\', \'wallet\', \'new\']" mat-button matTooltip="New Wallet">          <mat-icon>account_balance_wallet</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'backup\']" mat-button matTooltip="Backup">          <mat-icon>cloud_download</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'restore\']" mat-button matTooltip="Restore">          <mat-icon>cloud_upload</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'settings\']" mat-button matTooltip="Settings">          <mat-icon>settings</mat-icon>        </button>      </mat-toolbar-row>    </mat-toolbar>    <div fxLayout="row">      <div fxFlex="20" style="padding: 6px 3px 6px 0;">        <mat-card>          <mat-card-title>Wallets</mat-card-title>          <mat-card-content>            <mat-nav-list>              <a mat-list-item>Mine</a>              <a mat-list-item>Rick\'s</a>              <a mat-list-item>My other</a>            </mat-nav-list>          </mat-card-content>        </mat-card>      </div>      <div fxFlex="80" style="padding: 6px 0 6px 3px;">        <mat-card>          <mat-card-title>Options</mat-card-title>        </mat-card>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-app-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-spp-wallet'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-spp-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'SettingsComponent-1'};
 </script>

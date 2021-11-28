@@ -334,15 +334,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/WalletModule.html" data-type="entity-link" >WalletModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-WalletModule-34b15ebb0f05b8e12e5770169c63bb88cd79d4371a3775b38eb186b5ed432683fc639cee1387114a44e7f929e94285c56b55df3b1ab46d81c03b6f9346f894d1"' : 'data-target="#xs-components-links-module-WalletModule-34b15ebb0f05b8e12e5770169c63bb88cd79d4371a3775b38eb186b5ed432683fc639cee1387114a44e7f929e94285c56b55df3b1ab46d81c03b6f9346f894d1"' }>
+                                            'data-target="#components-links-module-WalletModule-6b510f6a94705f28e5760571af74e6d47c2f1836f8d495ad86971f1fdfced2f8f5e27edc41d1ee0e5ff0864c757cde8381ad93475edca1799bdc6049a3bbdf4f"' : 'data-target="#xs-components-links-module-WalletModule-6b510f6a94705f28e5760571af74e6d47c2f1836f8d495ad86971f1fdfced2f8f5e27edc41d1ee0e5ff0864c757cde8381ad93475edca1799bdc6049a3bbdf4f"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-WalletModule-34b15ebb0f05b8e12e5770169c63bb88cd79d4371a3775b38eb186b5ed432683fc639cee1387114a44e7f929e94285c56b55df3b1ab46d81c03b6f9346f894d1"' :
-                                            'id="xs-components-links-module-WalletModule-34b15ebb0f05b8e12e5770169c63bb88cd79d4371a3775b38eb186b5ed432683fc639cee1387114a44e7f929e94285c56b55df3b1ab46d81c03b6f9346f894d1"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-WalletModule-6b510f6a94705f28e5760571af74e6d47c2f1836f8d495ad86971f1fdfced2f8f5e27edc41d1ee0e5ff0864c757cde8381ad93475edca1799bdc6049a3bbdf4f"' :
+                                            'id="xs-components-links-module-WalletModule-6b510f6a94705f28e5760571af74e6d47c2f1836f8d495ad86971f1fdfced2f8f5e27edc41d1ee0e5ff0864c757cde8381ad93475edca1799bdc6049a3bbdf4f"' }>
                                             <li class="link">
                                                 <a href="components/BackupComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >BackupComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/NewComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >NewComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/RestoreComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RestoreComponent</a>
@@ -564,6 +567,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/Response.html" data-type="entity-link" >Response</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/RestoreWallet.html" data-type="entity-link" >RestoreWallet</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/SettingsState.html" data-type="entity-link" >SettingsState</a>

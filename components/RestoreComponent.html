@@ -52,9 +52,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -64,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/plugins/lthn/wallet/restore/restore.component.ts</code>
+    <code>src/app/plugins/lthn/wallet/components/restore.component.ts</code>
 </p>
 
 
@@ -95,13 +92,9 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>lthn-app-restore</code></td>
+                <td class="col-md-9"><code>lthn-wallet-restore</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./restore.component.scss</code></td>
-            </tr>
 
 
 
@@ -125,6 +118,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#restoreWalletForm" >restoreWalletForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -136,6 +143,9 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#restoreWallet" >restoreWallet</a>
                             </li>
                         </ul>
                     </td>
@@ -155,15 +165,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(wallet: <a href="../injectables/WalletService.html" target="_self">WalletService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/plugins/lthn/wallet/restore/restore.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:20</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>wallet</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/WalletService.html" target="_self" >WalletService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -197,8 +237,45 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/restore/restore.component.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="restoreWallet"></a>
+                    <span class="name">
+                        <span ><b>restoreWallet</b></span>
+                        <a href="#restoreWallet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>restoreWallet()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -215,77 +292,136 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="restoreWalletForm"></a>
+                    <span class="name">
+                        <span ><b>restoreWalletForm</b></span>
+                        <a href="#restoreWalletForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+		filename: new FormControl(&#x27;&#x27;),
+		address: new FormControl(&#x27;&#x27;),
+		restore_height: new FormControl(&#x27;&#x27;),
+		autosave_current: new FormControl(&#x27;&#x27;),
+		password: new FormControl(&#x27;&#x27;),
+		password_confirm: new FormControl(&#x27;&#x27;),
+		spendkey: new FormControl(&#x27;&#x27;),
+		viewkey: new FormControl(&#x27;&#x27;),
+	})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
+import {FormControl, FormGroup} from &#x27;@angular/forms&#x27;;
 
 @Component({
-	selector: &#x27;lthn-app-restore&#x27;,
-	templateUrl: &#x27;./restore.component.html&#x27;,
-	styleUrls: [&#x27;./restore.component.scss&#x27;]
+	selector: &#x27;lthn-wallet-restore&#x27;,
+	templateUrl: &#x27;./restore.component.html&#x27;
 })
 export class RestoreComponent implements OnInit {
-	constructor() {}
 
-	ngOnInit(): void {}
+	restoreWalletForm &#x3D; new FormGroup({
+		filename: new FormControl(&#x27;&#x27;),
+		address: new FormControl(&#x27;&#x27;),
+		restore_height: new FormControl(&#x27;&#x27;),
+		autosave_current: new FormControl(&#x27;&#x27;),
+		password: new FormControl(&#x27;&#x27;),
+		password_confirm: new FormControl(&#x27;&#x27;),
+		spendkey: new FormControl(&#x27;&#x27;),
+		viewkey: new FormControl(&#x27;&#x27;),
+	});
+
+	constructor(private wallet: WalletService) {
+	}
+
+	ngOnInit(): void {
+	}
+
+	restoreWallet() {
+		console.log(this.restoreWalletForm.value)
+		this.wallet.restoreWallet({
+			filename: this.restoreWalletForm.value.filename,
+			address: this.restoreWalletForm.value.address,
+			restore_height: this.restoreWalletForm.value.restore_height,
+			autosave_current: this.restoreWalletForm.value.autosave_current,
+			password: this.restoreWalletForm.value.password,
+			spendkey: this.restoreWalletForm.value.spendkey,
+			viewkey: this.restoreWalletForm.value.viewkey
+		});
+	}
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot; fxLayout&#x3D;&quot;column&quot;&gt;
-  &lt;div fxFlex&#x3D;&quot;100&quot; style&#x3D;&quot;padding: 12px 12px 3px 12px;&quot;&gt;
-    &lt;mat-toolbar&gt;
-      &lt;mat-toolbar-row&gt;
-        &lt;span class&#x3D;&quot;lthn-brand&quot;&gt;Wallet Manager&lt;/span&gt;
-        &lt;span class&#x3D;&quot;flex-spacer&quot;&gt;&lt;/span&gt;
-        &lt;button [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;wallet&#x27;, &#x27;new&#x27;]&quot; mat-button matTooltip&#x3D;&quot;New Wallet&quot;&gt;
-          &lt;mat-icon&gt;account_balance_wallet&lt;/mat-icon&gt;
-        &lt;/button&gt;
-        &lt;button [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;wallet&#x27;, &#x27;backup&#x27;]&quot; mat-button matTooltip&#x3D;&quot;Backup&quot;&gt;
-          &lt;mat-icon&gt;cloud_download&lt;/mat-icon&gt;
-        &lt;/button&gt;
-        &lt;button [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;wallet&#x27;, &#x27;restore&#x27;]&quot; mat-button matTooltip&#x3D;&quot;Restore&quot;&gt;
-          &lt;mat-icon&gt;cloud_upload&lt;/mat-icon&gt;
-        &lt;/button&gt;
-        &lt;button [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;wallet&#x27;, &#x27;settings&#x27;]&quot; mat-button matTooltip&#x3D;&quot;Settings&quot;&gt;
-          &lt;mat-icon&gt;settings&lt;/mat-icon&gt;
-        &lt;/button&gt;
-      &lt;/mat-toolbar-row&gt;
-    &lt;/mat-toolbar&gt;
-    &lt;div fxLayout&#x3D;&quot;row&quot;&gt;
-      &lt;div fxFlex&#x3D;&quot;20&quot; style&#x3D;&quot;padding: 6px 3px 6px 0;&quot;&gt;
-        &lt;mat-card&gt;
-          &lt;mat-card-title&gt;Wallets&lt;/mat-card-title&gt;
-          &lt;mat-card-content&gt;
-            &lt;mat-nav-list&gt;
-              &lt;a mat-list-item&gt;Mine&lt;/a&gt;
-              &lt;a mat-list-item&gt;Rick&#x27;s&lt;/a&gt;
-              &lt;a mat-list-item&gt;My other&lt;/a&gt;
-            &lt;/mat-nav-list&gt;
-          &lt;/mat-card-content&gt;
-        &lt;/mat-card&gt;
-      &lt;/div&gt;
-      &lt;div fxFlex&#x3D;&quot;80&quot; style&#x3D;&quot;padding: 6px 0 6px 3px;&quot;&gt;
-        &lt;mat-card&gt;
-          &lt;mat-card-title&gt;Options&lt;/mat-card-title&gt;
-        &lt;/mat-card&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;form [formGroup]&#x3D;&quot;restoreWalletForm&quot;&gt;
+
+    &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+        &lt;mat-label&gt;File Name&lt;/mat-label&gt;
+        &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;filename&quot;&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+        &lt;mat-label&gt;Address&lt;/mat-label&gt;
+        &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;address&quot;&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+        &lt;mat-label&gt;Restore Height&lt;/mat-label&gt;
+        &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;restore_height&quot;&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+        &lt;mat-label&gt;Autosave&lt;/mat-label&gt;
+        &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;autosave_current&quot;&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+        &lt;mat-label&gt;Wallet Password&lt;/mat-label&gt;
+        &lt;input matInput type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;password&quot;&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+        &lt;mat-label&gt;Confirm Password&lt;/mat-label&gt;
+        &lt;input matInput type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;password_confirm&quot;&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+        &lt;mat-label&gt;Speed Key&lt;/mat-label&gt;
+        &lt;input matInput type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;spendkey&quot;&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
+        &lt;mat-label&gt;View Key&lt;/mat-label&gt;
+        &lt;input matInput type&#x3D;&quot;password&quot; formControlName&#x3D;&quot;viewkey&quot;&gt;
+    &lt;/mat-form-field&gt;
+    &lt;button mat-button (click)&#x3D;&quot;restoreWallet()&quot;&gt;Restore Wallet&lt;/button&gt;
+&lt;/form&gt;
+
+
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./restore.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -312,8 +448,8 @@ export class RestoreComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container" fxLayout="column">  <div fxFlex="100" style="padding: 12px 12px 3px 12px;">    <mat-toolbar>      <mat-toolbar-row>        <span class="lthn-brand">Wallet Manager</span>        <span class="flex-spacer"></span>        <button [routerLink]="[\'/\', \'wallet\', \'new\']" mat-button matTooltip="New Wallet">          <mat-icon>account_balance_wallet</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'backup\']" mat-button matTooltip="Backup">          <mat-icon>cloud_download</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'restore\']" mat-button matTooltip="Restore">          <mat-icon>cloud_upload</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'settings\']" mat-button matTooltip="Settings">          <mat-icon>settings</mat-icon>        </button>      </mat-toolbar-row>    </mat-toolbar>    <div fxLayout="row">      <div fxFlex="20" style="padding: 6px 3px 6px 0;">        <mat-card>          <mat-card-title>Wallets</mat-card-title>          <mat-card-content>            <mat-nav-list>              <a mat-list-item>Mine</a>              <a mat-list-item>Rick\'s</a>              <a mat-list-item>My other</a>            </mat-nav-list>          </mat-card-content>        </mat-card>      </div>      <div fxFlex="80" style="padding: 6px 0 6px 3px;">        <mat-card>          <mat-card-title>Options</mat-card-title>        </mat-card>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-app-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-spp-wallet'}];
+        var COMPONENT_TEMPLATE = '<div><form [formGroup]="restoreWalletForm">    <mat-form-field appearance="standard">        <mat-label>File Name</mat-label>        <input matInput type="text" formControlName="filename">    </mat-form-field>    <mat-form-field appearance="standard">        <mat-label>Address</mat-label>        <input matInput type="text" formControlName="address">    </mat-form-field>    <mat-form-field appearance="standard">        <mat-label>Restore Height</mat-label>        <input matInput type="text" formControlName="restore_height">    </mat-form-field>    <mat-form-field appearance="standard">        <mat-label>Autosave</mat-label>        <input matInput type="text" formControlName="autosave_current">    </mat-form-field>    <mat-form-field appearance="standard">        <mat-label>Wallet Password</mat-label>        <input matInput type="password" formControlName="password">    </mat-form-field>    <mat-form-field appearance="standard">        <mat-label>Confirm Password</mat-label>        <input matInput type="password" formControlName="password_confirm">    </mat-form-field>    <mat-form-field appearance="standard">        <mat-label>Speed Key</mat-label>        <input matInput type="password" formControlName="spendkey">    </mat-form-field>    <mat-form-field appearance="standard">        <mat-label>View Key</mat-label>        <input matInput type="password" formControlName="viewkey">    </mat-form-field>    <button mat-button (click)="restoreWallet()">Restore Wallet</button></form></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-spp-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'RestoreComponent'};
 </script>
