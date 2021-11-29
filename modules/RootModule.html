@@ -202,27 +202,10 @@ import {MatTabsModule} from &#x27;@angular/material/tabs&#x27;;
 import {WalletModule} from &#x27;@plugin/lthn/wallet/wallet.module&#x27;;
 import {TranslateModule} from &#x27;@ngx-translate/core&#x27;;
 
-
-const routes: Routes &#x3D; [
-	{
-		path: &#x27;&#x27;,
-		component: RootComponent,
-		canActivate: [AuthGuard],
-		pathMatch: &#x27;full&#x27;,
-		data: {
-			title: &#x27;view.dashboard.title&#x27;,
-			heading: &#x27;view.dashboard.heading&#x27;,
-			description: &#x27;view.dashboard.description&#x27;,
-			robots: true
-		}
-	}
-];
-
 @NgModule({
 	declarations: [RootComponent],
 	imports: [
 		CommonModule,
-		RouterModule.forChild(routes),
 		MatCardModule,
 		MatButtonModule,
 		FlexModule,

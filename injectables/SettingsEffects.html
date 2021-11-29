@@ -98,12 +98,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(actions$: Actions)</code>
+<code>constructor(actions$: Actions, translate: TranslateService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/settings/data/settings.effects.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/modules/settings/data/settings.effects.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -125,6 +125,18 @@
                                                   
                                                         <td>
                                                                     <code>Actions</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -164,7 +176,9 @@
 		() &#x3D;&gt;
 			this.actions$.pipe(
 				ofType(&#x27;[Settings] Change Language&#x27;),
-				switchMap((req: { language: string; type: string }) &#x3D;&gt; [])
+				switchMap((req: { language: string; type: string }) &#x3D;&gt; {
+					return this.translate.use(req.language)
+				})
 			),
 		{ dispatch: false }
 	)</code>
@@ -172,7 +186,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/modules/settings/data/settings.effects.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/modules/settings/data/settings.effects.ts:8</a></div>
                         </td>
                     </tr>
 
@@ -188,6 +202,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 import { switchMap } from &#x27;rxjs/operators&#x27;;
+import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
 
 @Injectable()
 export class SettingsEffects {
@@ -195,12 +210,14 @@ export class SettingsEffects {
 		() &#x3D;&gt;
 			this.actions$.pipe(
 				ofType(&#x27;[Settings] Change Language&#x27;),
-				switchMap((req: { language: string; type: string }) &#x3D;&gt; [])
+				switchMap((req: { language: string; type: string }) &#x3D;&gt; {
+					return this.translate.use(req.language)
+				})
 			),
 		{ dispatch: false }
 	);
 
-	constructor(private actions$: Actions) {}
+	constructor(private actions$: Actions, private translate: TranslateService) {}
 }
 </code></pre>
     </div>
