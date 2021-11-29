@@ -491,10 +491,10 @@ export class BlockchainComponent implements OnInit, OnDestroy {
   &lt;div fxFlex&#x3D;&quot;100&quot; style&#x3D;&quot;padding: 12px 12px 3px 12px;&quot;&gt;
     &lt;div fxLayout&#x3D;&quot;row&quot;&gt;
       &lt;mat-card fxFlex&#x3D;&quot;100&quot;&gt;
-        &lt;mat-card-title&gt;Network Hash Rate&lt;/mat-card-title&gt;
+        &lt;mat-card-title&gt;{{ &#x27;charts.network-hashrate.title&#x27; | translate }}&lt;/mat-card-title&gt;
         &lt;mat-card-subtitle&gt;
-          Data provided by&lt;a color&#x3D;&quot;accent&quot; href&#x3D;&quot;https://hashvault.pro&quot; mat-button&gt;HashVault
-          Mining Pool&lt;/a&gt;
+          {{ &#x27;charts.network-hashrate.subtitle&#x27; | translate }} &lt;a color&#x3D;&quot;accent&quot; href&#x3D;&quot;https://hashvault.pro&quot; mat-button&gt;HashVault
+         {{ &#x27;names.mining-pool&#x27; | translate }}&lt;/a&gt;
         &lt;/mat-card-subtitle&gt;
         &lt;mat-card-content&gt;
           &lt;div lthnChart&#x3D;&quot;networkDifficulty&quot;&gt;&lt;/div&gt;
@@ -502,65 +502,18 @@ export class BlockchainComponent implements OnInit, OnDestroy {
       &lt;/mat-card&gt;
 
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;vertically-filled-mat-card-container&quot; fxLayout&#x3D;&quot;row&quot;&gt;
-      &lt;div fxFlex&#x3D;&quot;40&quot; style&#x3D;&quot;padding: 6px 3px 6px 0;&quot;&gt;
-        &lt;mat-card&gt;
-          &lt;mat-card-title&gt;Local Chain&lt;/mat-card-title&gt;
-          &lt;mat-card-content&gt;
-            &lt;p *ngIf&#x3D;&quot;this.isWeb&quot;&gt;
-              To sync the Lethean blockchain, you need to &lt;a class&#x3D;&quot;lthn-brand&quot; href&#x3D;&quot;https://lt.hn/en/download&quot;&gt;download
-              our app&lt;/a&gt; or
-              the &lt;a class&#x3D;&quot;lthn-brand&quot; href&#x3D;&quot;https://github.com/letheanVPN/lethean/releases&quot;&gt;Standalone CLI&lt;/a&gt;
-            &lt;/p&gt;
-            &lt;p *ngIf&#x3D;&quot;this.isApp&quot;&gt;
-              Did you know you can start the Lethean blockchain clicking the cloud icon in the bottom left corner?
-            &lt;/p&gt;
-          &lt;/mat-card-content&gt;
-        &lt;/mat-card&gt;
-      &lt;/div&gt;
-      &lt;div fxFlex&#x3D;&quot;30&quot; style&#x3D;&quot;padding: 6px 3px 6px 0;&quot;&gt;
-        &lt;mat-card&gt;
-          &lt;mat-card-title&gt;CLI Downloads&lt;/mat-card-title&gt;
-          &lt;mat-card-content&gt;
-            &lt;mat-nav-list fxLayout&#x3D;&quot;row&quot;&gt;
-              &lt;a
-                href&#x3D;&quot;https://github.com/letheanVPN/lethean/releases/download/v3.1.0/lethean-cli-linux-64bit-v3.1.tar.bz2&quot;
-                mat-list-item&gt;Linux&lt;/a&gt;
-              &lt;a
-                href&#x3D;&quot;https://github.com/letheanVPN/lethean/releases/download/v3.1.0/lethean-cli-mac-64bit-v3.1.tar.bz2&quot;
-                mat-list-item&gt;Macos&lt;/a&gt;
-              &lt;a href&#x3D;&quot;https://github.com/letheanVPN/lethean/releases/download/v3.1.0/lethean-cli-win-64bit-v3.1.zip&quot;
-                 mat-list-item&gt;Windows&lt;/a&gt;
-
-            &lt;/mat-nav-list&gt;
-          &lt;/mat-card-content&gt;
-        &lt;/mat-card&gt;
-      &lt;/div&gt;
-      &lt;div fxFlex&#x3D;&quot;30&quot; style&#x3D;&quot;padding: 6px 0 6px 3px;&quot;&gt;
-        &lt;mat-card&gt;
-          &lt;mat-card-title&gt;Remote Node&lt;/mat-card-title&gt;
-          &lt;mat-card-content&gt;
-            &lt;mat-list fxLayout&#x3D;&quot;row&quot;&gt;
-              &lt;mat-list-item&gt;sync.lethean.io&lt;/mat-list-item&gt;
-              &lt;mat-list-item&gt;nodes.hashvault.pro&lt;/mat-list-item&gt;
-            &lt;/mat-list&gt;
-          &lt;/mat-card-content&gt;
-        &lt;/mat-card&gt;
-      &lt;/div&gt;
-
-    &lt;/div&gt;
-
+    &lt;mat-divider&gt;&lt;/mat-divider&gt;
     &lt;div&gt;
       &lt;mat-card&gt;
-        &lt;mat-card-title&gt;Recent Blocks&lt;/mat-card-title&gt;
+        &lt;mat-card-title&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.title&#x27; | translate }}&lt;/mat-card-title&gt;
         &lt;mat-card-content&gt;
           &lt;table *ngIf&#x3D;&quot;recentTxs&quot; style&#x3D;&quot;width: 100%;&quot;&gt;
             &lt;thead&gt;
             &lt;tr&gt;
-              &lt;th&gt;Age&lt;/th&gt;
-              &lt;th&gt;Hash&lt;/th&gt;
-              &lt;th&gt;Height&lt;/th&gt;
-              &lt;th&gt;Time&lt;/th&gt;
+              &lt;th&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.headings.age&#x27; | translate }}&lt;/th&gt;
+              &lt;th&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.headings.hash&#x27; | translate }}&lt;/th&gt;
+              &lt;th&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.headings.height&#x27; | translate }}&lt;/th&gt;
+              &lt;th&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.headings.time&#x27; | translate }}&lt;/th&gt;
             &lt;/tr&gt;
             &lt;/thead&gt;
 
@@ -634,7 +587,7 @@ export class BlockchainComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container" fxLayout="column">  <div fxFlex="100" style="padding: 12px 12px 3px 12px;">    <div fxLayout="row">      <mat-card fxFlex="100">        <mat-card-title>Network Hash Rate</mat-card-title>        <mat-card-subtitle>          Data provided by<a color="accent" href="https://hashvault.pro" mat-button>HashVault          Mining Pool</a>        </mat-card-subtitle>        <mat-card-content>          <div lthnChart="networkDifficulty"></div>        </mat-card-content>      </mat-card>    </div>    <div class="vertically-filled-mat-card-container" fxLayout="row">      <div fxFlex="40" style="padding: 6px 3px 6px 0;">        <mat-card>          <mat-card-title>Local Chain</mat-card-title>          <mat-card-content>            <p *ngIf="this.isWeb">              To sync the Lethean blockchain, you need to <a class="lthn-brand" href="https://lt.hn/en/download">download              our app</a> or              the <a class="lthn-brand" href="https://github.com/letheanVPN/lethean/releases">Standalone CLI</a>            </p>            <p *ngIf="this.isApp">              Did you know you can start the Lethean blockchain clicking the cloud icon in the bottom left corner?            </p>          </mat-card-content>        </mat-card>      </div>      <div fxFlex="30" style="padding: 6px 3px 6px 0;">        <mat-card>          <mat-card-title>CLI Downloads</mat-card-title>          <mat-card-content>            <mat-nav-list fxLayout="row">              <a                href="https://github.com/letheanVPN/lethean/releases/download/v3.1.0/lethean-cli-linux-64bit-v3.1.tar.bz2"                mat-list-item>Linux</a>              <a                href="https://github.com/letheanVPN/lethean/releases/download/v3.1.0/lethean-cli-mac-64bit-v3.1.tar.bz2"                mat-list-item>Macos</a>              <a href="https://github.com/letheanVPN/lethean/releases/download/v3.1.0/lethean-cli-win-64bit-v3.1.zip"                 mat-list-item>Windows</a>            </mat-nav-list>          </mat-card-content>        </mat-card>      </div>      <div fxFlex="30" style="padding: 6px 0 6px 3px;">        <mat-card>          <mat-card-title>Remote Node</mat-card-title>          <mat-card-content>            <mat-list fxLayout="row">              <mat-list-item>sync.lethean.io</mat-list-item>              <mat-list-item>nodes.hashvault.pro</mat-list-item>            </mat-list>          </mat-card-content>        </mat-card>      </div>    </div>    <div>      <mat-card>        <mat-card-title>Recent Blocks</mat-card-title>        <mat-card-content>          <table *ngIf="recentTxs" style="width: 100%;">            <thead>            <tr>              <th>Age</th>              <th>Hash</th>              <th>Height</th>              <th>Time</th>            </tr>            </thead>            <tbody>            <tr *ngFor="let block of recentTxs">              <td>{{block.age}}</td>              <td>                <a color="accent" href="https://lethean.hashvault.pro/explorer/block/{{block.hash}}"                   mat-button                   rel="nofollow">{{block.hash}}</a>              </td>              <td>                {{block.height}}</td>              <td>{{block.timestamp * 1000 | date: \'dd/MM/yyyy @ HH:mm:ss\'}}</td>            </tr>            </tbody>          </table>        </mat-card-content>      </mat-card>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container" fxLayout="column">  <div fxFlex="100" style="padding: 12px 12px 3px 12px;">    <div fxLayout="row">      <mat-card fxFlex="100">        <mat-card-title>{{ \'charts.network-hashrate.title\' | translate }}</mat-card-title>        <mat-card-subtitle>          {{ \'charts.network-hashrate.subtitle\' | translate }} <a color="accent" href="https://hashvault.pro" mat-button>HashVault         {{ \'names.mining-pool\' | translate }}</a>        </mat-card-subtitle>        <mat-card-content>          <div lthnChart="networkDifficulty"></div>        </mat-card-content>      </mat-card>    </div>    <mat-divider></mat-divider>    <div>      <mat-card>        <mat-card-title>{{ \'plugin.lthn.chain.table.recent-blocks.title\' | translate }}</mat-card-title>        <mat-card-content>          <table *ngIf="recentTxs" style="width: 100%;">            <thead>            <tr>              <th>{{ \'plugin.lthn.chain.table.recent-blocks.headings.age\' | translate }}</th>              <th>{{ \'plugin.lthn.chain.table.recent-blocks.headings.hash\' | translate }}</th>              <th>{{ \'plugin.lthn.chain.table.recent-blocks.headings.height\' | translate }}</th>              <th>{{ \'plugin.lthn.chain.table.recent-blocks.headings.time\' | translate }}</th>            </tr>            </thead>            <tbody>            <tr *ngFor="let block of recentTxs">              <td>{{block.age}}</td>              <td>                <a color="accent" href="https://lethean.hashvault.pro/explorer/block/{{block.hash}}"                   mat-button                   rel="nofollow">{{block.hash}}</a>              </td>              <td>                {{block.height}}</td>              <td>{{block.timestamp * 1000 | date: \'dd/MM/yyyy @ HH:mm:ss\'}}</td>            </tr>            </tbody>          </table>        </mat-card-content>      </mat-card>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-spp-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'BlockchainComponent'};
