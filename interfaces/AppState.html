@@ -261,6 +261,7 @@ import * as User from &#x27;../../modules/user/data/user&#x27;;
 import {localStorageSync} from &#x27;ngrx-store-localstorage&#x27;;
 import * as Chart from &#x27;../../modules/chart/data&#x27;;
 import * as Logs from &#x27;../logs&#x27;;
+import {WebStorageService} from &#x27;@service/web-storage.service&#x27;;
 
 export interface AppState {
 	settings: Settings.SettingsState;
@@ -290,7 +291,8 @@ export function localStorageSyncReducer(
 			}
 		],
 		rehydrate: true,
-		removeOnUndefined: true
+		removeOnUndefined: true,
+		storage:  new WebStorageService()
 	})(reducer);
 }
 

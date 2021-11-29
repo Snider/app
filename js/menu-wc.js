@@ -446,6 +446,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <li class="link">
                                     <a href="injectables/WebsocketService.html" data-type="entity-link" >WebsocketService</a>
                                 </li>
+                                <li class="link">
+                                    <a href="injectables/WebStorageService.html" data-type="entity-link" >WebStorageService</a>
+                                </li>
                             </ul>
                         </li>
                     <li class="chapter">
