@@ -91,13 +91,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/BlockchainModule.html" data-type="entity-link" >BlockchainModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-BlockchainModule-900cfdb2d32e561f71c74527c19123b6affb4444787e888bfde236ffc81d9a8ebd6e59166d6e746624812a47a6a77e678bbd3ec21227c7fe0e3e2f90f2a216d0"' : 'data-target="#xs-components-links-module-BlockchainModule-900cfdb2d32e561f71c74527c19123b6affb4444787e888bfde236ffc81d9a8ebd6e59166d6e746624812a47a6a77e678bbd3ec21227c7fe0e3e2f90f2a216d0"' }>
+                                            'data-target="#components-links-module-BlockchainModule-8b5de1e99ef4c97b625b404931bdd23c05ee018d71f1eda8bf94a06114f702178b3f57f63bc8b6e09308254a362754601607bed63635f7c7d536a1a3721575bc"' : 'data-target="#xs-components-links-module-BlockchainModule-8b5de1e99ef4c97b625b404931bdd23c05ee018d71f1eda8bf94a06114f702178b3f57f63bc8b6e09308254a362754601607bed63635f7c7d536a1a3721575bc"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-BlockchainModule-900cfdb2d32e561f71c74527c19123b6affb4444787e888bfde236ffc81d9a8ebd6e59166d6e746624812a47a6a77e678bbd3ec21227c7fe0e3e2f90f2a216d0"' :
-                                            'id="xs-components-links-module-BlockchainModule-900cfdb2d32e561f71c74527c19123b6affb4444787e888bfde236ffc81d9a8ebd6e59166d6e746624812a47a6a77e678bbd3ec21227c7fe0e3e2f90f2a216d0"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-BlockchainModule-8b5de1e99ef4c97b625b404931bdd23c05ee018d71f1eda8bf94a06114f702178b3f57f63bc8b6e09308254a362754601607bed63635f7c7d536a1a3721575bc"' :
+                                            'id="xs-components-links-module-BlockchainModule-8b5de1e99ef4c97b625b404931bdd23c05ee018d71f1eda8bf94a06114f702178b3f57f63bc8b6e09308254a362754601607bed63635f7c7d536a1a3721575bc"' }>
                                             <li class="link">
                                                 <a href="components/BlockchainComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >BlockchainComponent</a>
                                             </li>
