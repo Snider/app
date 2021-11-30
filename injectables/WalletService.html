@@ -99,6 +99,9 @@
                                 <a href="#getWalletList" >getWalletList</a>
                             </li>
                             <li>
+                                <a href="#loadTransfers" >loadTransfers</a>
+                            </li>
+                            <li>
                                 <a href="#openWallet" >openWallet</a>
                             </li>
                             <li>
@@ -266,6 +269,75 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadTransfers"></a>
+                    <span class="name">
+                        <span ><b>loadTransfers</b></span>
+                        <a href="#loadTransfers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadTransfers(opts: <a href="../interfaces/GetTransfersIn.html" target="_self">GetTransfersIn</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>opts</td>
+                                    <td>
+                                                <code><a href="../interfaces/GetTransfersIn.html" target="_self" >GetTransfersIn</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -547,7 +619,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
 import {WalletRpcService} from &#x27;@service/wallet.rpc.service&#x27;;
-import {Balance, OpenWallet, RestoreWallet} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
+import {Balance, GetTransfersIn, OpenWallet, RestoreWallet} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
 import {FileSystemService} from &#x27;@service/filesystem/file-system.service&#x27;;
 import {Observable} from &#x27;rxjs&#x27;;
 
@@ -627,6 +699,11 @@ export class WalletService {
 		}
 		return this.wallets;
 	}
+
+	loadTransfers(opts: GetTransfersIn){
+		return this.rpc.getTransfers(opts).then((data) &#x3D;&gt; Object.values(data).flat());
+	}
+
 }
 </code></pre>
     </div>

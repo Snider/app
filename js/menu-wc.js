@@ -354,13 +354,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/WalletModule.html" data-type="entity-link" >WalletModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-WalletModule-221767cb330826372de38858d1f103a0c5e3b042a4bc134f23f25df8138e246a4d41433c6cf379505f8470810c8db6205197fec8b4931b039594e12be3ab3895"' : 'data-target="#xs-components-links-module-WalletModule-221767cb330826372de38858d1f103a0c5e3b042a4bc134f23f25df8138e246a4d41433c6cf379505f8470810c8db6205197fec8b4931b039594e12be3ab3895"' }>
+                                            'data-target="#components-links-module-WalletModule-aae2dab73fb8d66b40d856790c71bcabe60fa00eb790bd8d35c74d6b1727678642543e2867123a875755dec145a8e4967d648943880a9a3da123cef710cc0439"' : 'data-target="#xs-components-links-module-WalletModule-aae2dab73fb8d66b40d856790c71bcabe60fa00eb790bd8d35c74d6b1727678642543e2867123a875755dec145a8e4967d648943880a9a3da123cef710cc0439"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-WalletModule-221767cb330826372de38858d1f103a0c5e3b042a4bc134f23f25df8138e246a4d41433c6cf379505f8470810c8db6205197fec8b4931b039594e12be3ab3895"' :
-                                            'id="xs-components-links-module-WalletModule-221767cb330826372de38858d1f103a0c5e3b042a4bc134f23f25df8138e246a4d41433c6cf379505f8470810c8db6205197fec8b4931b039594e12be3ab3895"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-WalletModule-aae2dab73fb8d66b40d856790c71bcabe60fa00eb790bd8d35c74d6b1727678642543e2867123a875755dec145a8e4967d648943880a9a3da123cef710cc0439"' :
+                                            'id="xs-components-links-module-WalletModule-aae2dab73fb8d66b40d856790c71bcabe60fa00eb790bd8d35c74d6b1727678642543e2867123a875755dec145a8e4967d648943880a9a3da123cef710cc0439"' }>
                                             <li class="link">
                                                 <a href="components/NewComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >NewComponent</a>
                                             </li>
@@ -394,9 +394,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
                                 <a href="components/BackupComponent.html" data-type="entity-link" >BackupComponent</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/ModalComponent.html" data-type="entity-link" >ModalComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/OpenComponent.html" data-type="entity-link" >OpenComponent</a>
@@ -465,9 +462,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/FileSystemWebService.html" data-type="entity-link" >FileSystemWebService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/ModalComponent.html" data-type="entity-link" >ModalComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/NetworkHashrateChart.html" data-type="entity-link" >NetworkHashrateChart</a>
