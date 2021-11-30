@@ -169,8 +169,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -178,8 +178,6 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Restore wallet</p>
-<p>{filename: &#39;&#39;, address: &#39;&#39;, restore_height: &#39;&#39;, autosave_current: true,
-password: &#39;&#39;, spendkey (optional),viewkey: &#39;&#39;}</p>
 </div>
 
                     <div class="io-description">
@@ -274,7 +272,7 @@ password: &#39;&#39;, spendkey (optional),viewkey: &#39;&#39;}</p>
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import {WalletRpcService} from &#x27;@service/wallet.rpc.service&#x27;;
-import {RestoreWallet} from &#x27;@plugin/lthn/wallet/interfaces/wallet&#x27;;
+import {RestoreWallet} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -294,9 +292,6 @@ export class WalletService {
 
   /**
    * Restore wallet
-   *
-   * {filename: &#x27;&#x27;, address: &#x27;&#x27;, restore_height: &#x27;&#x27;, autosave_current: true,
-   * password: &#x27;&#x27;, spendkey (optional),viewkey: &#x27;&#x27;}
    *
    * @param {RestoreWallet} req
    * @returns {Promise&lt;AxiosResponse&lt;any&gt;&gt;}
