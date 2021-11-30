@@ -68,6 +68,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Restore Wallet request payload</p>
+
+            </p>
 
 
         <section>
@@ -169,6 +176,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The wallet&#39;s primary address.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -207,6 +220,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Defaults to true) If true, save the current wallet before generating the new wallet.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -240,6 +259,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The wallet&#39;s file name on the RPC server.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -273,6 +298,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The wallet&#39;s password.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -311,6 +342,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Optional; defaults to 0) The block height to restore the wallet from.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -349,6 +386,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Optional; omit to create a view-only wallet) The wallet&#39;s private spend key.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -382,6 +425,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The wallet&#39;s private view key.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -390,12 +439,40 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface RestoreWallet {
-	restore_height?: number;
+
+	/**
+	 * The wallet&#x27;s file name on the RPC server.
+	 */
 	filename: string;
+
+	/**
+	 * (Optional; defaults to 0) The block height to restore the wallet from.
+	 */
+	restore_height?: number;
+
+	/**
+	 * The wallet&#x27;s primary address.
+	 */
 	address: string;
+
+	/**
+	 * (Optional; omit to create a view-only wallet) The wallet&#x27;s private spend key.
+	 */
 	spendkey?: string;
+
+	/**
+	 * The wallet&#x27;s private view key.
+	 */
 	viewkey: string;
+
+	/**
+	 * The wallet&#x27;s password.
+	 */
 	password: string;
+
+	/**
+	 * (Defaults to true) If true, save the current wallet before generating the new wallet.
+	 */
 	autosave_current?: boolean;
 
 }

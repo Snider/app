@@ -68,6 +68,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>SweepAll request payload</p>
+
+            </p>
 
 
         <section>
@@ -103,6 +110,7 @@
                                         </a>
                                 </li>
                                 <li>
+                                            <span class="modifier">Optional</span>
                                         <a href="#get_tx_hex" 
 >
                                             get_tx_hex
@@ -183,6 +191,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Destination public address</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -221,6 +235,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Optional)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -259,6 +279,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Optional)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -288,10 +314,21 @@
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Optional) return the transactions as hex encoded string.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -330,6 +367,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Optional) Return the transaction keys after sending.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -363,6 +406,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Number of outpouts from the blockchain to mix with (0 means no mixing).</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -401,6 +450,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Optional) Random 32-byte/64-character hex string to identify a transaction.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -439,6 +494,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>(Optional)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -472,6 +533,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>unsigned int; Number of blocks before the monero can be spent (0 to not add a lock).</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -480,15 +547,33 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface SweepAllIn {
+
+	/** Destination public address */
 	address: string;
+
+	/** (Optional) */
 	priority?: number;
+
+	/** Number of outpouts from the blockchain to mix with (0 means no mixing). */
 	mixin: number;
+
+	/** unsigned int; Number of blocks before the monero can be spent (0 to not add a lock). */
 	unlock_time: number;
+
+	/** (Optional) Random 32-byte/64-character hex string to identify a transaction. */
 	payment_id?: string;
+
+	/** (Optional) Return the transaction keys after sending. */
 	get_tx_keys?: boolean;
+
+	/** (Optional) */
 	below_amount?: number;
+
+	/** (Optional)  */
 	do_not_relay?: boolean;
-	get_tx_hex: boolean;
+
+	/** (Optional) return the transactions as hex encoded string. */
+	get_tx_hex?: boolean;
 }
 </code></pre>
     </div>
