@@ -209,8 +209,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/services/filesystem/file-system.service.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/services/filesystem/file-system.service.ts:71</a></div>
                 </td>
             </tr>
 
@@ -349,8 +349,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/services/filesystem/file-system.service.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/services/filesystem/file-system.service.ts:61</a></div>
                 </td>
             </tr>
 
@@ -422,8 +422,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/services/filesystem/file-system.service.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/services/filesystem/file-system.service.ts:41</a></div>
                 </td>
             </tr>
 
@@ -498,8 +498,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/app/services/filesystem/file-system.service.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/services/filesystem/file-system.service.ts:51</a></div>
                 </td>
             </tr>
 
@@ -663,7 +663,12 @@ export class FileSystemService {
 	 * @returns
 	 */
 	async listFiles(dirname) {
-		return await this.fileSystem.list(dirname);
+		try {
+			return await this.fileSystem.list(dirname);
+		} catch (e) {
+			return []
+		}
+
 	}
 
 	/**

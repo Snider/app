@@ -308,18 +308,19 @@ export class AuthGuard implements CanActivate {
 		state: RouterStateSnapshot
 	): boolean | Promise&lt;boolean&gt; {
 		let isAuthenticated &#x3D; this.authService.getAuthStatus();
-		// @todo try to attack this variable in compiled app
-		if (!APP_CONFIG.production) {
-			isAuthenticated &#x3D; true;
-		}
 		if (!isAuthenticated) {
-			this.fileSystem.listFiles(&#x27;/users&#x27;).then((dat: any) &#x3D;&gt; {
-				if (dat.length &gt; 0) {
-					this.router.navigate([&#x27;/login&#x27;]);
-				} else {
-					this.router.navigate([&#x27;/user&#x27;]);
-				}
-			});
+			try {
+				this.fileSystem.listFiles(&#x27;/users&#x27;).then((dat: any) &#x3D;&gt; {
+					if (dat.length &gt; 0) {
+						this.router.navigate([&#x27;/login&#x27;]);
+					} else {
+						this.router.navigate([&#x27;/user&#x27;]);
+					}
+				});
+			}catch (e) {
+				isAuthenticated &#x3D; false
+			}
+
 		}
 		return isAuthenticated;
 	}

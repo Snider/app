@@ -405,7 +405,7 @@ export class BlockchainService {
 		return this.http
 			.post&lt;any&gt;(&#x60;https://localhost:36911/update/cli&#x60;, {}, options)
 			.toPromise()
-			.then((dat) &#x3D;&gt; console.log(dat));
+			.then((dat) &#x3D;&gt; dat);
 	}
 }
 </code></pre>

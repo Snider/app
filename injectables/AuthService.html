@@ -254,8 +254,8 @@ not because it would just be easier to code</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/modules/auth/auth.service.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/modules/auth/auth.service.ts:46</a></div>
                 </td>
             </tr>
 
@@ -333,8 +333,8 @@ so if the worst happens, they can decrypt using a HSM/encrypted file stored pass
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/app/modules/auth/auth.service.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/modules/auth/auth.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -458,9 +458,6 @@ export class AuthService {
 	 * @returns {boolean}
 	 */
 	getAuthStatus() {
-		if (!APP_CONFIG.production) {
-			return true;
-		}
 		return this.user.length &gt; 0;
 	}
 

@@ -284,6 +284,7 @@ import {TranslateLoader, TranslateModule} from &#x27;@ngx-translate/core&#x27;;
 import {TranslateHttpLoader} from &#x27;@ngx-translate/http-loader&#x27;;
 import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
 import {ModalComponent} from &#x27;@service/ui/modal/modal.component&#x27;;
+import {FileSystemService} from &#x27;@service/filesystem/file-system.service&#x27;;
 
 export function HttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http);
@@ -334,14 +335,17 @@ export class AppModule {
 	/**
 	 * Start blockchain &amp; wallet service automatically on start
 	 *
+	 * @param fs
 	 * @param {BlockchainService} chain
 	 * @param {WalletRpcService} wallet
 	 */
-	constructor(private chain: BlockchainService, private wallet: WalletService) {
-		this.chain.startDaemon().then((data) &#x3D;&gt; {
-			console.log(&quot;blockchain started&quot;)
-			this.wallet.startWallet().then((data) &#x3D;&gt; console.log(&#x27;wallet started&#x27;))
-		})
+	constructor(private fs: FileSystemService, private chain: BlockchainService, private wallet: WalletService) {
+		this.fs.listFiles(&#x27;/cli&#x27;).then((dat: any) &#x3D;&gt; {
+			this.chain.startDaemon().then((data) &#x3D;&gt; {
+				console.log(&quot;blockchain started&quot;)
+				this.wallet.startWallet().then((data) &#x3D;&gt; console.log(&#x27;wallet started&#x27;))
+			})
+		});
 	}
 }
 </code></pre>
