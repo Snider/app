@@ -280,9 +280,9 @@ import {AppRoutingModule} from &#x27;./app-routing.module&#x27;;
 import {AuthModule} from &#x27;@module/auth/auth.module&#x27;;
 import {ConsoleModule} from &#x27;@plugin/console/console.module&#x27;;
 import {BlockchainService} from &#x27;@plugin/lthn/chain/blockchain.service&#x27;;
-import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
 import {TranslateLoader, TranslateModule} from &#x27;@ngx-translate/core&#x27;;
 import {TranslateHttpLoader} from &#x27;@ngx-translate/http-loader&#x27;;
+import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
 
 export function HttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http);
@@ -332,7 +332,7 @@ export class AppModule {
 	 * Start blockchain &amp; wallet service automatically on start
 	 *
 	 * @param {BlockchainService} chain
-	 * @param {WalletService} wallet
+	 * @param {WalletRpcService} wallet
 	 */
 	constructor(private chain: BlockchainService, private wallet: WalletService) {
 		this.chain.startDaemon().then((data) &#x3D;&gt; {

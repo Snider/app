@@ -170,7 +170,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -237,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -274,8 +274,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:30</a></div>
                 </td>
             </tr>
 
@@ -325,7 +325,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -339,13 +339,15 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
-import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
+import {WalletRpcService} from &#x27;@service/wallet.rpc.service&#x27;;
 import {FormControl, FormGroup} from &#x27;@angular/forms&#x27;;
+import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
 
 @Component({
 	selector: &#x27;lthn-wallet-restore&#x27;,
 	templateUrl: &#x27;./restore.component.html&#x27;
 })
+
 export class RestoreComponent implements OnInit {
 	restoreWalletForm &#x3D; new FormGroup({
 		filename: new FormControl(&#x27;&#x27;),
@@ -366,16 +368,16 @@ export class RestoreComponent implements OnInit {
 	}
 
 	restoreWallet() {
-		console.log(this.restoreWalletForm.value)
+
 		this.wallet.restoreWallet({
 			filename: this.restoreWalletForm.value.filename,
 			address: this.restoreWalletForm.value.address,
 			restore_height: this.restoreWalletForm.value.restore_height,
 			autosave_current: this.restoreWalletForm.value.autosave_current,
 			password: this.restoreWalletForm.value.password,
-			spendkey: 
+			spendkey:
 			(
-				this.restoreWalletForm.value.viewonly_wallet ? 
+				this.restoreWalletForm.value.viewonly_wallet ?
 					&#x27;&#x27; : this.restoreWalletForm.value.spendkey
 			)
 			,

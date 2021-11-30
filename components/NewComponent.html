@@ -171,7 +171,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(wallet: <a href="../injectables/WalletService.html" target="_self">WalletService</a>)</code>
+<code>constructor(wallet: <a href="../injectables/WalletRpcService.html" target="_self">WalletRpcService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -197,7 +197,7 @@
                                                         <td>wallet</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/WalletService.html" target="_self" >WalletService</a></code>
+                                                                        <code><a href="../injectables/WalletRpcService.html" target="_self" >WalletRpcService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -387,7 +387,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 import { FormControl } from &#x27;@angular/forms&#x27;;
-import { WalletService } from &#x27;../wallet.service&#x27;;
+import { WalletRpcService } from &#x27;@service/wallet.rpc.service&#x27;;
 
 @Component({
 	selector: &#x27;lthn-wallet-new&#x27;,
@@ -397,7 +397,7 @@ export class NewComponent implements OnInit {
 	wallet_name &#x3D; new FormControl(&#x27;&#x27;);
 	password &#x3D; new FormControl(&#x27;&#x27;);
 	password_confirm &#x3D; new FormControl(&#x27;&#x27;);
-	constructor(private wallet: WalletService) {}
+	constructor(private wallet: WalletRpcService) {}
 
 	ngOnInit(): void {}
 
