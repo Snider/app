@@ -412,8 +412,8 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>(url) &#x3D;&gt;
-	(method, params &#x3D; {}) &#x3D;&gt;
-		axios.post(url, JSON.stringify(rpcBody(method)(params)))</code>
+	async (method, params &#x3D; {}) &#x3D;&gt;
+		await axios.post(url, JSON.stringify(rpcBody(method)(params)))</code>
                     </td>
                 </tr>
 

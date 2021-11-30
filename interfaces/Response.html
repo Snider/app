@@ -224,8 +224,8 @@
 const axios &#x3D; require(&#x27;axios&#x27;).default;
 export const request &#x3D;
 	(url) &#x3D;&gt;
-	(method, params &#x3D; {}) &#x3D;&gt;
-		axios.post(url, JSON.stringify(rpcBody(method)(params)));
+	async (method, params &#x3D; {}) &#x3D;&gt;
+		await axios.post(url, JSON.stringify(rpcBody(method)(params)));
 
 interface Response {
 	id: string;

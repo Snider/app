@@ -68,6 +68,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#wallets" >wallets</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -78,10 +93,23 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getBalance" >getBalance</a>
+                            </li>
+                            <li>
+                                <a href="#getWalletList" >getWalletList</a>
+                            </li>
+                            <li>
+                                <a href="#openWallet" >openWallet</a>
+                            </li>
+                            <li>
                                 <a href="#restoreWallet" >restoreWallet</a>
                             </li>
                             <li>
                                 <a href="#startWallet" >startWallet</a>
+                            </li>
+                            <li>
+                                <a href="#walletList" >walletList</a>
                             </li>
                         </ul>
                     </td>
@@ -101,12 +129,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(rpc: <a href="../injectables/WalletRpcService.html" target="_self">WalletRpcService</a>)</code>
+<code>constructor(fs: <a href="../injectables/FileSystemService.html" target="_self">FileSystemService</a>, rpc: <a href="../injectables/WalletRpcService.html" target="_self">WalletRpcService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -123,6 +151,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                                <tr>
+                                                        <td>fs</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FileSystemService.html" target="_self" >FileSystemService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                                 <tr>
                                                         <td>rpc</td>
                                                   
@@ -153,6 +193,162 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getBalance"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>getBalance</b></span>
+                        <a href="#getBalance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getBalance()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get wallet balance</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Balance.html" target="_self" >Promise&lt;Balance&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getWalletList"></a>
+                    <span class="name">
+                        <span ><b>getWalletList</b></span>
+                        <a href="#getWalletList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getWalletList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the list of known wallets from the file system</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openWallet"></a>
+                    <span class="name">
+                        <span ><b>openWallet</b></span>
+                        <a href="#openWallet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openWallet(req: <a href="../interfaces/OpenWallet.html" target="_self">OpenWallet</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Open a known wallet</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                                <code><a href="../interfaces/OpenWallet.html" target="_self" >OpenWallet</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="restoreWallet"></a>
                     <span class="name">
                         <span ><b>restoreWallet</b></span>
@@ -169,8 +365,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:34</a></div>
                 </td>
             </tr>
 
@@ -240,8 +436,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -264,41 +460,176 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="walletList"></a>
+                    <span class="name">
+                        <span ><b>walletList</b></span>
+                        <a href="#walletList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>walletList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:77</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Returns the wallets we know about</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="wallets"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>wallets</b></span>
+                        <a href="#wallets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
 import {WalletRpcService} from &#x27;@service/wallet.rpc.service&#x27;;
-import {RestoreWallet} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
+import {Balance, OpenWallet, RestoreWallet} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
+import {FileSystemService} from &#x27;@service/filesystem/file-system.service&#x27;;
+import {Observable} from &#x27;rxjs&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+	providedIn: &#x27;root&#x27;
 })
+/**
+ * Orchestrates dealing with wallets, to add a new wallet type, implement this class
+ */
 export class WalletService {
+	private wallets: string[] &#x3D; [];
 
-  constructor(private rpc: WalletRpcService) { }
+	constructor(private fs: FileSystemService, private rpc: WalletRpcService) {
+	}
 
-  /**
-   * Start wallet service
-   *
-   * @returns {Promise&lt;void&gt;}
-   */
-  startWallet(){
-    return this.rpc.startWallet()
-  }
+	/**
+	 * Start wallet service
+	 *
+	 * @returns {Promise&lt;void&gt;}
+	 */
+	startWallet() {
+		return this.rpc.startWallet();
+	}
 
-  /**
-   * Restore wallet
-   *
-   * @param {RestoreWallet} req
-   * @returns {Promise&lt;AxiosResponse&lt;any&gt;&gt;}
-   */
-  restoreWallet(req: RestoreWallet){
-    return this.rpc.restoreWallet(req)
-  }
+	/**
+	 * Restore wallet
+	 *
+	 * @param {RestoreWallet} req
+	 * @returns {Promise&lt;AxiosResponse&lt;any&gt;&gt;}
+	 */
+	restoreWallet(req: RestoreWallet) {
+		return this.rpc.restoreWallet(req);
+	}
+
+	/**
+	 * Open a known wallet
+	 *
+	 * @param {OpenWallet} req
+	 * @returns {Promise&lt;AxiosResponse&lt;any&gt;&gt;}
+	 */
+	openWallet(req: OpenWallet) {
+		return this.rpc.openWallet(req);
+	}
+
+	/**
+	 * Get wallet balance
+	 *
+	 * @param {Balance} req
+	 * @returns {Observable&lt;Balance&gt;}
+	 */
+	async getBalance(): Promise&lt;Balance&gt; {
+		return await this.rpc.getBalance()
+	}
+	/**
+	 * Gets the list of known wallets from the file system
+	 */
+	getWalletList() {
+		this.fs.listFiles(&#x27;/wallets&#x27;).then((data) &#x3D;&gt; {
+			if (data.length &gt; 0) {
+				for (let dat of data) {
+					if (!dat.endsWith(&#x27;.keys&#x27;) &amp;&amp; !dat.endsWith(&#x27;.txt&#x27;)) {
+						this.wallets.push(dat);
+					}
+				}
+			}
+		});
+	}
+
+	/**
+	 * Returns the wallets we know about
+	 *
+	 * @returns {string[]}
+	 */
+	walletList() {
+		if (this.wallets.length &#x3D;&#x3D;&#x3D; 0) {
+			this.getWalletList();
+		}
+		return this.wallets;
+	}
 }
 </code></pre>
     </div>

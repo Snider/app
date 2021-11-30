@@ -75,6 +75,7 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
     </p>
 
 
@@ -178,6 +179,10 @@
                             </li>
                             <li>
                                 <a href="#getChild" >getChild</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
@@ -338,8 +343,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/app/app.component.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/app.component.ts:57</a></div>
                 </td>
             </tr>
 
@@ -407,8 +412,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/app/app.component.ts:95</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/app.component.ts:98</a></div>
                 </td>
             </tr>
 
@@ -451,6 +456,45 @@
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/app.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
                     </div>
                 </td>
             </tr>
@@ -513,8 +557,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/app/app.component.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/app.component.ts:61</a></div>
                 </td>
             </tr>
 
@@ -550,8 +594,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/app/app.component.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/app.component.ts:66</a></div>
                 </td>
             </tr>
 
@@ -782,7 +826,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {AfterViewInit, Component, OnInit, ViewChild} from &#x27;@angular/core&#x27;;
 import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
 import {ActivatedRoute, NavigationEnd, Router} from &#x27;@angular/router&#x27;;
 import { Meta, Title } from &#x27;@angular/platform-browser&#x27;;
@@ -797,7 +841,7 @@ import {Subscription} from &#x27;rxjs&#x27;;
 	templateUrl: &#x27;./app.component.html&#x27;,
 	styleUrls: [&#x27;./app.component.scss&#x27;]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 	public menu: boolean;
 	public heading &#x3D; &#x27;&#x27;;
 
@@ -827,12 +871,15 @@ export class AppComponent implements OnInit {
 			this.translate.use(lang)
 		})
 
+		this.updateMeta();
+	}
+
+	public ngAfterViewInit() {
 		this.menu$ &#x3D; this.store.pipe(select(selectMenuVisibility)).subscribe((opened) &#x3D;&gt; {
 			this.menu &#x3D; opened
 			this.sidenav.toggle();
 
 		})
-		this.updateMeta();
 	}
 
 	changeLanguage(lang: string){
@@ -1043,7 +1090,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="main-container">    <mat-sidenav #sidenav [(opened)]="menu"                 mode="side">        <div fxLayout="row">            <a [routerLink]="[\'/\']">                <img alt="Lethean Logo" class="logo" src="../assets/images/logo.png"/>            </a>            <button (click)="toggleMenu()" *ngIf="menu" mat-button>                <mat-icon>menu</mat-icon>            </button>        </div>        <mat-divider></mat-divider>        <mat-nav-list>            <a [routerLink]="[\'/\'] " mat-list-item>{{ \'menu.text.dashboard\' | translate }}</a>            <a [routerLink]="[\'chain\'] " mat-list-item>{{ \'menu.text.blockchain\' | translate }}</a>            <a [routerLink]="[\'wallets\'] " mat-list-item>{{ \'menu.text.wallet\' | translate }}</a>            <a [routerLink]="[\'settings\'] " mat-list-item>{{ \'menu.text.settings\' | translate }}</a>        </mat-nav-list>        <span class="flex-spacer"></span>        <lthn-app-status></lthn-app-status>    </mat-sidenav>    <mat-sidenav-content>        <mat-toolbar>            <mat-toolbar-row>                <button (click)="toggleMenu()" *ngIf="!menu" mat-button>                    <mat-icon>menu_open</mat-icon>                </button>                <span>{{heading | translate}}</span>                <span class="flex-spacer"></span>                <mat-menu #appMenu="matMenu">                    <ng-template let-name="name" matMenuContent>                        <mat-list-item>                            <button (click)="changeLanguage(\'en\')" mat-button color="accent">                                <img src="assets/flags/1x1/en.svg" width="16" alt="{{ \'lang.en\' | translate }}">&nbsp;&nbsp;{{ \'lang.en\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'ru\')" mat-button color="accent">                                <img src="assets/flags/1x1/ru.svg" width="16" alt="{{ \'lang.ru\' | translate }}">&nbsp;&nbsp;{{ \'lang.ru\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'zh\')" mat-button color="accent">                                <img src="assets/flags/1x1/zh.svg" width="16" alt="{{ \'lang.zh\' | translate }}">&nbsp;&nbsp;{{ \'lang.zh\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'es\')" mat-button color="accent">                                <img src="assets/flags/1x1/es.svg" width="16" alt="{{ \'lang.es\' | translate }}">&nbsp;&nbsp;{{ \'lang.es\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'de\')" mat-button color="accent">                                <img src="assets/flags/1x1/de.svg" width="16" alt="{{ \'lang.de\' | translate }}">&nbsp;&nbsp;{{ \'lang.de\' | translate }}                            </button>                        </mat-list-item>                        <mat-list-item>                            <button (click)="changeLanguage(\'fr\')" mat-button color="accent">                                <img src="assets/flags/1x1/fr.svg" width="16" alt="{{ \'lang.fr\' | translate }}">&nbsp;&nbsp;{{ \'lang.fr\' | translate }}                            </button>                        </mat-list-item>                    </ng-template>                </mat-menu>                <button [matMenuTriggerData]="{auth: \'dave\'}" [matMenuTriggerFor]="appMenu"                        mat-icon-button                        matTooltip="Click Me!">                    <img src="assets/flags/1x1/{{ this.currentLanguage }}.svg" width="24">                </button>            </mat-toolbar-row>        </mat-toolbar>        <router-outlet></router-outlet>    </mat-sidenav-content></mat-sidenav-container></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-spp-wallet'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-spp-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
