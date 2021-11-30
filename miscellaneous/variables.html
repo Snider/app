@@ -412,8 +412,17 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>(url) &#x3D;&gt;
-	async (method, params &#x3D; {}) &#x3D;&gt;
-		await axios.post(url, JSON.stringify(rpcBody(method)(params)))</code>
+	 (method, params &#x3D; {}) &#x3D;&gt;
+		 axios.post(url, JSON.stringify(rpcBody(method)(params))).then((data) &#x3D;&gt; {
+			 console.log(data)
+			 if(data[&#x27;data&#x27;].error){
+				return data[&#x27;data&#x27;]
+			 } else if(data[&#x27;data&#x27;]) {
+				 return data[&#x27;data&#x27;].result
+			 }else{
+				 return data
+			 }
+		 })</code>
                     </td>
                 </tr>
 

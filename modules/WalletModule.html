@@ -325,6 +325,7 @@ import {TranslateModule} from &#x27;@ngx-translate/core&#x27;;
 import {OpenComponent} from &#x27;@plugin/lthn/wallet/components/open.component&#x27;;
 import {ModalModule} from &#x27;@service/ui/modal/modal.module&#x27;;
 import {TransactionsComponent} from &#x27;@plugin/lthn/wallet/components/transactions.component&#x27;;
+import {NgxDatatableModule} from &#x27;@swimlane/ngx-datatable&#x27;;
 
 const routes: Routes &#x3D; [
 	{
@@ -365,7 +366,8 @@ const routes: Routes &#x3D; [
 		MatTooltipModule,
 		MatInputModule,
 		TranslateModule,
-		ModalModule
+		ModalModule,
+		NgxDatatableModule
 	]
 })
 export class WalletModule {}

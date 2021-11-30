@@ -93,7 +93,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Async</span>
                                 <a href="#getBalance" >getBalance</a>
                             </li>
                             <li>
@@ -195,7 +194,6 @@
                 <td class="col-md-4">
                     <a name="getBalance"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
                         <span ><b>getBalance</b></span>
                         <a href="#getBalance"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -203,8 +201,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getBalance()</code>
+<code>getBalance()</code>
                 </td>
             </tr>
 
@@ -599,10 +596,10 @@ export class WalletService {
 	 * Get wallet balance
 	 *
 	 * @param {Balance} req
-	 * @returns {Observable&lt;Balance&gt;}
+	 * @returns {Promise&lt;Balance&gt;}
 	 */
-	async getBalance(): Promise&lt;Balance&gt; {
-		return await this.rpc.getBalance()
+	getBalance(): Promise&lt;Balance&gt; {
+		return this.rpc.getBalance()
 	}
 	/**
 	 * Gets the list of known wallets from the file system
