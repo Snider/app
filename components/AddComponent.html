@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  LogsComponent</li>
+  AddComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -52,9 +52,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -64,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/modules/settings/logs/logs.component.ts</code>
+    <code>src/app/plugins/lthn/wallet/components/add.component.ts</code>
 </p>
 
 
@@ -95,19 +92,15 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>lthn-app-logs</code></td>
+                <td class="col-md-9"><code>lthn-wallet-add</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./logs.component.scss</code></td>
-            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./logs.component.html</code></td>
+                <td class="col-md-9"><code>./add.component.html</code></td>
             </tr>
 
 
@@ -160,7 +153,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/modules/settings/logs/logs.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/plugins/lthn/wallet/components/add.component.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -198,7 +191,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/modules/settings/logs/logs.component.ts:11</a></div>
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/add.component.ts:11</a></div>
                 </td>
             </tr>
 
@@ -223,29 +216,44 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
-	selector: &#x27;lthn-app-logs&#x27;,
-	templateUrl: &#x27;./logs.component.html&#x27;,
-	styleUrls: [&#x27;./logs.component.scss&#x27;]
+	selector: &#x27;lthn-wallet-add&#x27;,
+	templateUrl: &#x27;./add.component.html&#x27;
 })
-export class LogsComponent implements OnInit {
-	constructor() {}
+export class AddComponent implements OnInit {
 
-	ngOnInit(): void {}
+	constructor() { }
+
+	ngOnInit(): void {
+	}
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;wallet-add-container&quot;&gt;
+&lt;mat-tab-group dynamicHeight&gt;
+	&lt;mat-tab&gt;
+		&lt;ng-template mat-tab-label&gt;
+			&lt;label matTooltip&#x3D;&quot;Create new wallet&quot;&gt;
+				&lt;mat-icon&gt;add_box&lt;/mat-icon&gt;
+			&lt;/label&gt;
+		&lt;/ng-template&gt;
+		&lt;lthn-wallet-new&gt;&lt;/lthn-wallet-new&gt;
+	&lt;/mat-tab&gt;
+	&lt;mat-tab &gt;
+		&lt;ng-template mat-tab-label&gt;
+			&lt;label matTooltip&#x3D;&quot;Restore wallet&quot;&gt;
+				&lt;mat-icon&gt;cloud_download&lt;/mat-icon&gt;
+			&lt;/label&gt;
+		&lt;/ng-template&gt;
+		&lt;lthn-wallet-restore&gt;&lt;/lthn-wallet-restore&gt;
+	&lt;/mat-tab&gt;
+&lt;/mat-tab-group&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./logs.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -272,10 +280,10 @@ export class LogsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="wallet-add-container"><mat-tab-group dynamicHeight>	<mat-tab>		<ng-template mat-tab-label>			<label matTooltip="Create new wallet">				<mat-icon>add_box</mat-icon>			</label>		</ng-template>		<lthn-wallet-new></lthn-wallet-new>	</mat-tab>	<mat-tab >		<ng-template mat-tab-label>			<label matTooltip="Restore wallet">				<mat-icon>cloud_download</mat-icon>			</label>		</ng-template>		<lthn-wallet-restore></lthn-wallet-restore>	</mat-tab></mat-tab-group></div></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
-    var ACTUAL_COMPONENT = {'name': 'LogsComponent'};
+    var ACTUAL_COMPONENT = {'name': 'AddComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -319,7 +327,7 @@ export class LogsComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'LogsComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

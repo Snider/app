@@ -170,7 +170,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -237,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -274,8 +274,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:31</a></div>
                 </td>
             </tr>
 
@@ -311,7 +311,7 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>new FormGroup({
-		filename: new FormControl(&#x27;&#x27;),
+		filename: new FormControl(&#x27;&#x27;, [nameNotTakenValidator(this.wallet.walletList())]),
 		address: new FormControl(&#x27;&#x27;),
 		restore_height: new FormControl(&#x27;0&#x27;),
 		autosave_current: new FormControl(true),
@@ -325,7 +325,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -342,6 +342,7 @@
 import {WalletRpcService} from &#x27;@service/wallet.rpc.service&#x27;;
 import {FormControl, FormGroup} from &#x27;@angular/forms&#x27;;
 import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
+import {nameNotTakenValidator} from &#x27;../validators&#x27;
 
 @Component({
 	selector: &#x27;lthn-wallet-restore&#x27;,
@@ -350,7 +351,7 @@ import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
 
 export class RestoreComponent implements OnInit {
 	restoreWalletForm &#x3D; new FormGroup({
-		filename: new FormControl(&#x27;&#x27;),
+		filename: new FormControl(&#x27;&#x27;, [nameNotTakenValidator(this.wallet.walletList())]),
 		address: new FormControl(&#x27;&#x27;),
 		restore_height: new FormControl(&#x27;0&#x27;),
 		autosave_current: new FormControl(true),
@@ -397,6 +398,7 @@ export class RestoreComponent implements OnInit {
                 &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
                     &lt;mat-label&gt;{{ &#x27;plugin.lthn.wallet.label.filename&#x27; | translate }}&lt;/mat-label&gt;
                     &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;filename&quot;&gt;
+					&lt;mat-error *ngIf&#x3D;&quot;restoreWalletForm.get(&#x27;filename&#x27;)?.errors?.[&#x27;nameTaken&#x27;]&quot;&gt;Wallet already exists&lt;/mat-error&gt;
                 &lt;/mat-form-field&gt;
                 &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
                     &lt;mat-label&gt;{{ &#x27;plugin.lthn.wallet.label.wallet-password&#x27; | translate }}&lt;/mat-label&gt;
@@ -489,8 +491,8 @@ export class RestoreComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-card>    <mat-card-title>{{ \'plugin.lthn.wallet.titles.restore-seed\' | translate }}</mat-card-title>    <mat-card-content>        <form [formGroup]="restoreWalletForm">            <section>                <mat-form-field appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.filename\' | translate }}</mat-label>                    <input matInput type="text" formControlName="filename">                </mat-form-field>                <mat-form-field appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.wallet-password\' | translate }}</mat-label>                    <input matInput type="password" formControlName="password">                </mat-form-field>                <mat-form-field appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.wallet-password-confirm\' | translate }}</mat-label>                    <input matInput type="password" formControlName="password_confirm">                </mat-form-field>            </section>            <section>                <mat-form-field class="full_width" appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.address\' | translate }}</mat-label>                    <input matInput type="text" formControlName="address">                </mat-form-field>            </section>            <mat-form-field *ngIf="!restoreWalletForm.value.viewonly_wallet" class="full_width" appearance="standard">                <mat-label>{{ \'plugin.lthn.wallet.label.spend-key\' | translate }}</mat-label>                <input matInput type="password" formControlName="spendkey">            </mat-form-field>            <mat-form-field class="full_width" appearance="standard">                <mat-label>{{ \'plugin.lthn.wallet.label.view-key\' | translate }}</mat-label>                <input matInput type="password" formControlName="viewkey">            </mat-form-field>            <mat-expansion-panel>                <mat-expansion-panel-header>                    <mat-panel-title>                        Optional parameters                    </mat-panel-title>                </mat-expansion-panel-header>                <mat-form-field appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.restore-height\' | translate }}</mat-label>                    <input matInput type="text" formControlName="restore_height">                </mat-form-field>                <section>                    <mat-checkbox formControlName="autosave_current">{{ \'plugin.lthn.wallet.label.autosave\' | translate }}</mat-checkbox>                </section>                <section>                    <mat-checkbox formControlName="viewonly_wallet">View only wallet</mat-checkbox>                </section>            </mat-expansion-panel>            <p>                <button mat-button (click)="restoreWallet()">{{ \'plugin.lthn.wallet.button.restore-wallet\' | translate }}</button>            </p>        </form>    </mat-card-content></mat-card></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
+        var COMPONENT_TEMPLATE = '<div><mat-card>    <mat-card-title>{{ \'plugin.lthn.wallet.titles.restore-seed\' | translate }}</mat-card-title>    <mat-card-content>        <form [formGroup]="restoreWalletForm">            <section>                <mat-form-field appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.filename\' | translate }}</mat-label>                    <input matInput type="text" formControlName="filename">					<mat-error *ngIf="restoreWalletForm.get(\'filename\')?.errors?.[\'nameTaken\']">Wallet already exists</mat-error>                </mat-form-field>                <mat-form-field appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.wallet-password\' | translate }}</mat-label>                    <input matInput type="password" formControlName="password">                </mat-form-field>                <mat-form-field appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.wallet-password-confirm\' | translate }}</mat-label>                    <input matInput type="password" formControlName="password_confirm">                </mat-form-field>            </section>            <section>                <mat-form-field class="full_width" appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.address\' | translate }}</mat-label>                    <input matInput type="text" formControlName="address">                </mat-form-field>            </section>            <mat-form-field *ngIf="!restoreWalletForm.value.viewonly_wallet" class="full_width" appearance="standard">                <mat-label>{{ \'plugin.lthn.wallet.label.spend-key\' | translate }}</mat-label>                <input matInput type="password" formControlName="spendkey">            </mat-form-field>            <mat-form-field class="full_width" appearance="standard">                <mat-label>{{ \'plugin.lthn.wallet.label.view-key\' | translate }}</mat-label>                <input matInput type="password" formControlName="viewkey">            </mat-form-field>            <mat-expansion-panel>                <mat-expansion-panel-header>                    <mat-panel-title>                        Optional parameters                    </mat-panel-title>                </mat-expansion-panel-header>                <mat-form-field appearance="standard">                    <mat-label>{{ \'plugin.lthn.wallet.label.restore-height\' | translate }}</mat-label>                    <input matInput type="text" formControlName="restore_height">                </mat-form-field>                <section>                    <mat-checkbox formControlName="autosave_current">{{ \'plugin.lthn.wallet.label.autosave\' | translate }}</mat-checkbox>                </section>                <section>                    <mat-checkbox formControlName="viewonly_wallet">View only wallet</mat-checkbox>                </section>            </mat-expansion-panel>            <p>                <button mat-button (click)="restoreWallet()">{{ \'plugin.lthn.wallet.button.restore-wallet\' | translate }}</button>            </p>        </form>    </mat-card-content></mat-card></div>'
+    var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'RestoreComponent'};
 </script>
