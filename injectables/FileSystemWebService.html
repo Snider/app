@@ -142,7 +142,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -207,8 +207,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:15</a></div>
                 </td>
             </tr>
 
@@ -275,8 +275,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:19</a></div>
                 </td>
             </tr>
 
@@ -342,8 +342,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -409,8 +409,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -477,8 +477,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:39</a></div>
                 </td>
             </tr>
 
@@ -545,8 +545,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:52</a></div>
                 </td>
             </tr>
 
@@ -630,7 +630,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/filesystem/file-system-web.service.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -646,6 +646,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
 import {HttpClient, HttpHeaders} from &#x27;@angular/common/http&#x27;;
 import {FileSystemInterface} from &#x27;@interface/file-system.interface&#x27;;
+import {atob, btoa} from &#x27;bytebuffer&#x27;;
 
 @Injectable({
 	providedIn: &#x27;root&#x27;
@@ -679,6 +680,7 @@ export class FileSystemWebService implements FileSystemInterface {
 	public path(filename) {
 	}
 
+
 	public async read(filename) {
 		const options &#x3D; {
 			headers: new HttpHeaders({
@@ -689,7 +691,7 @@ export class FileSystemWebService implements FileSystemInterface {
 		return await this.http
 			.post&lt;any&gt;(&#x60;${this.apiUrl}/read&#x60;, {path: filename}, options)
 			.toPromise()
-			.then((dat) &#x3D;&gt; dat);
+			.then((dat) &#x3D;&gt; atob(dat));
 	}
 
 	public async write(filename, data) {
@@ -698,15 +700,18 @@ export class FileSystemWebService implements FileSystemInterface {
 				&#x27;Content-Type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;
 			})
 		};
+
 		return await this.http
 			.post(
 				&#x60;${this.apiUrl}/write&#x60;,
-				{path: filename, data: data},
+				{path: filename, data: btoa(data)},
 				options
 			)
 			.toPromise()
 			.then((dat) &#x3D;&gt; console.log(&#x27;e&#x27;));
 	}
+
+
 }
 </code></pre>
     </div>

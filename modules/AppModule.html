@@ -341,7 +341,7 @@ export class AppModule {
 	 */
 	constructor(private fs: FileSystemService, private chain: BlockchainService, private wallet: WalletService) {
 		this.fs.listFiles(&#x27;/cli&#x27;).then((dat: any) &#x3D;&gt; {
-			if(dat.length &gt; 0){
+			if(dat.length &gt; 2){
 				this.chain.startDaemon().then((data) &#x3D;&gt; {
 					console.log(&quot;blockchain started&quot;)
 					this.wallet.startWallet().then((data) &#x3D;&gt; console.log(&#x27;wallet started&#x27;))
