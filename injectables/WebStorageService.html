@@ -162,21 +162,23 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>backend(cmd: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, payload)</code>
+                    <code>backend(cmd: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, payload: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:55</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Performs call to backend object store</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -205,6 +207,7 @@
                                 <tr>
                                     <td>payload</td>
                                     <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                     </td>
 
                                     <td>
@@ -219,7 +222,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <b>Returns : </b>    <code>string | null</code>
 
                     </div>
                     <div class="io-description">
@@ -249,8 +252,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:43</a></div>
                 </td>
             </tr>
 
@@ -286,8 +289,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -351,8 +354,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -420,8 +423,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:39</a></div>
                 </td>
             </tr>
 
@@ -485,8 +488,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:29</a></div>
                 </td>
             </tr>
 
@@ -577,7 +580,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/web-storage.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/web-storage.service.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -609,7 +612,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/web-storage.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/web-storage.service.ts:9</a></div>
                         </td>
                     </tr>
 
@@ -638,7 +641,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/web-storage.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/web-storage.service.ts:12</a></div>
                                 </td>
                             </tr>
 
@@ -650,6 +653,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {atob, btoa} from &#x27;bytebuffer&#x27;;
 
 @Injectable({
 	providedIn: &#x27;root&#x27;
@@ -668,11 +672,22 @@ export class WebStorageService implements Storage {
 	}
 
 	getItem(key): string | null {
-		return this.backend(&#x27;get&#x27;, {object: key});
+		try {
+			return this.backend(&#x27;get&#x27;, {object: key});
+		}catch (e){
+			console.log(&#x27;getItem Error&#x27;)
+		}
+		return null;
 	}
 
 	setItem(key: string, value: string) {
-		return this.backend(&#x27;set&#x27;, {object: key, data: value});
+		try {
+			return this.backend(&#x27;set&#x27;, {object: key, data: value});
+		}catch (e){
+			console.log(&#x27;setItem Error&#x27;)
+		}
+		return null;
+
 	}
 
 	removeItem(key) {
@@ -683,10 +698,23 @@ export class WebStorageService implements Storage {
 		this.backend(&#x27;clear&#x27;, {});
 	}
 
-	private backend(cmd:string, payload):string {
+	/**
+	 * Performs call to backend object store
+	 *
+	 * @param {string} cmd
+	 * @param payload
+	 * @returns {string | null}
+	 * @private
+	 */
+	private backend(cmd:string, payload: any):string|null {
 		const axios &#x3D; require(&#x27;axios&#x27;).default;
-		const ret &#x3D; axios.post(&#x60;${this.apiUrl}/${cmd}&#x60;, {group: &#x27;lthn-app&#x27;, ...payload}).then((data) &#x3D;&gt; data.data)
-		return ret.data;
+		try {
+			const ret &#x3D; axios.post(&#x60;${this.apiUrl}/${cmd}&#x60;, atob({group: &#x27;lthn-app&#x27;, ...payload})).then((data) &#x3D;&gt; data.data)
+			return ret.data;
+		}catch (NetworkError) {
+			console.log(&#x27;HTTP Error&#x27;)
+		}
+		return null
 	}
 }
 </code></pre>

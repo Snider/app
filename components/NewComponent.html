@@ -255,8 +255,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/new.component.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/new.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -328,7 +328,8 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
                     </td>
                 </tr>
                     <tr>
@@ -353,7 +354,8 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
                     </td>
                 </tr>
                     <tr>
@@ -378,7 +380,8 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;, [nameNotTakenValidator(this.wallet.walletList())])</code>
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
                     </td>
                 </tr>
                     <tr>
@@ -409,12 +412,16 @@ import { WalletService } from &#x27;../wallet.service&#x27;
 	templateUrl: &#x27;./new.component.html&#x27;
 })
 export class NewComponent implements OnInit {
-	wallet_name &#x3D; new FormControl(&#x27;&#x27;, [nameNotTakenValidator(this.wallet.walletList())]);
-	password &#x3D; new FormControl(&#x27;&#x27;);
-	password_confirm &#x3D; new FormControl(&#x27;&#x27;);
+	wallet_name: FormControl;
+	password: FormControl;
+	password_confirm: FormControl;
 	constructor(private walletRpc: WalletRpcService, private wallet: WalletService) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.wallet_name &#x3D; new FormControl(&#x27;&#x27;, [nameNotTakenValidator(this.wallet.walletList())]);
+		this.password &#x3D; new FormControl(&#x27;&#x27;)
+		this.password_confirm &#x3D; new FormControl(&#x27;&#x27;)
+	}
 
 	createWallet() {
 		if (this.password.value &#x3D;&#x3D;&#x3D; this.password_confirm.value) {

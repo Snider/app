@@ -235,7 +235,7 @@ const routes: Routes &#x3D; [
 
 @NgModule({
 	imports: [
-		RouterModule.forRoot(routes, {relativeLinkResolution: &#x27;legacy&#x27;}),
+		RouterModule.forRoot(routes, { relativeLinkResolution: &#x27;legacy&#x27;, initialNavigation: &#x27;enabledBlocking&#x27; }),
 		PostRoutingModule,
 		BlockchainRoutingModule,
 		UserRoutingModule,

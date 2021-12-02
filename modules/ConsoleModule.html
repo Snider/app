@@ -56,13 +56,13 @@
 <title>cluster_ConsoleModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 170,-230.8 170,-32.8 8,-32.8"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_ConsoleModule_declarations</title>
-<polygon fill="none" stroke="black" points="17,-40.8 17,-92.8 161,-92.8 161,-40.8 17,-40.8"/>
-</g>
 <g id="clust5" class="cluster">
 <title>cluster_ConsoleModule_exports</title>
 <polygon fill="none" stroke="black" points="16,-170.8 16,-222.8 162,-222.8 162,-170.8 16,-170.8"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_ConsoleModule_declarations</title>
+<polygon fill="none" stroke="black" points="17,-40.8 17,-92.8 161,-92.8 161,-40.8 17,-40.8"/>
 </g>
 <!-- ConsoleComponent -->
 <g id="node1" class="node">
@@ -162,9 +162,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { ConsoleComponent } from &#x27;./console.component&#x27;;
-import { NgTerminalModule } from &#x27;ng-terminal&#x27;;
 import { MatCardModule } from &#x27;@angular/material/card&#x27;;
 import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
+import {NgTerminalModule} from &#x27;ng-terminal&#x27;;
+
 
 @NgModule({
 	declarations: [ConsoleComponent],
@@ -173,9 +174,9 @@ import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 	],
 	imports: [
 		CommonModule,
-		NgTerminalModule,
 		MatCardModule,
-		MatButtonModule
+		MatButtonModule,
+		NgTerminalModule
 	]
 })
 export class ConsoleModule {}

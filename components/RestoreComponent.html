@@ -170,7 +170,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -237,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -274,8 +274,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/restore.component.ts:32</a></div>
                 </td>
             </tr>
 
@@ -310,17 +310,8 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new FormGroup({
-		filename: new FormControl(&#x27;&#x27;, [nameNotTakenValidator(this.wallet.walletList())]),
-		address: new FormControl(&#x27;&#x27;),
-		restore_height: new FormControl(&#x27;0&#x27;),
-		autosave_current: new FormControl(true),
-		password: new FormControl(&#x27;&#x27;),
-		password_confirm: new FormControl(&#x27;&#x27;),
-		spendkey: new FormControl(&#x27;&#x27;),
-		viewkey: new FormControl(&#x27;&#x27;),
-		viewonly_wallet: new FormControl(false),
-	})</code>
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
                     </td>
                 </tr>
                     <tr>
@@ -350,22 +341,23 @@ import {nameNotTakenValidator} from &#x27;../validators&#x27;
 })
 
 export class RestoreComponent implements OnInit {
-	restoreWalletForm &#x3D; new FormGroup({
-		filename: new FormControl(&#x27;&#x27;, [nameNotTakenValidator(this.wallet.walletList())]),
-		address: new FormControl(&#x27;&#x27;),
-		restore_height: new FormControl(&#x27;0&#x27;),
-		autosave_current: new FormControl(true),
-		password: new FormControl(&#x27;&#x27;),
-		password_confirm: new FormControl(&#x27;&#x27;),
-		spendkey: new FormControl(&#x27;&#x27;),
-		viewkey: new FormControl(&#x27;&#x27;),
-		viewonly_wallet: new FormControl(false),
-	});
+	restoreWalletForm : FormGroup;
 
 	constructor(private wallet: WalletService) {
 	}
 
 	ngOnInit(): void {
+		this.restoreWalletForm &#x3D; new FormGroup({
+			filename: new FormControl(&#x27;&#x27;, [nameNotTakenValidator(this.wallet.walletList())]),
+			address: new FormControl(&#x27;&#x27;),
+			restore_height: new FormControl(&#x27;0&#x27;),
+			autosave_current: new FormControl(true),
+			password: new FormControl(&#x27;&#x27;),
+			password_confirm: new FormControl(&#x27;&#x27;),
+			spendkey: new FormControl(&#x27;&#x27;),
+			viewkey: new FormControl(&#x27;&#x27;),
+			viewonly_wallet: new FormControl(false),
+		});
 	}
 
 	restoreWallet() {
