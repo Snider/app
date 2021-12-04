@@ -285,8 +285,8 @@ export function localStorageSyncReducer(
 			&#x27;settings&#x27;,
 			{
 				user: {
-					encrypt: (state: string) &#x3D;&gt; btoa(state),
-					decrypt: (state: string) &#x3D;&gt; atob(state)
+					encrypt: (state: string) &#x3D;&gt; btoa(state), // placeholder
+					decrypt: (state: string) &#x3D;&gt; atob(state) // placeholder
 				}
 			}
 		],
@@ -297,7 +297,7 @@ export function localStorageSyncReducer(
 }
 
 export const metaReducers: MetaReducer&lt;AppState&gt;[] &#x3D; !APP_CONFIG.production
-	? [localStorageSyncReducer]
+	? []
 	: [localStorageSyncReducer];
 
 export const effects &#x3D; [Settings.SettingsEffects, Chart.ChartsEffects];
