@@ -300,7 +300,7 @@ export const metaReducers: MetaReducer&lt;AppState&gt;[] &#x3D; !APP_CONFIG.prod
 	? []
 	: [localStorageSyncReducer];
 
-export const effects &#x3D; [Settings.SettingsEffects, Chart.ChartsEffects];
+export const effects &#x3D; [Chart.ChartsEffects, Settings.SettingsEffects ];
 </code></pre>
     </div>
 </div>

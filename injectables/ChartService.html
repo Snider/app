@@ -131,7 +131,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: Store<literal type>, platformId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a>, networkHashrateConfigService: <a href="../injectables/NetworkHashrateChart.html" target="_self">NetworkHashrateChart</a>)</code>
+<code>constructor(store: Store<literal type>, platformId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank">Object</a>, NetworkHashrateChart: <a href="../injectables/NetworkHashrateChart.html" target="_self">NetworkHashrateChart</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -178,7 +178,7 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>networkHashrateConfigService</td>
+                                                        <td>NetworkHashrateChart</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/NetworkHashrateChart.html" target="_self" >NetworkHashrateChart</a></code>
@@ -521,7 +521,7 @@ chart config service as a function dataMap(data)</p>
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
-		networkDifficulty: NetworkHashrateChart
+		networkDifficulty: this.NetworkHashrateChart
 	}</code>
                     </td>
                 </tr>
@@ -604,7 +604,7 @@ export class ChartService {
 	 * @private
 	 */
 	private chartMeta &#x3D; {
-		networkDifficulty: NetworkHashrateChart
+		networkDifficulty: this.NetworkHashrateChart
 	};
 	/**
 	 * holds all the data observables for all charts
@@ -617,7 +617,7 @@ export class ChartService {
 		private store: Store&lt;{ payload: any }&gt;,
 		@Inject(PLATFORM_ID) private platformId: Object,
 		//@TODO try and find a better way than get DI to give us configs, so they can themselves use services
-		private networkHashrateConfigService: NetworkHashrateChart
+		private NetworkHashrateChart: NetworkHashrateChart
 	) {
 		if (isPlatformBrowser(this.platformId)) {
 			Chart.register(...registerables);
