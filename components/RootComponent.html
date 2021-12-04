@@ -158,6 +158,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Async</span>
                                 <a href="#downloadCLI" >downloadCLI</a>
                             </li>
                             <li>
@@ -291,6 +292,7 @@
                 <td class="col-md-4">
                     <a name="downloadCLI"></a>
                     <span class="name">
+                        <span class="modifier">Async</span>
                         <span ><b>downloadCLI</b></span>
                         <a href="#downloadCLI"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -298,7 +300,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>downloadCLI()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>downloadCLI()</code>
                 </td>
             </tr>
 
@@ -315,7 +318,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -455,8 +458,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/modules/root.component.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/modules/root.component.ts:66</a></div>
                 </td>
             </tr>
 
@@ -492,8 +495,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/modules/root.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/modules/root.component.ts:58</a></div>
                 </td>
             </tr>
 
@@ -529,8 +532,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/modules/root.component.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/modules/root.component.ts:62</a></div>
                 </td>
             </tr>
 
@@ -753,8 +756,9 @@ export class RootComponent implements OnInit {
 		this.router.navigateByUrl(&#x27;/user&#x27;);
 	}
 
-	downloadCLI() {
+	async downloadCLI() {
 		this.downloadingCLI &#x3D; true
+		await new Promise(f &#x3D;&gt; setTimeout(f, 1000));
 		this.chain.downloadCLI().then((data) &#x3D;&gt; {
 			this.downloadingCLI &#x3D; false;
 			this.router.navigateByUrl(&#x27;/chain&#x27;)
@@ -807,22 +811,22 @@ export class RootComponent implements OnInit {
     &lt;div style&#x3D;&quot;padding: 16px;&quot;&gt;
         &lt;mat-tab-group animationDuration&#x3D;&quot;100ms&quot;&gt;
             &lt;mat-tab label&#x3D;&quot;{{ &#x27;plugin.lthn.daemons.letheand&#x27; | translate }}&quot;&gt;
-                &lt;lthn-app-console attach&#x3D;&quot;letheand&quot;&gt;&lt;/lthn-app-console&gt;
+                &lt;lthn-app-console attach&#x3D;&quot;daemon:letheand&quot;&gt;&lt;/lthn-app-console&gt;
             &lt;/mat-tab&gt;
             &lt;mat-tab label&#x3D;&quot;{{ &#x27;plugin.lthn.daemons.lethean-wallet-rpc&#x27; | translate }}&quot;&gt;
-                &lt;lthn-app-console attach&#x3D;&quot;lethean-wallet-rpc&quot;&gt;&lt;/lthn-app-console&gt;
+                &lt;lthn-app-console attach&#x3D;&quot;daemon:lethean-wallet-rpc&quot;&gt;&lt;/lthn-app-console&gt;
             &lt;/mat-tab&gt;
             &lt;mat-tab label&#x3D;&quot;{{ &#x27;plugin.lthn.daemons.lethean-wallet-cli&#x27; | translate }}&quot;&gt;
-                &lt;lthn-app-console attach&#x3D;&quot;lethean-wallet-cli&quot;&gt;&lt;/lthn-app-console&gt;
+                &lt;lthn-app-console attach&#x3D;&quot;daemon:lethean-wallet-cli&quot;&gt;&lt;/lthn-app-console&gt;
             &lt;/mat-tab&gt;
             &lt;mat-tab label&#x3D;&quot;{{ &#x27;plugin.lthn.daemons.lethean-wallet-vpn-rpc&#x27; | translate }}&quot;&gt;
-                &lt;lthn-app-console attach&#x3D;&quot;lethean-wallet-vpn-rpc&quot;&gt;&lt;/lthn-app-console&gt;
+                &lt;lthn-app-console attach&#x3D;&quot;daemon:lethean-wallet-vpn-rpc&quot;&gt;&lt;/lthn-app-console&gt;
             &lt;/mat-tab&gt;
             &lt;mat-tab label&#x3D;&quot;{{ &#x27;plugin.lthn.daemons.lethean-blockchain-export&#x27; | translate }}&quot;&gt;
-                &lt;lthn-app-console attach&#x3D;&quot;lethean-blockchain-export&quot;&gt;&lt;/lthn-app-console&gt;
+                &lt;lthn-app-console attach&#x3D;&quot;daemon:lethean-blockchain-export&quot;&gt;&lt;/lthn-app-console&gt;
             &lt;/mat-tab&gt;
             &lt;mat-tab label&#x3D;&quot;{{ &#x27;plugin.lthn.daemons.lethean-blockchain-import&#x27; | translate }}&quot;&gt;
-                &lt;lthn-app-console attach&#x3D;&quot;lethean-blockchain-import&quot;&gt;&lt;/lthn-app-console&gt;
+                &lt;lthn-app-console attach&#x3D;&quot;daemon:lethean-blockchain-import&quot;&gt;&lt;/lthn-app-console&gt;
             &lt;/mat-tab&gt;
         &lt;/mat-tab-group&gt;
     &lt;/div&gt;
@@ -856,7 +860,7 @@ export class RootComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="!hasCLI">    <div style="padding: 16px;">    <mat-card >        <mat-card-title>{{ \'words.states.not_installed\' | translate }}</mat-card-title>        <mat-card-content>            <p>{{ \'words.states.not_installed_desc\' | translate }}</p>            <button (click)="downloadCLI()" color="accent" mat-button>{{ \'button.install-blockchain\' | translate }}</button>            <ng-container *ngIf="downloadingCLI ">                <lthn-app-console attach="update-cli"></lthn-app-console>            </ng-container>        </mat-card-content>    </mat-card>    </div></ng-container><ng-container *ngIf="hasCLI">    <div style="padding: 16px;">        <mat-tab-group animationDuration="100ms">            <mat-tab label="{{ \'plugin.lthn.daemons.letheand\' | translate }}">                <lthn-app-console attach="letheand"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-wallet-rpc\' | translate }}">                <lthn-app-console attach="lethean-wallet-rpc"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-wallet-cli\' | translate }}">                <lthn-app-console attach="lethean-wallet-cli"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-wallet-vpn-rpc\' | translate }}">                <lthn-app-console attach="lethean-wallet-vpn-rpc"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-blockchain-export\' | translate }}">                <lthn-app-console attach="lethean-blockchain-export"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-blockchain-import\' | translate }}">                <lthn-app-console attach="lethean-blockchain-import"></lthn-app-console>            </mat-tab>        </mat-tab-group>    </div></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="!hasCLI">    <div style="padding: 16px;">    <mat-card >        <mat-card-title>{{ \'words.states.not_installed\' | translate }}</mat-card-title>        <mat-card-content>            <p>{{ \'words.states.not_installed_desc\' | translate }}</p>            <button (click)="downloadCLI()" color="accent" mat-button>{{ \'button.install-blockchain\' | translate }}</button>            <ng-container *ngIf="downloadingCLI ">                <lthn-app-console attach="update-cli"></lthn-app-console>            </ng-container>        </mat-card-content>    </mat-card>    </div></ng-container><ng-container *ngIf="hasCLI">    <div style="padding: 16px;">        <mat-tab-group animationDuration="100ms">            <mat-tab label="{{ \'plugin.lthn.daemons.letheand\' | translate }}">                <lthn-app-console attach="daemon:letheand"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-wallet-rpc\' | translate }}">                <lthn-app-console attach="daemon:lethean-wallet-rpc"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-wallet-cli\' | translate }}">                <lthn-app-console attach="daemon:lethean-wallet-cli"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-wallet-vpn-rpc\' | translate }}">                <lthn-app-console attach="daemon:lethean-wallet-vpn-rpc"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-blockchain-export\' | translate }}">                <lthn-app-console attach="daemon:lethean-blockchain-export"></lthn-app-console>            </mat-tab>            <mat-tab label="{{ \'plugin.lthn.daemons.lethean-blockchain-import\' | translate }}">                <lthn-app-console attach="daemon:lethean-blockchain-import"></lthn-app-console>            </mat-tab>        </mat-tab-group>    </div></ng-container></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'RootComponent'};
