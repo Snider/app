@@ -263,7 +263,7 @@ export class HashLinkPipe implements PipeTransform {
 
     return content &#x3D;&#x3D;&#x3D; undefined
       ? &quot;¯\\_(ツ)_/¯&quot;
-      : &#x60;&lt;a class&#x3D;&quot;lthn-brand&quot; href&#x3D;&quot;${url}&quot;&gt;${this.cutMiddle(content, 8)}&lt;/a&gt;&#x60;;
+      : &#x60;&lt;a class&#x3D;&quot;lthn-brand&quot; href&#x3D;&quot;${url}&quot;&gt;${this.cutMiddle(content, 16)}&lt;/a&gt;&#x60;;
   }
 
   private cutMiddle(string, maxLength) {
