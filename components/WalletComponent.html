@@ -144,10 +144,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#modalConfig" >modalConfig</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#openedWallet" >openedWallet</a>
                             </li>
                             <li>
@@ -157,6 +153,10 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#showtx" >showtx</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subs$" >subs$</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -194,10 +194,6 @@
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#openModal" >openModal</a>
-                            </li>
-                            <li>
                                 <a href="#openWallet" >openWallet</a>
                             </li>
                             <li>
@@ -223,12 +219,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(wallet: <a href="../injectables/WalletService.html" target="_self">WalletService</a>)</code>
+<code>constructor(wallet: <a href="../injectables/WalletService.html" target="_self">WalletService</a>, store: Store)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -250,6 +246,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/WalletService.html" target="_self" >WalletService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
                                                         </td>
                                                   
                                                     <td>
@@ -297,8 +305,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:68</a></div>
                 </td>
             </tr>
 
@@ -336,8 +344,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:77</a></div>
                 </td>
             </tr>
 
@@ -401,8 +409,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:57</a></div>
                 </td>
             </tr>
 
@@ -440,8 +448,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -451,45 +459,6 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="openModal"></a>
-                    <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>openModal</b></span>
-                        <a href="#openModal"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>openModal()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:38</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>unknown</code>
 
                     </div>
                 </td>
@@ -516,8 +485,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:64</a></div>
                 </td>
             </tr>
 
@@ -588,8 +557,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -659,7 +628,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -695,39 +664,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:25</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="modalConfig"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>modalConfig</b></span>
-                        <a href="#modalConfig"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/ModalConfig.html" target="_self" >ModalConfig</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>{modalTitle: &#x27;Open Wallet&#x27;} as ModalConfig</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -759,7 +696,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -797,7 +734,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -829,7 +766,39 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subs$"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>subs$</b></span>
+                        <a href="#subs$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:41</a></div>
                         </td>
                     </tr>
 
@@ -870,7 +839,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:31</a></div>
                         </td>
                     </tr>
 
@@ -902,7 +871,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -921,6 +890,9 @@ import {ModalConfig} from &#x27;@service/ui/modal/modalConfig&#x27;;
 import {ModalComponent} from &#x27;@service/ui/modal/modal.component&#x27;;
 import {Balance} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
 import {PluginDefinition, PluginStatus} from &#x27;@data/plugins&#x27;;
+import {select, Store} from &#x27;@ngrx/store&#x27;;
+import {addWallet, getWalletList, selectOpenedWallet, selectWallets} from &#x27;@plugin/lthn/wallet/data&#x27;;
+import {Subscription} from &#x27;rxjs&#x27;;
 
 @Component({
 	selector: &#x27;lthn-app-wallet&#x27;,
@@ -936,9 +908,9 @@ export class WalletComponent implements OnInit, OnDestroy {
 		status: PluginStatus.ACTIVE
 	}
 	public balance:  Balance | Promise&lt;Balance&gt;;
-	constructor(private wallet: WalletService) {}
+
 	public wallets: string[] &#x3D; [];
-	public modalConfig: ModalConfig &#x3D; {modalTitle: &#x27;Open Wallet&#x27;} as ModalConfig;
+
 	@ViewChild(&#x27;modal&#x27;) private modalComponent: ModalComponent
 	public openedWallet: string &#x3D; &#x27;&#x27;;
 	public showtx: boolean &#x3D; false;
@@ -952,23 +924,31 @@ export class WalletComponent implements OnInit, OnDestroy {
 		min_height: null,
 		max_height: null
 	};
-	async openModal() {
-		return await this.modalComponent.open()
-	}
-	 async ngOnInit() {
+	private subs$: Subscription[] &#x3D; []
+	constructor(private wallet: WalletService, private store: Store) {}
+
+	async ngOnInit() {
 		 await this.getBalance()
-		 this.wallets &#x3D; this.wallet.walletList()
+
+		this.subs$[&#x27;wallets&#x27;] &#x3D; this.store.pipe(select(selectWallets)).subscribe((data) &#x3D;&gt; {
+			if(data) this.wallets &#x3D; data
+		})
+
+		this.subs$[&#x27;openedWallet&#x27;] &#x3D; this.store.pipe(select(selectOpenedWallet)).subscribe((data) &#x3D;&gt; {
+			if(data) this.openedWallet &#x3D; data
+		})
 
 	 }
 
 	ngOnDestroy(): void {
+		for (let sub of this.subs$){
+			sub.unsubscribe();
+		}
 		console.log(&#x27;WalletComponent DESTROY&#x27;);
 	}
 
 	openWallet(key: string){
-		this.openedWallet &#x3D; key;
-		this.openModal()
-
+		this.store.dispatch(addWallet({wallet: key}))
 	}
 
 	async getBalance() {
@@ -1013,8 +993,9 @@ export class WalletComponent implements OnInit, OnDestroy {
                 &lt;mat-card&gt;
                     &lt;mat-card-title&gt;Wallets&lt;/mat-card-title&gt;
                     &lt;mat-card-content&gt;
-                        &lt;mat-select [placeholder]&#x3D;&quot;openedWallet&quot;&gt;
+                        &lt;mat-select [(value)]&#x3D;&quot;openedWallet&quot; [placeholder]&#x3D;&quot;openedWallet&quot; &gt;
                             &lt;mat-option *ngFor&#x3D;&quot;let wallet of wallets&quot;
+                                        value&#x3D;&quot;{{wallet}}&quot;
                                         (click)&#x3D;&quot;this.openWallet(wallet)&quot;&gt;{{wallet}}&lt;/mat-option&gt;
                         &lt;/mat-select&gt;
                         &lt;mat-divider&gt;&lt;/mat-divider&gt;
@@ -1057,7 +1038,7 @@ export class WalletComponent implements OnInit, OnDestroy {
                 &lt;/ng-container&gt;
                 &lt;ng-container *ngIf&#x3D;&quot;openedWallet.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
 
-                        &lt;lthn-wallet-add targetAddForm&#x3D;&quot;restore&quot;&gt;
+                        &lt;lthn-wallet-add targetAddForm&#x3D;&quot;open&quot;&gt;
                         &lt;/lthn-wallet-add&gt;
 
                 &lt;/ng-container&gt;
@@ -1067,11 +1048,6 @@ export class WalletComponent implements OnInit, OnDestroy {
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-
-
-&lt;modal #modal [modalConfig]&#x3D;&quot;modalConfig&quot;&gt;
-    &lt;lthn-wallet-open [name]&#x3D;&quot;openedWallet&quot;&gt;&lt;/lthn-wallet-open&gt;
-&lt;/modal&gt;
 </code></pre>
     </div>
 
@@ -1107,7 +1083,7 @@ export class WalletComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="column">    <div fxFlex="100" style="padding: 12px 12px 3px 12px;">        <mat-toolbar>            <mat-toolbar-row>                <span class="lthn-brand">Wallet Manager</span>                <span class="flex-spacer"></span>                <button [routerLink]="[\'/\', \'wallet\', \'new\']" mat-button matTooltip="New Wallet">                    <mat-icon>account_balance_wallet</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'backup\']" mat-button matTooltip="Backup">                    <mat-icon>cloud_download</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'restore\']" mat-button matTooltip="Restore">                    <mat-icon>cloud_upload</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'settings\']" mat-button matTooltip="Settings">                    <mat-icon>settings</mat-icon>                </button>            </mat-toolbar-row>        </mat-toolbar>        <div fxLayout="row">            <div fxFlex="20" style="padding: 6px 3px 6px 0;">                <mat-card>                    <mat-card-title>Wallets</mat-card-title>                    <mat-card-content>                        <mat-select [placeholder]="openedWallet">                            <mat-option *ngFor="let wallet of wallets"                                        (click)="this.openWallet(wallet)">{{wallet}}</mat-option>                        </mat-select>                        <mat-divider></mat-divider>                        <h4>Available Columns</h4>                        <mat-list>                            <mat-list-item>                                <input type="checkbox" id="in" (click)="toggle(\'in\')" [checked]="isChecked(\'in\')"/>                                <label for="in">Incoming</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="out" (click)="toggle(\'out\')" [checked]="isChecked(\'out\')"/>                                <label for="out">Sent</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="pending" (click)="toggle(\'pending\')"                                       [checked]="isChecked(\'pending\')"/>                                <label for="pending">Pending</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="failed" (click)="toggle(\'failed\')"                                       [checked]="isChecked(\'failed\')"/>                                <label for="failed">Failed</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="pool" (click)="toggle(\'pool\')"                                       [checked]="isChecked(\'pool\')"/>                                <label for="pool">Pool</label>                            </mat-list-item>                        </mat-list>                    </mat-card-content>                </mat-card>            </div>            <div fxFlex="80" style="padding: 6px 0 6px 3px;">                <ng-container *ngIf="openedWallet.length > 1">                    <lthn-wallet-transactions [opts]="txnSelection"></lthn-wallet-transactions>                </ng-container>                <ng-container *ngIf="openedWallet.length === 0">                        <lthn-wallet-add targetAddForm="restore">                        </lthn-wallet-add>                </ng-container>            </div>        </div>    </div></div><modal #modal [modalConfig]="modalConfig">    <lthn-wallet-open [name]="openedWallet"></lthn-wallet-open></modal></div>'
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="column">    <div fxFlex="100" style="padding: 12px 12px 3px 12px;">        <mat-toolbar>            <mat-toolbar-row>                <span class="lthn-brand">Wallet Manager</span>                <span class="flex-spacer"></span>                <button [routerLink]="[\'/\', \'wallet\', \'new\']" mat-button matTooltip="New Wallet">                    <mat-icon>account_balance_wallet</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'backup\']" mat-button matTooltip="Backup">                    <mat-icon>cloud_download</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'restore\']" mat-button matTooltip="Restore">                    <mat-icon>cloud_upload</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'settings\']" mat-button matTooltip="Settings">                    <mat-icon>settings</mat-icon>                </button>            </mat-toolbar-row>        </mat-toolbar>        <div fxLayout="row">            <div fxFlex="20" style="padding: 6px 3px 6px 0;">                <mat-card>                    <mat-card-title>Wallets</mat-card-title>                    <mat-card-content>                        <mat-select [(value)]="openedWallet" [placeholder]="openedWallet" >                            <mat-option *ngFor="let wallet of wallets"                                        value="{{wallet}}"                                        (click)="this.openWallet(wallet)">{{wallet}}</mat-option>                        </mat-select>                        <mat-divider></mat-divider>                        <h4>Available Columns</h4>                        <mat-list>                            <mat-list-item>                                <input type="checkbox" id="in" (click)="toggle(\'in\')" [checked]="isChecked(\'in\')"/>                                <label for="in">Incoming</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="out" (click)="toggle(\'out\')" [checked]="isChecked(\'out\')"/>                                <label for="out">Sent</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="pending" (click)="toggle(\'pending\')"                                       [checked]="isChecked(\'pending\')"/>                                <label for="pending">Pending</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="failed" (click)="toggle(\'failed\')"                                       [checked]="isChecked(\'failed\')"/>                                <label for="failed">Failed</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="pool" (click)="toggle(\'pool\')"                                       [checked]="isChecked(\'pool\')"/>                                <label for="pool">Pool</label>                            </mat-list-item>                        </mat-list>                    </mat-card-content>                </mat-card>            </div>            <div fxFlex="80" style="padding: 6px 0 6px 3px;">                <ng-container *ngIf="openedWallet.length > 1">                    <lthn-wallet-transactions [opts]="txnSelection"></lthn-wallet-transactions>                </ng-container>                <ng-container *ngIf="openedWallet.length === 0">                        <lthn-wallet-add targetAddForm="open">                        </lthn-wallet-add>                </ng-container>            </div>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PluginsComponent', 'selector': 'lthn-app-plugins'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'WalletComponent'};

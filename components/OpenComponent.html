@@ -132,6 +132,10 @@
                             <li>
                                 <a href="#password" >password</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#wallets" >wallets</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -182,12 +186,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(wallet: <a href="../injectables/WalletRpcService.html" target="_self">WalletRpcService</a>)</code>
+<code>constructor(wallet: <a href="../injectables/WalletService.html" target="_self">WalletService</a>, store: Store, notifierService: NotifierService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -208,7 +212,31 @@
                                                         <td>wallet</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/WalletRpcService.html" target="_self" >WalletRpcService</a></code>
+                                                                        <code><a href="../injectables/WalletService.html" target="_self" >WalletService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notifierService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NotifierService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -248,7 +276,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:14</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -282,14 +310,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>get list of filesystem wallets</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -312,25 +342,59 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>unlockWallet()</code>
+<code>unlockWallet(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:42</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Unlock wallet</p>
+</div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -360,7 +424,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -385,10 +449,43 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:17</a></div>
                         </td>
                     </tr>
 
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="wallets"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>wallets</b></span>
+                        <a href="#wallets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/plugins/lthn/wallet/components/open.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Lists the wallets known</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -401,7 +498,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Input, OnInit} from &#x27;@angular/core&#x27;;
 
 import {FormControl} from &#x27;@angular/forms&#x27;;
-import {WalletRpcService} from &#x27;@service/wallet.rpc.service&#x27;;
+import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
+import {NotifierService} from &#x27;angular-notifier&#x27;;
+import {addWallet, openWallet} from &#x27;@plugin/lthn/wallet/data&#x27;;
+import {Store} from &#x27;@ngrx/store&#x27;;
 
 @Component({
 	selector: &#x27;lthn-wallet-open&#x27;,
@@ -412,21 +512,36 @@ export class OpenComponent implements OnInit {
 
 	filename &#x3D; new FormControl(&#x27;&#x27;);
 	password &#x3D; new FormControl(&#x27;&#x27;);
+	/**
+	 * Lists the wallets known
+	 *
+	 * @type {string[]}
+	 */
+	public wallets: string[];
 
-	constructor(private wallet: WalletRpcService) {
+
+	constructor(private wallet: WalletService, private store: Store, private notifierService: NotifierService) {
 
 	}
 
+	/**
+	 * get list of filesystem wallets
+	 */
 	ngOnInit(): void {
-
+		this.wallets &#x3D; this.wallet.getWalletList()
 	}
 
-	unlockWallet() {
-
-		return this.wallet.openWallet({
-			filename: this.name ? this.name : this.filename.value,
-			password: this.password.value
-		});
+	/**
+	 * Unlock wallet
+	 *
+	 * @returns {Promise&lt;AxiosResponse&lt;any&gt;&gt;}
+	 */
+	unlockWallet(name: string) {
+		this.store.dispatch(openWallet({wallet: name, password: (&lt;HTMLInputElement&gt;document.getElementById(name + &#x27;-pass&#x27;)).value}))
+//		return this.wallet.openWallet({
+//			filename: name,
+//			password:
+//		}).then(() &#x3D;&gt; this.notifierService.notify(&#x27;success&#x27;, &#x27;Loaded Wallet: &#x27; + name));
 
 	}
 }
@@ -435,18 +550,23 @@ export class OpenComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;mat-card&gt;
-    &lt;mat-card-title&gt;{{ &#x27;plugin.lthn.wallet.titles.unlockang-wallet&#x27; | translate }}&lt;/mat-card-title&gt;
+    &lt;mat-card-title&gt;{{ &#x27;plugin.lthn.wallet.titles.unlock-wallet&#x27; | translate }}&lt;/mat-card-title&gt;
     &lt;mat-card-content&gt;
+        &lt;div fxLayout&#x3D;&quot;row, wrap&quot;&gt;
+            &lt;div  fxFlex&#x3D;&quot;20&quot; *ngFor&#x3D;&quot;let wall of wallets&quot;&gt;
+            &lt;mat-card&gt;
+                &lt;mat-card-title&gt;{{wall}}&lt;/mat-card-title&gt;
+                &lt;mat-card-content&gt;
+                    &lt;mat-form-field  class&#x3D;&quot;full_width&quot; appearance&#x3D;&quot;standard&quot;&gt;
+                        &lt;mat-label&gt;{{ &#x27;plugin.lthn.wallet.label.wallet-password&#x27; | translate }}&lt;/mat-label&gt;
+                        &lt;input [id]&#x3D;&quot;wall+&#x27;-pass&#x27;&quot; matInput type&#x3D;&quot;password&quot;&gt;
+                    &lt;/mat-form-field&gt;
+                    &lt;button mat-button (click)&#x3D;&quot;unlockWallet(wall)&quot; color&#x3D;&quot;accent&quot;&gt;{{ &#x27;plugin.lthn.wallet.button.unlock-wallet&#x27; | translate }}&lt;/button&gt;
 
-        &lt;mat-form-field class&#x3D;&quot;full_width&quot;  appearance&#x3D;&quot;standard&quot;&gt;
-            &lt;mat-label&gt;{{ &#x27;plugin.lthn.wallet.label.filename&#x27; | translate }}&lt;/mat-label&gt;
-            &lt;input [formControl]&#x3D;&quot;filename&quot; [value]&#x3D;&quot;this.name&quot; matInput type&#x3D;&quot;text&quot;&gt;
-        &lt;/mat-form-field&gt;
-        &lt;mat-form-field  class&#x3D;&quot;full_width&quot; appearance&#x3D;&quot;standard&quot;&gt;
-            &lt;mat-label&gt;{{ &#x27;plugin.lthn.wallet.label.wallet-password&#x27; | translate }}&lt;/mat-label&gt;
-            &lt;input [formControl]&#x3D;&quot;password&quot; matInput type&#x3D;&quot;password&quot;&gt;
-        &lt;/mat-form-field&gt;
-        &lt;button mat-button (click)&#x3D;&quot;unlockWallet()&quot;&gt;{{ &#x27;plugin.lthn.wallet.button.unlock-wallet&#x27; | translate }}&lt;/button&gt;
+                &lt;/mat-card-content&gt;
+            &lt;/mat-card&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
     &lt;/mat-card-content&gt;
 &lt;/mat-card&gt;
 </code></pre>
@@ -478,7 +598,7 @@ export class OpenComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-card>    <mat-card-title>{{ \'plugin.lthn.wallet.titles.unlockang-wallet\' | translate }}</mat-card-title>    <mat-card-content>        <mat-form-field class="full_width"  appearance="standard">            <mat-label>{{ \'plugin.lthn.wallet.label.filename\' | translate }}</mat-label>            <input [formControl]="filename" [value]="this.name" matInput type="text">        </mat-form-field>        <mat-form-field  class="full_width" appearance="standard">            <mat-label>{{ \'plugin.lthn.wallet.label.wallet-password\' | translate }}</mat-label>            <input [formControl]="password" matInput type="password">        </mat-form-field>        <button mat-button (click)="unlockWallet()">{{ \'plugin.lthn.wallet.button.unlock-wallet\' | translate }}</button>    </mat-card-content></mat-card></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-card>    <mat-card-title>{{ \'plugin.lthn.wallet.titles.unlock-wallet\' | translate }}</mat-card-title>    <mat-card-content>        <div fxLayout="row, wrap">            <div  fxFlex="20" *ngFor="let wall of wallets">            <mat-card>                <mat-card-title>{{wall}}</mat-card-title>                <mat-card-content>                    <mat-form-field  class="full_width" appearance="standard">                        <mat-label>{{ \'plugin.lthn.wallet.label.wallet-password\' | translate }}</mat-label>                        <input [id]="wall+\'-pass\'" matInput type="password">                    </mat-form-field>                    <button mat-button (click)="unlockWallet(wall)" color="accent">{{ \'plugin.lthn.wallet.button.unlock-wallet\' | translate }}</button>                </mat-card-content>            </mat-card>            </div>        </div>    </mat-card-content></mat-card></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PluginsComponent', 'selector': 'lthn-app-plugins'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'OpenComponent'};

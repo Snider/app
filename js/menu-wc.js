@@ -59,13 +59,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-86088f107bb4880f7c16b1c9f8efb3d509e4db18acce0caa5449a842c3e8792271b515a16c85754f561b1606c161991d8ba9c2ff84dc76616216297419f74e1b"' : 'data-target="#xs-components-links-module-AppModule-86088f107bb4880f7c16b1c9f8efb3d509e4db18acce0caa5449a842c3e8792271b515a16c85754f561b1606c161991d8ba9c2ff84dc76616216297419f74e1b"' }>
+                                            'data-target="#components-links-module-AppModule-af72f9d118dc6cd1fc5b4275bd7f5b7a3fb129aaa783c26c8d03cfe50a2f436344ba613483ac2226ef606731395fb3a58b181b57480e9730c5c88e06110af147"' : 'data-target="#xs-components-links-module-AppModule-af72f9d118dc6cd1fc5b4275bd7f5b7a3fb129aaa783c26c8d03cfe50a2f436344ba613483ac2226ef606731395fb3a58b181b57480e9730c5c88e06110af147"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-86088f107bb4880f7c16b1c9f8efb3d509e4db18acce0caa5449a842c3e8792271b515a16c85754f561b1606c161991d8ba9c2ff84dc76616216297419f74e1b"' :
-                                            'id="xs-components-links-module-AppModule-86088f107bb4880f7c16b1c9f8efb3d509e4db18acce0caa5449a842c3e8792271b515a16c85754f561b1606c161991d8ba9c2ff84dc76616216297419f74e1b"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-af72f9d118dc6cd1fc5b4275bd7f5b7a3fb129aaa783c26c8d03cfe50a2f436344ba613483ac2226ef606731395fb3a58b181b57480e9730c5c88e06110af147"' :
+                                            'id="xs-components-links-module-AppModule-af72f9d118dc6cd1fc5b4275bd7f5b7a3fb129aaa783c26c8d03cfe50a2f436344ba613483ac2226ef606731395fb3a58b181b57480e9730c5c88e06110af147"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
                                             </li>
@@ -529,6 +529,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/SettingsEffects.html" data-type="entity-link" >SettingsEffects</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/WalletEffects.html" data-type="entity-link" >WalletEffects</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/WalletRpcService.html" data-type="entity-link" >WalletRpcService</a>
                                 </li>
                                 <li class="link">
@@ -724,6 +727,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/UserState.html" data-type="entity-link" >UserState</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/WalletsState.html" data-type="entity-link" >WalletsState</a>
                             </li>
                         </ul>
                     </li>

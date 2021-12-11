@@ -267,7 +267,7 @@
 </div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>    <code>{}</code>
 
                     </div>
                 </td>
@@ -294,8 +294,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="84"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:84</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:85</a></div>
                 </td>
             </tr>
 
@@ -549,8 +549,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:77</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.service.ts:78</a></div>
                 </td>
             </tr>
 
@@ -680,12 +680,13 @@ export class WalletService {
 		this.fs.listFiles(&#x27;/wallets&#x27;).then((data) &#x3D;&gt; {
 			if (data.length &gt; 0) {
 				for (let dat of data) {
-					if (!dat.endsWith(&#x27;.keys&#x27;) &amp;&amp; !dat.endsWith(&#x27;.txt&#x27;)) {
+					if (!this.wallets.includes(dat) &amp;&amp; !dat.endsWith(&#x27;.keys&#x27;) &amp;&amp; !dat.endsWith(&#x27;.txt&#x27;)) {
 						this.wallets.push(dat);
 					}
 				}
 			}
 		});
+		return this.wallets
 	}
 
 	/**

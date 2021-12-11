@@ -300,6 +300,7 @@ import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
 import {FileSystemService} from &#x27;@service/filesystem/file-system.service&#x27;;
 import {ConsoleModule} from &#x27;@plugin/console/console.module&#x27;;
 import {PluginsModule} from &#x27;@plugin/plugins.module&#x27;;
+import {NotifierModule} from &#x27;angular-notifier&#x27;;
 
 export function HttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http);
@@ -335,7 +336,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 		FlexModule,
 		AuthModule,
 		ConsoleModule,
-		PluginsModule
+		PluginsModule,
+		NotifierModule.withConfig({
+			// Custom options in here
+		}),
 
 	],
 	providers: [],
