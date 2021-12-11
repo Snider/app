@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  SettingsComponent</li>
+  PluginsComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -52,6 +52,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -61,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/plugins/lthn/wallet/components/settings.component.ts</code>
+    <code>src/app/plugins/plugins.component.ts</code>
 </p>
 
 
@@ -92,15 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>lthn-app-settings</code></td>
+                <td class="col-md-9"><code>lthn-app-plugins</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./plugins.component.scss</code></td>
+            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./settings.component.html</code></td>
+                <td class="col-md-9"><code>./plugins.component.html</code></td>
             </tr>
 
 
@@ -118,6 +125,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#wallet" >wallet</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -148,15 +170,57 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>, wallet: <a href="../injectables/PluginsService.html" target="_self">PluginsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/plugins/lthn/wallet/components/settings.component.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/plugins/plugins.component.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>injector</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/Injector" target="_blank" >Injector</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>wallet</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PluginsService.html" target="_self" >PluginsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -190,8 +254,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="10"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/components/settings.component.ts:10</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/plugins/plugins.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -208,70 +272,83 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="wallet"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>wallet</b></span>
+                        <a href="#wallet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/PluginsService.html" target="_self" >PluginsService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/plugins/plugins.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Injector, OnInit} from &#x27;@angular/core&#x27;;
+import {PluginsService} from &#x27;@plugin/plugins.service&#x27;;
+import {createCustomElement} from &#x27;@angular/elements&#x27;;
+import {WalletComponent} from &#x27;@plugin/lthn/wallet/wallet.component&#x27;;
 
 @Component({
-	selector: &#x27;lthn-app-settings&#x27;,
-	templateUrl: &#x27;./settings.component.html&#x27;
+  selector: &#x27;lthn-app-plugins&#x27;,
+  templateUrl: &#x27;./plugins.component.html&#x27;,
+  styleUrls: [&#x27;./plugins.component.scss&#x27;]
 })
-export class SettingsComponent implements OnInit {
-	constructor() {}
+export class PluginsComponent implements OnInit {
 
-	ngOnInit(): void {}
+  constructor(injector: Injector, public wallet: PluginsService) {
+    // Convert &#x60;PopupComponent&#x60; to a custom element.
+    const PopupElement &#x3D; createCustomElement(WalletComponent, {injector});
+    // Register the custom element with the browser.
+    customElements.define(&#x27;lthn-app-wallet&#x27;, PopupElement);
+  }
+
+  ngOnInit(): void {
+  }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot; fxLayout&#x3D;&quot;column&quot;&gt;
-  &lt;div fxFlex&#x3D;&quot;100&quot; style&#x3D;&quot;padding: 12px 12px 3px 12px;&quot;&gt;
-    &lt;mat-toolbar&gt;
-      &lt;mat-toolbar-row&gt;
-        &lt;span class&#x3D;&quot;lthn-brand&quot;&gt;Wallet Manager&lt;/span&gt;
-        &lt;span class&#x3D;&quot;flex-spacer&quot;&gt;&lt;/span&gt;
-        &lt;button [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;wallet&#x27;, &#x27;new&#x27;]&quot; mat-button matTooltip&#x3D;&quot;New Wallet&quot;&gt;
-          &lt;mat-icon&gt;account_balance_wallet&lt;/mat-icon&gt;
-        &lt;/button&gt;
-        &lt;button [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;wallet&#x27;, &#x27;backup&#x27;]&quot; mat-button matTooltip&#x3D;&quot;Backup&quot;&gt;
-          &lt;mat-icon&gt;cloud_download&lt;/mat-icon&gt;
-        &lt;/button&gt;
-        &lt;button [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;wallet&#x27;, &#x27;restore&#x27;]&quot; mat-button matTooltip&#x3D;&quot;Restore&quot;&gt;
-          &lt;mat-icon&gt;cloud_upload&lt;/mat-icon&gt;
-        &lt;/button&gt;
-        &lt;button [routerLink]&#x3D;&quot;[&#x27;/&#x27;, &#x27;wallet&#x27;, &#x27;settings&#x27;]&quot; mat-button matTooltip&#x3D;&quot;Settings&quot;&gt;
-          &lt;mat-icon&gt;settings&lt;/mat-icon&gt;
-        &lt;/button&gt;
-      &lt;/mat-toolbar-row&gt;
-    &lt;/mat-toolbar&gt;
-    &lt;div fxLayout&#x3D;&quot;row&quot;&gt;
-      &lt;div fxFlex&#x3D;&quot;20&quot; style&#x3D;&quot;padding: 6px 3px 6px 0;&quot;&gt;
-        &lt;mat-card&gt;
-          &lt;mat-card-title&gt;Wallets&lt;/mat-card-title&gt;
-          &lt;mat-card-content&gt;
-            &lt;mat-nav-list&gt;
-              &lt;a mat-list-item&gt;Mine&lt;/a&gt;
-              &lt;a mat-list-item&gt;Rick&#x27;s&lt;/a&gt;
-              &lt;a mat-list-item&gt;My other&lt;/a&gt;
-            &lt;/mat-nav-list&gt;
-          &lt;/mat-card-content&gt;
-        &lt;/mat-card&gt;
-      &lt;/div&gt;
-      &lt;div fxFlex&#x3D;&quot;80&quot; style&#x3D;&quot;padding: 6px 0 6px 3px;&quot;&gt;
-        &lt;mat-card&gt;
-          &lt;mat-card-title&gt;Options&lt;/mat-card-title&gt;
-        &lt;/mat-card&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;input #input value&#x3D;&quot;Message&quot;&gt;
+&lt;button (click)&#x3D;&quot;wallet.showAsComponent(input.value)&quot;&gt;Show as component&lt;/button&gt;
+&lt;button (click)&#x3D;&quot;wallet.showAsElement(input.value)&quot;&gt;Show as element&lt;/button&gt;
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./plugins.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -298,10 +375,10 @@ export class SettingsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container" fxLayout="column">  <div fxFlex="100" style="padding: 12px 12px 3px 12px;">    <mat-toolbar>      <mat-toolbar-row>        <span class="lthn-brand">Wallet Manager</span>        <span class="flex-spacer"></span>        <button [routerLink]="[\'/\', \'wallet\', \'new\']" mat-button matTooltip="New Wallet">          <mat-icon>account_balance_wallet</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'backup\']" mat-button matTooltip="Backup">          <mat-icon>cloud_download</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'restore\']" mat-button matTooltip="Restore">          <mat-icon>cloud_upload</mat-icon>        </button>        <button [routerLink]="[\'/\', \'wallet\', \'settings\']" mat-button matTooltip="Settings">          <mat-icon>settings</mat-icon>        </button>      </mat-toolbar-row>    </mat-toolbar>    <div fxLayout="row">      <div fxFlex="20" style="padding: 6px 3px 6px 0;">        <mat-card>          <mat-card-title>Wallets</mat-card-title>          <mat-card-content>            <mat-nav-list>              <a mat-list-item>Mine</a>              <a mat-list-item>Rick\'s</a>              <a mat-list-item>My other</a>            </mat-nav-list>          </mat-card-content>        </mat-card>      </div>      <div fxFlex="80" style="padding: 6px 0 6px 3px;">        <mat-card>          <mat-card-title>Options</mat-card-title>        </mat-card>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><input #input value="Message"><button (click)="wallet.showAsComponent(input.value)">Show as component</button><button (click)="wallet.showAsElement(input.value)">Show as element</button></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PluginsComponent', 'selector': 'lthn-app-plugins'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
-    var ACTUAL_COMPONENT = {'name': 'SettingsComponent-1'};
+    var ACTUAL_COMPONENT = {'name': 'PluginsComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -345,7 +422,7 @@ export class SettingsComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'SettingsComponent-1.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'PluginsComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
