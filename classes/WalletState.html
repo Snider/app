@@ -139,7 +139,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/plugins/lthn/wallet/data/state.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/plugins/lthn/wallet/data/state.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -170,7 +170,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/plugins/lthn/wallet/data/state.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/plugins/lthn/wallet/data/state.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -201,7 +201,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/plugins/lthn/wallet/data/state.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/plugins/lthn/wallet/data/state.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -221,6 +221,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {PaginatorOptions} from &#x27;@data/interface/pagination&#x27;;
+import {GetTransfersOut, Transfer} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
 
 export interface WalletsState {
 	loaded_wallet: string;
@@ -241,6 +242,7 @@ export interface Wallet {
 	 */
 	height: number;
 	name: string;
+	transfers: GetTransfersOut[];
 	options: {
 		inactivityThreshold: number;
 		pollingInterval: number;
@@ -252,8 +254,12 @@ export interface Wallet {
 export class Wallet implements Wallet {
 	options &#x3D; {
 		inactivityThreshold: 10,
-		pollingInterval: 1000,
+		pollingInterval: 10000,
 		pagination: new PaginatorOptions
+	}
+
+	constructor(name: string) {
+		this.name &#x3D; name
 	}
 
 }

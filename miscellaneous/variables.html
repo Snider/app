@@ -263,6 +263,9 @@
                             <a href="#selectWalletsState" title="src/app/plugins/lthn/wallet/data/selectors.ts" ><b>selectWalletsState</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#selectWalletTransactions" title="src/app/plugins/lthn/wallet/data/selectors.ts" ><b>selectWalletTransactions</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#setGlobalFontSize" title="src/app/modules/settings/data/settings.actions.ts" ><b>setGlobalFontSize</b>&nbsp;&nbsp;&nbsp;(src/.../settings.actions.ts)</a>
                         </li>
                         <li>
@@ -311,6 +314,9 @@
                             <a href="#WalletAddValid" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletAddValid</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
+                            <a href="#WalletBalance" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletBalance</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
                             <a href="#WalletDelete" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletDelete</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
@@ -333,6 +339,9 @@
                         </li>
                         <li>
                             <a href="#WalletStopPolling" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletStopPolling</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletTransfers" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletTransfers</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
                             <a href="#WS_ENDPOINT" title="src/app/services/websocket.service.ts" ><b>WS_ENDPOINT</b>&nbsp;&nbsp;&nbsp;(src/.../websocket.service.ts)</a>
@@ -621,6 +630,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="WalletBalance"></a>
+                    <span class="name">
+                        <span ><b>WalletBalance</b></span>
+                        <a href="#WalletBalance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Loaded Balance&#x27;, props&lt;{ address: string, balance: Balance }&gt;() )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="WalletDelete"></a>
                     <span class="name">
                         <span ><b>WalletDelete</b></span>
@@ -690,7 +719,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Loaded&#x27;, props&lt;{  stats: any }&gt;() )</code>
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Loaded&#x27; )</code>
                     </td>
                 </tr>
 
@@ -751,6 +780,26 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(&#x27;[Wallet] Stop Polling&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletTransfers"></a>
+                    <span class="name">
+                        <span ><b>WalletTransfers</b></span>
+                        <a href="#WalletTransfers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Loaded Transfers&#x27;, props&lt;{ address: string, transfers: GetTransfersOut[] }&gt;() )</code>
                     </td>
                 </tr>
 
@@ -2063,7 +2112,7 @@
 			address
 		],
 		wallets: {
-			...state.wallets, [address]: new Wallet()
+			...state.wallets, [address]: new Wallet(address)
 		}
 	})),
 	on(WalletActions.openWallet, (state: any, {address, password}) &#x3D;&gt; ({
@@ -2074,13 +2123,21 @@
 			address
 		],
 		wallets: {
-			...state.wallets, [address]: new Wallet()
+			...state.wallets, [address]: new Wallet(address)
 		}
 	})),
-	on(WalletActions.WalletLoaded, (state: any, {stats}) &#x3D;&gt; ({
-		...state,
-		wallets: {
-			...state.wallets,[state.loaded_wallet]: stats
+	on(WalletActions.WalletTransfers, (state: any, { address, transfers }) &#x3D;&gt; ({
+		...state, wallets: {
+			...state.wallets,[address]: {
+				...state.wallets[address], transfers: transfers
+			}
+		}
+	})),
+	on(WalletActions.WalletBalance, (state: any, { address, balance }) &#x3D;&gt; ({
+		...state, wallets: {
+			...state.wallets, [address]: {
+				...state.wallets[address], balance:  balance
+			}
 		}
 	}))
 )</code>
@@ -2637,6 +2694,31 @@
 </div>
                 </td>
             </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectWalletTransactions"></a>
+                    <span class="name">
+                        <span ><b>selectWalletTransactions</b></span>
+                        <a href="#selectWalletTransactions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectOpenedWalletData, (state) &#x3D;&gt; {
+
+		return state.transfers;
+
+
+})</code>
+                    </td>
+                </tr>
+
 
         </tbody>
     </table>

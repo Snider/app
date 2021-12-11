@@ -415,8 +415,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:61</a></div>
                 </td>
             </tr>
 
@@ -452,8 +452,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/plugins/lthn/wallet/wallet.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -970,19 +970,18 @@ export class WalletComponent implements OnInit, OnDestroy, AfterViewInit {
 
 	ngOnInit() {
 
-		this.store.dispatch(WalletActions.WalletStartPolling())
 		this.subs$[&#x27;wallets&#x27;] &#x3D; this.store.pipe(select(WalletActions.selectWallets)).subscribe((data) &#x3D;&gt; {
-			if(data) this.wallets &#x3D; data
-		})
-
-		this.subs$[&#x27;openedWallet&#x27;] &#x3D; this.store.pipe(select(WalletActions.selectOpenedWallet)).subscribe((wallet) &#x3D;&gt; {
-			if(wallet) {
-				this.openedWallet &#x3D; wallet
+			if(data &amp;&amp; data.length &gt; 0) {
+				this.wallets &#x3D; data
+				this.subs$[&#x27;openedWallet&#x27;] &#x3D; this.store.pipe(select(WalletActions.selectOpenedWallet)).subscribe((wallet) &#x3D;&gt; {
+					if(wallet) {
+						this.openedWallet &#x3D; wallet
+						this.store.dispatch(WalletActions.WalletStartPolling())
+					}
+				})
 
 			}
 		})
-
-		this.subs$[&#x27;walletData&#x27;] &#x3D; this.store.pipe(select(WalletActions.selectWalletHeight)).subscribe((data) &#x3D;&gt; console.log(data))
 
 	 }
 
@@ -994,6 +993,7 @@ export class WalletComponent implements OnInit, OnDestroy, AfterViewInit {
 		for (let sub of this.subs$){
 			sub.unsubscribe();
 		}
+		this.store.dispatch(WalletActions.WalletStopPolling())
 		console.log(&#x27;WalletComponent DESTROY&#x27;);
 	}
 
@@ -1084,7 +1084,7 @@ export class WalletComponent implements OnInit, OnDestroy, AfterViewInit {
             &lt;/div&gt;
             &lt;div fxFlex&#x3D;&quot;80&quot; style&#x3D;&quot;padding: 6px 0 6px 3px;&quot;&gt;
                 &lt;ng-container *ngIf&#x3D;&quot;openedWallet.length &gt; 1&quot;&gt;
-&lt;!--                    &lt;lthn-wallet-transactions [opts]&#x3D;&quot;txnSelection&quot;&gt;&lt;/lthn-wallet-transactions&gt;--&gt;
+                    &lt;lthn-wallet-transactions [opts]&#x3D;&quot;txnSelection&quot;&gt;&lt;/lthn-wallet-transactions&gt;
                 &lt;/ng-container&gt;
                 &lt;ng-container *ngIf&#x3D;&quot;openedWallet.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
 
@@ -1133,7 +1133,7 @@ export class WalletComponent implements OnInit, OnDestroy, AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="column">    <div fxFlex="100" style="padding: 12px 12px 3px 12px;">        <mat-toolbar>            <mat-toolbar-row>                <span class="lthn-brand">Wallet Manager</span>                <span class="flex-spacer"></span>                <button [routerLink]="[\'/\', \'wallet\', \'new\']" mat-button matTooltip="New Wallet">                    <mat-icon>account_balance_wallet</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'backup\']" mat-button matTooltip="Backup">                    <mat-icon>cloud_download</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'restore\']" mat-button matTooltip="Restore">                    <mat-icon>cloud_upload</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'settings\']" mat-button matTooltip="Settings">                    <mat-icon>settings</mat-icon>                </button>            </mat-toolbar-row>        </mat-toolbar>        <div fxLayout="row">            <div fxFlex="20" style="padding: 6px 3px 6px 0;">                <mat-card>                    <mat-card-title>Wallets</mat-card-title>                    <mat-card-content>                        <mat-select [(value)]="openedWallet" [placeholder]="openedWallet" >                            <mat-option *ngFor="let wallet of wallets"                                        value="{{wallet}}"                                        (click)="this.openWallet(wallet)">{{wallet}}</mat-option>                        </mat-select>                        <mat-divider></mat-divider>                        <h4>Available Columns</h4>                        <mat-list>                            <mat-list-item>                                <input type="checkbox" id="in" (click)="toggle(\'in\')" [checked]="isChecked(\'in\')"/>                                <label for="in">Incoming</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="out" (click)="toggle(\'out\')" [checked]="isChecked(\'out\')"/>                                <label for="out">Sent</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="pending" (click)="toggle(\'pending\')"                                       [checked]="isChecked(\'pending\')"/>                                <label for="pending">Pending</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="failed" (click)="toggle(\'failed\')"                                       [checked]="isChecked(\'failed\')"/>                                <label for="failed">Failed</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="pool" (click)="toggle(\'pool\')"                                       [checked]="isChecked(\'pool\')"/>                                <label for="pool">Pool</label>                            </mat-list-item>                        </mat-list>                    </mat-card-content>                </mat-card>            </div>            <div fxFlex="80" style="padding: 6px 0 6px 3px;">                <ng-container *ngIf="openedWallet.length > 1"><!--                    <lthn-wallet-transactions [opts]="txnSelection"></lthn-wallet-transactions>-->                </ng-container>                <ng-container *ngIf="openedWallet.length === 0">                        <lthn-wallet-add targetAddForm="open">                        </lthn-wallet-add>                </ng-container>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="column">    <div fxFlex="100" style="padding: 12px 12px 3px 12px;">        <mat-toolbar>            <mat-toolbar-row>                <span class="lthn-brand">Wallet Manager</span>                <span class="flex-spacer"></span>                <button [routerLink]="[\'/\', \'wallet\', \'new\']" mat-button matTooltip="New Wallet">                    <mat-icon>account_balance_wallet</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'backup\']" mat-button matTooltip="Backup">                    <mat-icon>cloud_download</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'restore\']" mat-button matTooltip="Restore">                    <mat-icon>cloud_upload</mat-icon>                </button>                <button [routerLink]="[\'/\', \'wallet\', \'settings\']" mat-button matTooltip="Settings">                    <mat-icon>settings</mat-icon>                </button>            </mat-toolbar-row>        </mat-toolbar>        <div fxLayout="row">            <div fxFlex="20" style="padding: 6px 3px 6px 0;">                <mat-card>                    <mat-card-title>Wallets</mat-card-title>                    <mat-card-content>                        <mat-select [(value)]="openedWallet" [placeholder]="openedWallet" >                            <mat-option *ngFor="let wallet of wallets"                                        value="{{wallet}}"                                        (click)="this.openWallet(wallet)">{{wallet}}</mat-option>                        </mat-select>                        <mat-divider></mat-divider>                        <h4>Available Columns</h4>                        <mat-list>                            <mat-list-item>                                <input type="checkbox" id="in" (click)="toggle(\'in\')" [checked]="isChecked(\'in\')"/>                                <label for="in">Incoming</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="out" (click)="toggle(\'out\')" [checked]="isChecked(\'out\')"/>                                <label for="out">Sent</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="pending" (click)="toggle(\'pending\')"                                       [checked]="isChecked(\'pending\')"/>                                <label for="pending">Pending</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="failed" (click)="toggle(\'failed\')"                                       [checked]="isChecked(\'failed\')"/>                                <label for="failed">Failed</label>                            </mat-list-item>                            <mat-list-item>                                <input type="checkbox" id="pool" (click)="toggle(\'pool\')"                                       [checked]="isChecked(\'pool\')"/>                                <label for="pool">Pool</label>                            </mat-list-item>                        </mat-list>                    </mat-card-content>                </mat-card>            </div>            <div fxFlex="80" style="padding: 6px 0 6px 3px;">                <ng-container *ngIf="openedWallet.length > 1">                    <lthn-wallet-transactions [opts]="txnSelection"></lthn-wallet-transactions>                </ng-container>                <ng-container *ngIf="openedWallet.length === 0">                        <lthn-wallet-add targetAddForm="open">                        </lthn-wallet-add>                </ng-container>            </div>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PluginsComponent', 'selector': 'lthn-app-plugins'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'WalletComponent'};

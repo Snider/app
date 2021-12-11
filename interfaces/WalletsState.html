@@ -216,6 +216,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {PaginatorOptions} from &#x27;@data/interface/pagination&#x27;;
+import {GetTransfersOut, Transfer} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
 
 export interface WalletsState {
 	loaded_wallet: string;
@@ -236,6 +237,7 @@ export interface Wallet {
 	 */
 	height: number;
 	name: string;
+	transfers: GetTransfersOut[];
 	options: {
 		inactivityThreshold: number;
 		pollingInterval: number;
@@ -247,8 +249,12 @@ export interface Wallet {
 export class Wallet implements Wallet {
 	options &#x3D; {
 		inactivityThreshold: 10,
-		pollingInterval: 1000,
+		pollingInterval: 10000,
 		pagination: new PaginatorOptions
+	}
+
+	constructor(name: string) {
+		this.name &#x3D; name
 	}
 
 }

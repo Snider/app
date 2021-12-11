@@ -116,7 +116,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:87</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:103</a></div>
                             </td>
                         </tr>
 
@@ -227,7 +227,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:87</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:103</a></div>
                         </td>
                     </tr>
 
@@ -264,7 +264,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -296,7 +296,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:70</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:86</a></div>
                         </td>
                     </tr>
 
@@ -328,7 +328,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:78</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:94</a></div>
                         </td>
                     </tr>
 
@@ -353,27 +353,40 @@
 				ofType(WalletActions.WalletLoadData),
 				// Get the polling interval
 				withLatestFrom(this.store.pipe(select(WalletSelectors.selectOpenedWalletData))),
-				switchMap(([action, wallet]) &#x3D;&gt; {
-						// Start polling
-						return merge(
+				switchMap(([action, wallet]) &#x3D;&gt; merge(
 							timer(0, wallet.options.pollingInterval).pipe(
 								takeWhile(() &#x3D;&gt; this.isPollingActiveStats),
-								switchMap(() &#x3D;&gt; this.http.post&lt;any&gt;(&#x60;https://localhost:36911/daemon/wallet/json_rpc&#x60;,
-									JSON.stringify(rpcBody(&#x27;getbalance&#x27;)(&#x27;&#x27;)))
-									.pipe(
-										map((data) &#x3D;&gt; {
-											console.log(data)
-												return {stats: data};
-											}
-										)
+								switchMap(() &#x3D;&gt;
+									merge(
+										this.http.post&lt;any&gt;(&#x60;https://localhost:36911/daemon/wallet/json_rpc&#x60;,
+											JSON.stringify(rpcBody(&#x27;getbalance&#x27;)(&#x27;&#x27;)))
+											.pipe(
+												map((res: any) &#x3D;&gt; {
+													this.store.dispatch( WalletActions.WalletBalance({
+														address: wallet.name,
+														balance: res[&#x27;result&#x27;] as Balance
+													}))
+													}
+												)
+											),
+										this.http.post&lt;any&gt;(&#x60;https://localhost:36911/daemon/wallet/json_rpc&#x60;,
+											JSON.stringify(rpcBody(&#x27;get_transfers&#x27;)({in: true, out: true, failed: true, pending: true } as GetTransfersIn)))
+											.pipe(
+												map((res: any) &#x3D;&gt; {
+													this.store.dispatch( WalletActions.WalletTransfers({
+														address: wallet.name,
+													 	transfers: res[&#x27;result&#x27;] as GetTransfersOut[]
+													}))
+
+													}
+												)
+											)
 									)
 								)
 							)
 						).pipe(
 							map((payload) &#x3D;&gt; {
-									return WalletActions.WalletLoaded({
-										stats: payload.stats
-									});
+									return WalletActions.WalletLoaded();
 								},
 								catchError((error) &#x3D;&gt; {
 										console.error(error);
@@ -381,8 +394,8 @@
 									}
 								)
 							)
-						);
-					}
+						)
+
 				)
 			)
 		)</code>
@@ -390,7 +403,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -415,6 +428,9 @@ import {merge, of, timer} from &#x27;rxjs&#x27;;
 import {selectOpenedWalletData, selectWalletData} from &#x27;./selectors&#x27;;
 import {HttpClient} from &#x27;@angular/common/http&#x27;;
 import {rpcBody} from &#x27;@service/json-rpc&#x27;;
+import {Balance, GetTransfersIn, GetTransfersOut} from &#x27;@plugin/lthn/wallet/interfaces&#x27;;
+import {WalletTransfers} from &#x27;./actions&#x27;;
+import {debug} from &#x27;@data/debug.rxjs&#x27;;
 
 @Injectable()
 export class WalletEffects {
@@ -438,27 +454,40 @@ export class WalletEffects {
 				ofType(WalletActions.WalletLoadData),
 				// Get the polling interval
 				withLatestFrom(this.store.pipe(select(WalletSelectors.selectOpenedWalletData))),
-				switchMap(([action, wallet]) &#x3D;&gt; {
-						// Start polling
-						return merge(
+				switchMap(([action, wallet]) &#x3D;&gt; merge(
 							timer(0, wallet.options.pollingInterval).pipe(
 								takeWhile(() &#x3D;&gt; this.isPollingActiveStats),
-								switchMap(() &#x3D;&gt; this.http.post&lt;any&gt;(&#x60;https://localhost:36911/daemon/wallet/json_rpc&#x60;,
-									JSON.stringify(rpcBody(&#x27;getbalance&#x27;)(&#x27;&#x27;)))
-									.pipe(
-										map((data) &#x3D;&gt; {
-											console.log(data)
-												return {stats: data};
-											}
-										)
+								switchMap(() &#x3D;&gt;
+									merge(
+										this.http.post&lt;any&gt;(&#x60;https://localhost:36911/daemon/wallet/json_rpc&#x60;,
+											JSON.stringify(rpcBody(&#x27;getbalance&#x27;)(&#x27;&#x27;)))
+											.pipe(
+												map((res: any) &#x3D;&gt; {
+													this.store.dispatch( WalletActions.WalletBalance({
+														address: wallet.name,
+														balance: res[&#x27;result&#x27;] as Balance
+													}))
+													}
+												)
+											),
+										this.http.post&lt;any&gt;(&#x60;https://localhost:36911/daemon/wallet/json_rpc&#x60;,
+											JSON.stringify(rpcBody(&#x27;get_transfers&#x27;)({in: true, out: true, failed: true, pending: true } as GetTransfersIn)))
+											.pipe(
+												map((res: any) &#x3D;&gt; {
+													this.store.dispatch( WalletActions.WalletTransfers({
+														address: wallet.name,
+													 	transfers: res[&#x27;result&#x27;] as GetTransfersOut[]
+													}))
+
+													}
+												)
+											)
 									)
 								)
 							)
 						).pipe(
 							map((payload) &#x3D;&gt; {
-									return WalletActions.WalletLoaded({
-										stats: payload.stats
-									});
+									return WalletActions.WalletLoaded();
 								},
 								catchError((error) &#x3D;&gt; {
 										console.error(error);
@@ -466,8 +495,8 @@ export class WalletEffects {
 									}
 								)
 							)
-						);
-					}
+						)
+
 				)
 			)
 		);
