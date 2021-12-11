@@ -173,8 +173,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:64</a></div>
                 </td>
             </tr>
 
@@ -256,8 +256,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:50</a></div>
                 </td>
             </tr>
 
@@ -427,8 +427,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/app/services/web-storage.service.ts:45</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/services/web-storage.service.ts:44</a></div>
                 </td>
             </tr>
 
@@ -710,10 +710,10 @@ export class WebStorageService implements Storage {
 
 	getItem(key): string | null {
 		try {
-			if(this.items[key]){
-				return this.items[key]
+			const ret &#x3D; this.backend(&#x27;get&#x27;, {object: key});
+			if(ret){
+				return JSON.parse(ret)
 			}
-			return this.backend(&#x27;get&#x27;, {object: key});
 		}catch (e){
 			console.log(&#x27;getItem Error&#x27;)
 		}
@@ -722,7 +722,6 @@ export class WebStorageService implements Storage {
 
 	setItem(key: string, value: string) {
 		try {
-			this.items[key] &#x3D; value
 			this.count++
 			return this.backend(&#x27;set&#x27;, {object: key, data: value});
 		}catch (e){

@@ -335,7 +335,7 @@ export function localStorageSyncReducer(
 		],
 		rehydrate: true,
 		removeOnUndefined: true,
-		storage:  new WebStorageService()
+		//storage:  new WebStorageService()
 	})(reducer);
 }
 
@@ -343,7 +343,7 @@ export const metaReducers: MetaReducer&lt;AppState&gt;[] &#x3D; !APP_CONFIG.prod
 	? [localStorageSyncReducer]
 	: [localStorageSyncReducer];
 
-export const effects &#x3D; [Chart.ChartsEffects, Settings.SettingsEffects ];
+export const effects &#x3D; [Chart.ChartsEffects, Settings.SettingsEffects, Wallet.WalletEffects ];
 </code></pre>
     </div>
 </div>

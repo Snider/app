@@ -260,6 +260,9 @@
                             <a href="#settingsReducer" title="src/app/modules/settings/data/settings.reducer.ts" ><b>settingsReducer</b>&nbsp;&nbsp;&nbsp;(src/.../settings.reducer.ts)</a>
                         </li>
                         <li>
+                            <a href="#switchWallet" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>switchWallet</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
                             <a href="#toggleBiggerContentFont" title="src/app/modules/settings/data/settings.actions.ts" ><b>toggleBiggerContentFont</b>&nbsp;&nbsp;&nbsp;(src/.../settings.actions.ts)</a>
                         </li>
                         <li>
@@ -433,6 +436,29 @@
                         <i>Default value : </i><code>createAction(
 	&#x27;[Wallet] Open Wallet&#x27;,
 	props&lt;{ wallet: string, password: string }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchWallet"></a>
+                    <span class="name">
+                        <span ><b>switchWallet</b></span>
+                        <a href="#switchWallet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+	&#x27;[Wallet] Switching Wallets&#x27;,
+	props&lt;{ wallet: string }&gt;()
 )</code>
                     </td>
                 </tr>
@@ -1209,7 +1235,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>[Chart.ChartsEffects, Settings.SettingsEffects ]</code>
+                        <i>Default value : </i><code>[Chart.ChartsEffects, Settings.SettingsEffects, Wallet.WalletEffects ]</code>
                     </td>
                 </tr>
 
@@ -1718,7 +1744,6 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
-	count: 0,
 	known_wallets: [],
 	loaded_wallet: &#x27;&#x27;
 }</code>
@@ -1745,7 +1770,6 @@
 	initialState,
 	on(WalletActions.addWallet, (state: any, { wallet }) &#x3D;&gt; ({
 		...state,
-		count: state.count+1,
 		known_wallets: [
 			...state.known_wallets,
 			wallet
@@ -1754,7 +1778,6 @@
 	on(WalletActions.openWallet, (state: any, {wallet, password}) &#x3D;&gt; ({
 		...state,
 		loaded_wallet: wallet,
-		count: state.count+1,
 		known_wallets: [
 			...state.known_wallets,
 			wallet
@@ -2159,8 +2182,8 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>createSelector(selectWalletsState, (state) &#x3D;&gt; {
-	if (state &amp;&amp; state.count) {
-		return state.count;
+	if (state &amp;&amp; state.known_wallets) {
+		return state.known_wallets.length;
 	}
 	return null;
 })</code>
