@@ -218,18 +218,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/PipesModule.html" data-type="entity-link" >PipesModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-PipesModule-bea6c5c77a5ded0f72ff6f29aea755f899e3ef9d37815992bfc4c9cef6488d8cca0c07def291e694d2cb7e124e9bf917ce3ff9a75537e6f48df086f5b2fffba5"' : 'data-target="#xs-pipes-links-module-PipesModule-bea6c5c77a5ded0f72ff6f29aea755f899e3ef9d37815992bfc4c9cef6488d8cca0c07def291e694d2cb7e124e9bf917ce3ff9a75537e6f48df086f5b2fffba5"' }>
+                                            'data-target="#pipes-links-module-PipesModule-1ae9ca760d19acbbb1ca75182315b1079ef26acc71a7ecc025f957cbc000c0306e9117e5686173a0ecefc8202c531d75d4014a984ac11d80a65490531129ffcd"' : 'data-target="#xs-pipes-links-module-PipesModule-1ae9ca760d19acbbb1ca75182315b1079ef26acc71a7ecc025f957cbc000c0306e9117e5686173a0ecefc8202c531d75d4014a984ac11d80a65490531129ffcd"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-PipesModule-bea6c5c77a5ded0f72ff6f29aea755f899e3ef9d37815992bfc4c9cef6488d8cca0c07def291e694d2cb7e124e9bf917ce3ff9a75537e6f48df086f5b2fffba5"' :
-                                            'id="xs-pipes-links-module-PipesModule-bea6c5c77a5ded0f72ff6f29aea755f899e3ef9d37815992bfc4c9cef6488d8cca0c07def291e694d2cb7e124e9bf917ce3ff9a75537e6f48df086f5b2fffba5"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-PipesModule-1ae9ca760d19acbbb1ca75182315b1079ef26acc71a7ecc025f957cbc000c0306e9117e5686173a0ecefc8202c531d75d4014a984ac11d80a65490531129ffcd"' :
+                                            'id="xs-pipes-links-module-PipesModule-1ae9ca760d19acbbb1ca75182315b1079ef26acc71a7ecc025f957cbc000c0306e9117e5686173a0ecefc8202c531d75d4014a984ac11d80a65490531129ffcd"' }>
                                             <li class="link">
                                                 <a href="pipes/EffortPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >EffortPipe</a>
                                             </li>
                                             <li class="link">
                                                 <a href="pipes/EscapeHtmlPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >EscapeHtmlPipe</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="pipes/HashLinkPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >HashLinkPipe</a>
                                             </li>
                                             <li class="link">
                                                 <a href="pipes/HashRatePipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >HashRatePipe</a>
@@ -753,6 +756,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="pipes-links"' : 'id="xs-pipes-links"' }>
+                                <li class="link">
+                                    <a href="pipes/HashLinkPipe.html" data-type="entity-link" >HashLinkPipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="pipes/ToCoinPipe.html" data-type="entity-link" >ToCoinPipe</a>
                                 </li>
