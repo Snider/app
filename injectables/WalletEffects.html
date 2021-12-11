@@ -77,7 +77,20 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isPollingActiveStats" >isPollingActiveStats</a>
+                            </li>
+                            <li>
                                 <a href="#openWallet" >openWallet</a>
+                            </li>
+                            <li>
+                                <a href="#StartPollingWallet$" >StartPollingWallet$</a>
+                            </li>
+                            <li>
+                                <a href="#StopPollingWallet$" >StopPollingWallet$</a>
+                            </li>
+                            <li>
+                                <a href="#WalletLoadData$" >WalletLoadData$</a>
                             </li>
                         </ul>
                     </td>
@@ -98,12 +111,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(actions$: Actions, translate: TranslateService, store: Store, wallet: <a href="../injectables/WalletService.html" target="_self">WalletService</a>)</code>
+<code>constructor(actions$: Actions, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, translate: TranslateService, store: Store, wallet: <a href="../injectables/WalletService.html" target="_self">WalletService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:87</a></div>
                             </td>
                         </tr>
 
@@ -125,6 +138,18 @@
                                                   
                                                         <td>
                                                                     <code>Actions</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -187,6 +212,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="isPollingActiveStats"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>isPollingActiveStats</b></span>
+                        <a href="#isPollingActiveStats"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="openWallet"></a>
                     <span class="name">
                         <span ><b>openWallet</b></span>
@@ -200,20 +251,146 @@
 		() &#x3D;&gt;
 			this.actions$.pipe(
 				ofType(&#x27;[Wallet] Open Wallet&#x27;),
-				switchMap((req: { name: string; password: string }) &#x3D;&gt; {
+				switchMap((req: { address: string; password: string }) &#x3D;&gt; {
 					return this.wallet.openWallet({
-						filename: req.name,
+						filename: req.address,
 						password: req.password
-					})
+					});
 				})
 			),
-		{ dispatch: false }
+		{dispatch: false}
 	)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StartPollingWallet$"></a>
+                    <span class="name">
+                        <span ><b>StartPollingWallet$</b></span>
+                        <a href="#StartPollingWallet$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+		this.actions$.pipe(
+			ofType(WalletActions.WalletStartPolling),
+			map(() &#x3D;&gt; {
+				this.isPollingActiveStats &#x3D; true;
+				return WalletActions.WalletLoadData();
+			})
+		))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StopPollingWallet$"></a>
+                    <span class="name">
+                        <span ><b>StopPollingWallet$</b></span>
+                        <a href="#StopPollingWallet$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+		this.actions$.pipe(
+			ofType(WalletActions.WalletStopPolling),
+			map(() &#x3D;&gt; {
+				this.isPollingActiveStats &#x3D; false;
+				return WalletActions.WalletStoppedPolling();
+			})
+		))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletLoadData$"></a>
+                    <span class="name">
+                        <span ><b>WalletLoadData$</b></span>
+                        <a href="#WalletLoadData$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt; this.actions$.pipe(
+				// Filter action type
+				ofType(WalletActions.WalletLoadData),
+				// Get the polling interval
+				withLatestFrom(this.store.pipe(select(WalletSelectors.selectOpenedWalletData))),
+				switchMap(([action, wallet]) &#x3D;&gt; {
+						// Start polling
+						return merge(
+							timer(0, wallet.options.pollingInterval).pipe(
+								takeWhile(() &#x3D;&gt; this.isPollingActiveStats),
+								switchMap(() &#x3D;&gt; this.http.post&lt;any&gt;(&#x60;https://localhost:36911/daemon/wallet/json_rpc&#x60;,
+									JSON.stringify(rpcBody(&#x27;getbalance&#x27;)(&#x27;&#x27;)))
+									.pipe(
+										map((data) &#x3D;&gt; {
+											console.log(data)
+												return {stats: data};
+											}
+										)
+									)
+								)
+							)
+						).pipe(
+							map((payload) &#x3D;&gt; {
+									return WalletActions.WalletLoaded({
+										stats: payload.stats
+									});
+								},
+								catchError((error) &#x3D;&gt; {
+										console.error(error);
+										return of(WalletActions.WalletFailure({error}));
+									}
+								)
+							)
+						);
+					}
+				)
+			)
+		)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/plugins/lthn/wallet/data/effects.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -226,12 +403,18 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
-import {map, switchMap} from &#x27;rxjs/operators&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {Actions, createEffect, ofType} from &#x27;@ngrx/effects&#x27;;
+import {catchError, map, switchMap, takeWhile, withLatestFrom} from &#x27;rxjs/operators&#x27;;
 import {TranslateService} from &#x27;@ngx-translate/core&#x27;;
 import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
-import {Store} from &#x27;@ngrx/store&#x27;;
+import {select, Store} from &#x27;@ngrx/store&#x27;;
+import * as WalletActions from &#x27;./actions&#x27;;
+import * as WalletSelectors from &#x27;./selectors&#x27;;
+import {merge, of, timer} from &#x27;rxjs&#x27;;
+import {selectOpenedWalletData, selectWalletData} from &#x27;./selectors&#x27;;
+import {HttpClient} from &#x27;@angular/common/http&#x27;;
+import {rpcBody} from &#x27;@service/json-rpc&#x27;;
 
 @Injectable()
 export class WalletEffects {
@@ -239,17 +422,77 @@ export class WalletEffects {
 		() &#x3D;&gt;
 			this.actions$.pipe(
 				ofType(&#x27;[Wallet] Open Wallet&#x27;),
-				switchMap((req: { name: string; password: string }) &#x3D;&gt; {
+				switchMap((req: { address: string; password: string }) &#x3D;&gt; {
 					return this.wallet.openWallet({
-						filename: req.name,
+						filename: req.address,
 						password: req.password
-					})
+					});
 				})
 			),
-		{ dispatch: false }
+		{dispatch: false}
 	);
 
-	constructor(private actions$: Actions, private translate: TranslateService, private store: Store, private wallet: WalletService) {}
+	WalletLoadData$ &#x3D;
+		createEffect(() &#x3D;&gt; this.actions$.pipe(
+				// Filter action type
+				ofType(WalletActions.WalletLoadData),
+				// Get the polling interval
+				withLatestFrom(this.store.pipe(select(WalletSelectors.selectOpenedWalletData))),
+				switchMap(([action, wallet]) &#x3D;&gt; {
+						// Start polling
+						return merge(
+							timer(0, wallet.options.pollingInterval).pipe(
+								takeWhile(() &#x3D;&gt; this.isPollingActiveStats),
+								switchMap(() &#x3D;&gt; this.http.post&lt;any&gt;(&#x60;https://localhost:36911/daemon/wallet/json_rpc&#x60;,
+									JSON.stringify(rpcBody(&#x27;getbalance&#x27;)(&#x27;&#x27;)))
+									.pipe(
+										map((data) &#x3D;&gt; {
+											console.log(data)
+												return {stats: data};
+											}
+										)
+									)
+								)
+							)
+						).pipe(
+							map((payload) &#x3D;&gt; {
+									return WalletActions.WalletLoaded({
+										stats: payload.stats
+									});
+								},
+								catchError((error) &#x3D;&gt; {
+										console.error(error);
+										return of(WalletActions.WalletFailure({error}));
+									}
+								)
+							)
+						);
+					}
+				)
+			)
+		);
+
+	StartPollingWallet$ &#x3D; createEffect(() &#x3D;&gt;
+		this.actions$.pipe(
+			ofType(WalletActions.WalletStartPolling),
+			map(() &#x3D;&gt; {
+				this.isPollingActiveStats &#x3D; true;
+				return WalletActions.WalletLoadData();
+			})
+		));
+	StopPollingWallet$ &#x3D; createEffect(() &#x3D;&gt;
+		this.actions$.pipe(
+			ofType(WalletActions.WalletStopPolling),
+			map(() &#x3D;&gt; {
+				this.isPollingActiveStats &#x3D; false;
+				return WalletActions.WalletStoppedPolling();
+			})
+		));
+
+	private isPollingActiveStats &#x3D; false;
+
+	constructor(private actions$: Actions, private http: HttpClient, private translate: TranslateService, private store: Store, private wallet: WalletService) {
+	}
 }
 </code></pre>
     </div>

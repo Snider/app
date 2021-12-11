@@ -479,6 +479,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="classes/LTHN.html" data-type="entity-link" >LTHN</a>
                             </li>
+                            <li class="link">
+                                <a href="classes/PaginatorOptions.html" data-type="entity-link" >PaginatorOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PaginatorOptionsInterface.html" data-type="entity-link" >PaginatorOptionsInterface</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/WalletState.html" data-type="entity-link" >WalletState</a>
+                            </li>
                         </ul>
                     </li>
                         <li class="chapter">

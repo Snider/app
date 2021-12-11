@@ -340,7 +340,7 @@ export function localStorageSyncReducer(
 }
 
 export const metaReducers: MetaReducer&lt;AppState&gt;[] &#x3D; !APP_CONFIG.production
-	? [localStorageSyncReducer]
+	? []
 	: [localStorageSyncReducer];
 
 export const effects &#x3D; [Chart.ChartsEffects, Settings.SettingsEffects, Wallet.WalletEffects ];

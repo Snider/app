@@ -128,6 +128,9 @@
                             <a href="#getPluginList" title="src/app/data/plugins/actions.ts" ><b>getPluginList</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
+                            <a href="#getWalletData" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>getWalletData</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
                             <a href="#getWalletList" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>getWalletList</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
@@ -224,6 +227,9 @@
                             <a href="#selectOpenedWallet" title="src/app/plugins/lthn/wallet/data/selectors.ts" ><b>selectOpenedWallet</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#selectOpenedWalletData" title="src/app/plugins/lthn/wallet/data/selectors.ts" ><b>selectOpenedWalletData</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#selectPlugins" title="src/app/data/plugins/selectors.ts" ><b>selectPlugins</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
                         </li>
                         <li>
@@ -243,6 +249,12 @@
                         </li>
                         <li>
                             <a href="#selectWalletCount" title="src/app/plugins/lthn/wallet/data/selectors.ts" ><b>selectWalletCount</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectWalletData" title="src/app/plugins/lthn/wallet/data/selectors.ts" ><b>selectWalletData</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectWalletHeight" title="src/app/plugins/lthn/wallet/data/selectors.ts" ><b>selectWalletHeight</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
                         </li>
                         <li>
                             <a href="#selectWallets" title="src/app/plugins/lthn/wallet/data/selectors.ts" ><b>selectWallets</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
@@ -281,13 +293,46 @@
                             <a href="#toggleRtl" title="src/app/modules/settings/data/settings.actions.ts" ><b>toggleRtl</b>&nbsp;&nbsp;&nbsp;(src/.../settings.actions.ts)</a>
                         </li>
                         <li>
+                            <a href="#updateWalletData" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>updateWalletData</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
                             <a href="#userActionTypes" title="src/app/modules/user/data/user/actions.ts" ><b>userActionTypes</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
                             <a href="#userReducer" title="src/app/modules/user/data/user/reducer.ts" ><b>userReducer</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
                         </li>
                         <li>
+                            <a href="#WalletAdd" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletAdd</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletAddInvalid" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletAddInvalid</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletAddValid" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletAddValid</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletDelete" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletDelete</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletFailure" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletFailure</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletLoadData" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletLoadData</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletLoaded" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
                             <a href="#walletReducer" title="src/app/plugins/lthn/wallet/data/reducer.ts" ><b>walletReducer</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletStartPolling" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletStartPolling</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletStoppedPolling" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletStoppedPolling</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WalletStopPolling" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>WalletStopPolling</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
                             <a href="#WS_ENDPOINT" title="src/app/services/websocket.service.ts" ><b>WS_ENDPOINT</b>&nbsp;&nbsp;&nbsp;(src/.../websocket.service.ts)</a>
@@ -390,8 +435,31 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
 	&#x27;[Wallet] Adding Known Wallet&#x27;,
-	props&lt;{ wallet: string }&gt;()
+	props&lt;{ address: string }&gt;()
 )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getWalletData"></a>
+                    <span class="name">
+                        <span ><b>getWalletData</b></span>
+                        <a href="#getWalletData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+	&#x27;[Wallet] Get Wallet Data&#x27;,
+	props&lt;{ address: string }&gt;()
+	)</code>
                     </td>
                 </tr>
 
@@ -435,7 +503,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
 	&#x27;[Wallet] Open Wallet&#x27;,
-	props&lt;{ wallet: string, password: string }&gt;()
+	props&lt;{ address: string, password: string }&gt;()
 )</code>
                     </td>
                 </tr>
@@ -458,8 +526,231 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
 	&#x27;[Wallet] Switching Wallets&#x27;,
-	props&lt;{ wallet: string }&gt;()
+	props&lt;{ address: string }&gt;()
 )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateWalletData"></a>
+                    <span class="name">
+                        <span ><b>updateWalletData</b></span>
+                        <a href="#updateWalletData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+	&#x27;[Wallet] Wallet Data Update&#x27;,
+	props&lt;{ address: string, payload: any }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletAdd"></a>
+                    <span class="name">
+                        <span ><b>WalletAdd</b></span>
+                        <a href="#WalletAdd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Add Address&#x27;, props&lt;{ address: string}&gt;() )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletAddInvalid"></a>
+                    <span class="name">
+                        <span ><b>WalletAddInvalid</b></span>
+                        <a href="#WalletAddInvalid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Invalid Address&#x27;, props&lt;{ error: any }&gt;() )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletAddValid"></a>
+                    <span class="name">
+                        <span ><b>WalletAddValid</b></span>
+                        <a href="#WalletAddValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Valid Address &#x27;, props&lt;{ address: any}&gt;() )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletDelete"></a>
+                    <span class="name">
+                        <span ><b>WalletDelete</b></span>
+                        <a href="#WalletDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Delete Address&#x27;, props&lt;{ address: any }&gt;() )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletFailure"></a>
+                    <span class="name">
+                        <span ><b>WalletFailure</b></span>
+                        <a href="#WalletFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] General Fail&#x27;, props&lt;{ error: string }&gt;() )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletLoadData"></a>
+                    <span class="name">
+                        <span ><b>WalletLoadData</b></span>
+                        <a href="#WalletLoadData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Load Requested&#x27; )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletLoaded"></a>
+                    <span class="name">
+                        <span ><b>WalletLoaded</b></span>
+                        <a href="#WalletLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Loaded&#x27;, props&lt;{  stats: any }&gt;() )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletStartPolling"></a>
+                    <span class="name">
+                        <span ><b>WalletStartPolling</b></span>
+                        <a href="#WalletStartPolling"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Start Polling&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletStoppedPolling"></a>
+                    <span class="name">
+                        <span ><b>WalletStoppedPolling</b></span>
+                        <a href="#WalletStoppedPolling"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Stopped Polling&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WalletStopPolling"></a>
+                    <span class="name">
+                        <span ><b>WalletStopPolling</b></span>
+                        <a href="#WalletStopPolling"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Wallet] Stop Polling&#x27;)</code>
                     </td>
                 </tr>
 
@@ -1262,7 +1553,7 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>!APP_CONFIG.production
-	? [localStorageSyncReducer]
+	? []
 	: [localStorageSyncReducer]</code>
                     </td>
                 </tr>
@@ -1743,10 +2034,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>{
-	known_wallets: [],
-	loaded_wallet: &#x27;&#x27;
-}</code>
+                        <i>Default value : </i><code>new WalletState</code>
                     </td>
                 </tr>
 
@@ -1768,20 +2056,32 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createReducer(
 	initialState,
-	on(WalletActions.addWallet, (state: any, { wallet }) &#x3D;&gt; ({
+	on(WalletActions.addWallet, (state: any, { address }) &#x3D;&gt; ({
 		...state,
 		known_wallets: [
 			...state.known_wallets,
-			wallet
-		]
+			address
+		],
+		wallets: {
+			...state.wallets, [address]: new Wallet()
+		}
 	})),
-	on(WalletActions.openWallet, (state: any, {wallet, password}) &#x3D;&gt; ({
+	on(WalletActions.openWallet, (state: any, {address, password}) &#x3D;&gt; ({
 		...state,
-		loaded_wallet: wallet,
+		loaded_wallet: address,
 		known_wallets: [
 			...state.known_wallets,
-			wallet
-		]
+			address
+		],
+		wallets: {
+			...state.wallets, [address]: new Wallet()
+		}
+	})),
+	on(WalletActions.WalletLoaded, (state: any, {stats}) &#x3D;&gt; ({
+		...state,
+		wallets: {
+			...state.wallets,[state.loaded_wallet]: stats
+		}
 	}))
 )</code>
                     </td>
@@ -2157,14 +2457,43 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>createSelector(selectWalletsState, (state) &#x3D;&gt; {
-	if (state &amp;&amp; state.loaded_wallet) {
+
 		return state.loaded_wallet;
-	}
-	return null;
+
 })</code>
                     </td>
                 </tr>
 
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectOpenedWalletData"></a>
+                    <span class="name">
+                        <span ><b>selectOpenedWalletData</b></span>
+                        <a href="#selectOpenedWalletData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectWalletsState, (state) &#x3D;&gt; {
+
+		return state.wallets[state.loaded_wallet];
+
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Select Opened Wallet</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2197,6 +2526,67 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="selectWalletData"></a>
+                    <span class="name">
+                        <span ><b>selectWalletData</b></span>
+                        <a href="#selectWalletData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectOpenedWalletData, (state) &#x3D;&gt; {
+
+		return state;
+
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Select Wallet Global</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectWalletHeight"></a>
+                    <span class="name">
+                        <span ><b>selectWalletHeight</b></span>
+                        <a href="#selectWalletHeight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectOpenedWalletData, (state) &#x3D;&gt; {
+	if (state &amp;&amp; state.height) {
+		return state.height;
+	}
+	return null;
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get wallet height using walletData selector as base</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="selectWallets"></a>
                     <span class="name">
                         <span ><b>selectWallets</b></span>
@@ -2215,6 +2605,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Select known wallets</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2235,6 +2631,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Wallet Datastore feature name</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>

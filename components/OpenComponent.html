@@ -537,7 +537,7 @@ export class OpenComponent implements OnInit {
 	 * @returns {Promise&lt;AxiosResponse&lt;any&gt;&gt;}
 	 */
 	unlockWallet(name: string) {
-		this.store.dispatch(openWallet({wallet: name, password: (&lt;HTMLInputElement&gt;document.getElementById(name + &#x27;-pass&#x27;)).value}))
+		this.store.dispatch(openWallet({address: name, password: (&lt;HTMLInputElement&gt;document.getElementById(name + &#x27;-pass&#x27;)).value}))
 //		return this.wallet.openWallet({
 //			filename: name,
 //			password:
