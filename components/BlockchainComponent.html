@@ -280,8 +280,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.component.ts:36</a></div>
                 </td>
             </tr>
 
@@ -431,10 +431,7 @@ export class BlockchainComponent implements OnInit, OnDestroy {
 			.subscribe((data) &#x3D;&gt; {
 				this.recentTxs &#x3D; data.data.blocks;
 			});
-		this.chain.chainRpc(&#x27;get_info&#x27;, &#x27;&#x27;).subscribe((data) &#x3D;&gt; {
-			this.store.dispatch(ChainSetGetInfo({info: data.result}))
-			console.log(data.result)
-		})
+		this.chain.getInfo()
 
 	}
 

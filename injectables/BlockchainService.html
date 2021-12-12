@@ -87,6 +87,9 @@
                                 <a href="#exportChain" >exportChain</a>
                             </li>
                             <li>
+                                <a href="#getInfo" >getInfo</a>
+                            </li>
+                            <li>
                                 <a href="#importChain" >importChain</a>
                             </li>
                             <li>
@@ -110,12 +113,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, store: Store)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -137,6 +140,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
                                                         </td>
                                                   
                                                     <td>
@@ -178,8 +193,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:91</a></div>
                 </td>
             </tr>
 
@@ -259,8 +274,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:78</a></div>
                 </td>
             </tr>
 
@@ -304,8 +319,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:34</a></div>
                 </td>
             </tr>
 
@@ -317,6 +332,43 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInfo"></a>
+                    <span class="name">
+                        <span ><b>getInfo</b></span>
+                        <a href="#getInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getInfo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                 </td>
@@ -343,8 +395,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:55</a></div>
                 </td>
             </tr>
 
@@ -382,8 +434,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:13</a></div>
                 </td>
             </tr>
 
@@ -408,12 +460,14 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import {rpcBody} from &#x27;@service/json-rpc&#x27;;
+import {ChainSetGetInfo} from &#x27;@plugin/lthn/chain/data&#x27;;
+import {Store} from &#x27;@ngrx/store&#x27;;
 
 @Injectable({
 	providedIn: &#x27;root&#x27;
 })
 export class BlockchainService {
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient, private store: Store) {}
 
 	startDaemon() {
 		const options &#x3D; {
@@ -496,6 +550,12 @@ export class BlockchainService {
 	chainRpc(method: string, params: any) {
 		return this.http
 			.post&lt;any&gt;(&#x27;https://localhost:36911/daemon/chain/json_rpc&#x27;, JSON.stringify(rpcBody(method)(params)));
+	}
+
+	getInfo(){
+		this.chainRpc(&#x27;get_info&#x27;, &#x27;&#x27;).subscribe((data) &#x3D;&gt; {
+			this.store.dispatch(ChainSetGetInfo({info: data.result}))
+		})
 	}
 }
 </code></pre>
