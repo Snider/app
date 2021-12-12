@@ -83,6 +83,18 @@
                             <a href="#axios" title="src/app/services/wallet.rpc.service.ts" ><b>axios</b>&nbsp;&nbsp;&nbsp;(src/.../wallet.rpc.service.ts)</a>
                         </li>
                         <li>
+                            <a href="#ChainLoadData" title="src/app/plugins/lthn/chain/data/actions.ts" ><b>ChainLoadData</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ChainLoaded" title="src/app/plugins/lthn/chain/data/actions.ts" ><b>ChainLoaded</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#chainReducer" title="src/app/plugins/lthn/chain/data/reducer.ts" ><b>chainReducer</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ChainSetGetInfo" title="src/app/plugins/lthn/chain/data/actions.ts" ><b>ChainSetGetInfo</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
+                        </li>
+                        <li>
                             <a href="#changeLanguage" title="src/app/modules/settings/data/settings.actions.ts" ><b>changeLanguage</b>&nbsp;&nbsp;&nbsp;(src/.../settings.actions.ts)</a>
                         </li>
                         <li>
@@ -125,6 +137,9 @@
                             <a href="#generatePaymentId" title="src/app/plugins/lthn/wallet/interfaces/wallet.ts" ><b>generatePaymentId</b>&nbsp;&nbsp;&nbsp;(src/.../wallet.ts)</a>
                         </li>
                         <li>
+                            <a href="#getChainInfo" title="src/app/plugins/lthn/chain/data/selectors.ts" ><b>getChainInfo</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#getPluginList" title="src/app/data/plugins/actions.ts" ><b>getPluginList</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
@@ -150,6 +165,9 @@
                         </li>
                         <li>
                             <a href="#initialState" title="src/app/modules/user/data/user/reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/plugins/lthn/chain/data/reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#initialState" title="src/app/plugins/lthn/wallet/data/reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
@@ -189,6 +207,9 @@
                         </li>
                         <li>
                             <a href="#RxJsLogging" title="src/app/data/debug.rxjs.ts" ><b>RxJsLogging</b>&nbsp;&nbsp;&nbsp;(src/.../debug.rxjs.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectChainState" title="src/app/plugins/lthn/chain/data/selectors.ts" ><b>selectChainState</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
                         </li>
                         <li>
                             <a href="#selectChart" title="src/app/modules/chart/data/selectors.ts" ><b>selectChart</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
@@ -1008,6 +1029,127 @@
         </tbody>
     </table>
 </section>
+    <h3>src/app/plugins/lthn/chain/data/actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ChainLoadData"></a>
+                    <span class="name">
+                        <span ><b>ChainLoadData</b></span>
+                        <a href="#ChainLoadData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Chain] Load Requested&#x27; )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ChainLoaded"></a>
+                    <span class="name">
+                        <span ><b>ChainLoaded</b></span>
+                        <a href="#ChainLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Chain] Loaded&#x27; )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ChainSetGetInfo"></a>
+                    <span class="name">
+                        <span ><b>ChainSetGetInfo</b></span>
+                        <a href="#ChainSetGetInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Chain] Set Get Info&#x27;, props&lt;{ info: ChainGetInfo }&gt;() )</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/plugins/lthn/chain/data/reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chainReducer"></a>
+                    <span class="name">
+                        <span ><b>chainReducer</b></span>
+                        <a href="#chainReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+	initialState,
+	on(ChainActions.ChainSetGetInfo, (state: any, { info }) &#x3D;&gt; ({
+		...state,
+		info
+	})),
+
+
+
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialState"></a>
+                    <span class="name">
+                        <span ><b>initialState</b></span>
+                        <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ChainState</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new ChainState</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
     <h3>src/app/modules/settings/data/settings.actions.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -1634,7 +1776,8 @@
 	charts: Chart.reducer,
 	user: User.reducer,
 	logs: Logs.reducer,
-	wallets: Wallet.reducer
+	wallets: Wallet.reducer,
+	chain: Chain.reducer
 }</code>
                     </td>
                 </tr>
@@ -1747,6 +1890,65 @@
                     </td>
                 </tr>
 
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/plugins/lthn/chain/data/selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getChainInfo"></a>
+                    <span class="name">
+                        <span ><b>getChainInfo</b></span>
+                        <a href="#getChainInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectChainState, (state) &#x3D;&gt; {
+
+		return state.info;
+
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Select known wallets</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectChainState"></a>
+                    <span class="name">
+                        <span ><b>selectChainState</b></span>
+                        <a href="#selectChainState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createFeatureSelector&lt;ChainState&gt;(&#x27;chain&#x27;)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Wallet Datastore feature name</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>

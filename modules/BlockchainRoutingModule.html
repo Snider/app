@@ -80,7 +80,7 @@ import {AuthGuard} from &#x27;@module/auth/route.guard&#x27;;
 const routes: Routes &#x3D; [
 	{
 		path: &#x27;chain&#x27;,
-		canActivate: [AuthGuard],
+		//canActivate: [AuthGuard],
 		loadChildren: () &#x3D;&gt;
 			&quot;import(&#x27;./blockchain.module&#x27;).then((m) &#x3D;&gt; m.BlockchainModule)&quot;
 	}

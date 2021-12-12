@@ -78,6 +78,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#chainRpc" >chainRpc</a>
+                            </li>
+                            <li>
                                 <a href="#downloadCLI" >downloadCLI</a>
                             </li>
                             <li>
@@ -112,7 +115,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -159,6 +162,87 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="chainRpc"></a>
+                    <span class="name">
+                        <span ><b>chainRpc</b></span>
+                        <a href="#chainRpc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>chainRpc(method: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, params: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>method</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="downloadCLI"></a>
                     <span class="name">
                         <span ><b>downloadCLI</b></span>
@@ -175,8 +259,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:76</a></div>
                 </td>
             </tr>
 
@@ -220,8 +304,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -259,8 +343,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -298,8 +382,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="10"
-                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:10</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="11"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:11</a></div>
                 </td>
             </tr>
 
@@ -323,6 +407,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import {rpcBody} from &#x27;@service/json-rpc&#x27;;
 
 @Injectable({
 	providedIn: &#x27;root&#x27;
@@ -406,6 +491,11 @@ export class BlockchainService {
 			.post&lt;any&gt;(&#x60;https://localhost:36911/update/cli&#x60;, {}, options)
 			.toPromise()
 			.then((dat) &#x3D;&gt; dat);
+	}
+
+	chainRpc(method: string, params: any) {
+		return this.http
+			.post&lt;any&gt;(&#x27;https://localhost:36911/daemon/chain/json_rpc&#x27;, JSON.stringify(rpcBody(method)(params)));
 	}
 }
 </code></pre>

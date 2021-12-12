@@ -310,13 +310,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/RootModule.html" data-type="entity-link" >RootModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-RootModule-7b37fa757a8b75664f15286c10dd28ed6426292b089542db0a8e60fdd30dc3e6ffb2c959ae9429383e0432b28562d9673279ca68a9e24ea44755c86d7fe0c777"' : 'data-target="#xs-components-links-module-RootModule-7b37fa757a8b75664f15286c10dd28ed6426292b089542db0a8e60fdd30dc3e6ffb2c959ae9429383e0432b28562d9673279ca68a9e24ea44755c86d7fe0c777"' }>
+                                            'data-target="#components-links-module-RootModule-06fc3d0a5096fd84a412f913d58ff5e1f37936a90afb8422d92613abe9344c417ddf7ab588f1830335d41a39dc75239758cddc499151f5a39fd1057862de741a"' : 'data-target="#xs-components-links-module-RootModule-06fc3d0a5096fd84a412f913d58ff5e1f37936a90afb8422d92613abe9344c417ddf7ab588f1830335d41a39dc75239758cddc499151f5a39fd1057862de741a"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-RootModule-7b37fa757a8b75664f15286c10dd28ed6426292b089542db0a8e60fdd30dc3e6ffb2c959ae9429383e0432b28562d9673279ca68a9e24ea44755c86d7fe0c777"' :
-                                            'id="xs-components-links-module-RootModule-7b37fa757a8b75664f15286c10dd28ed6426292b089542db0a8e60fdd30dc3e6ffb2c959ae9429383e0432b28562d9673279ca68a9e24ea44755c86d7fe0c777"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-RootModule-06fc3d0a5096fd84a412f913d58ff5e1f37936a90afb8422d92613abe9344c417ddf7ab588f1830335d41a39dc75239758cddc499151f5a39fd1057862de741a"' :
+                                            'id="xs-components-links-module-RootModule-06fc3d0a5096fd84a412f913d58ff5e1f37936a90afb8422d92613abe9344c417ddf7ab588f1830335d41a39dc75239758cddc499151f5a39fd1057862de741a"' }>
                                             <li class="link">
                                                 <a href="components/RootComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RootComponent</a>
                                             </li>
@@ -592,6 +592,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/Balance.html" data-type="entity-link" >Balance</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ChainGetInfo.html" data-type="entity-link" >ChainGetInfo</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ChartConfigInterface.html" data-type="entity-link" >ChartConfigInterface</a>
