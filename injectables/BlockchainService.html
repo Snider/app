@@ -87,7 +87,13 @@
                                 <a href="#exportChain" >exportChain</a>
                             </li>
                             <li>
+                                <a href="#getBlocks" >getBlocks</a>
+                            </li>
+                            <li>
                                 <a href="#getInfo" >getInfo</a>
+                            </li>
+                            <li>
+                                <a href="#getTransactions" >getTransactions</a>
                             </li>
                             <li>
                                 <a href="#importChain" >importChain</a>
@@ -342,6 +348,87 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getBlocks"></a>
+                    <span class="name">
+                        <span ><b>getBlocks</b></span>
+                        <a href="#getBlocks"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBlocks(start_height: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, end_height: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>start_height</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>end_height</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getInfo"></a>
                     <span class="name">
                         <span ><b>getInfo</b></span>
@@ -370,6 +457,93 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTransactions"></a>
+                    <span class="name">
+                        <span ><b>getTransactions</b></span>
+                        <a href="#getTransactions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTransactions(txsHashes: string[], decodeAsJson: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/plugins/lthn/chain/blockchain.service.ts:102</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>txsHashes</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>decodeAsJson</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>true</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -460,7 +634,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import {rpcBody} from &#x27;@service/json-rpc&#x27;;
-import {ChainSetGetInfo} from &#x27;@plugin/lthn/chain/data&#x27;;
+import {ChainSetBlocks, ChainSetGetInfo, ChainSetTransactions} from &#x27;@plugin/lthn/chain/data&#x27;;
 import {Store} from &#x27;@ngrx/store&#x27;;
 
 @Injectable({
@@ -555,6 +729,24 @@ export class BlockchainService {
 	getInfo(){
 		this.chainRpc(&#x27;get_info&#x27;, &#x27;&#x27;).subscribe((data) &#x3D;&gt; {
 			this.store.dispatch(ChainSetGetInfo({info: data.result}))
+		})
+	}
+
+	getTransactions(txsHashes: string[], decodeAsJson: boolean &#x3D; true){
+
+		this.chainRpc(&#x27;get_transaction&#x27;, { txs_hashes: txsHashes, decode_as_json: decodeAsJson }).subscribe((data) &#x3D;&gt; {
+			if (decodeAsJson &amp;&amp; data.hasOwnProperty(&quot;txs_as_json&quot;)) {
+				data.txs_as_json &#x3D; JSON.parse(data.txs_as_json);
+			}
+			this.store.dispatch(ChainSetTransactions({transactions: data.result}))
+		})
+	}
+
+	getBlocks(start_height: number, end_height: number){
+
+		this.chainRpc(&#x27;getblockheadersrange&#x27;, {start_height:start_height,end_height:end_height}).subscribe((data) &#x3D;&gt; {
+
+			this.store.dispatch(ChainSetBlocks({blocks: data.result}))
 		})
 	}
 }
