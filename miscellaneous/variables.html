@@ -68,10 +68,10 @@
                             <a href="#addWallet" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>addWallet</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
-                            <a href="#APP_CONFIG" title="src/environments/environment.dev.ts" ><b>APP_CONFIG</b>&nbsp;&nbsp;&nbsp;(src/.../environment.dev.ts)</a>
+                            <a href="#APP_CONFIG" title="src/environments/environment.prod.ts" ><b>APP_CONFIG</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
                         </li>
                         <li>
-                            <a href="#APP_CONFIG" title="src/environments/environment.prod.ts" ><b>APP_CONFIG</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                            <a href="#APP_CONFIG" title="src/environments/environment.dev.ts" ><b>APP_CONFIG</b>&nbsp;&nbsp;&nbsp;(src/.../environment.dev.ts)</a>
                         </li>
                         <li>
                             <a href="#APP_CONFIG" title="src/environments/environment.ts" ><b>APP_CONFIG</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
@@ -158,10 +158,10 @@
                             <a href="#getWalletList" title="src/app/plugins/lthn/wallet/data/actions.ts" ><b>getWalletList</b>&nbsp;&nbsp;&nbsp;(src/.../actions.ts)</a>
                         </li>
                         <li>
-                            <a href="#initialState" title="src/app/data/logs/reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
+                            <a href="#initialState" title="src/app/data/plugins/reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
                         </li>
                         <li>
-                            <a href="#initialState" title="src/app/data/plugins/reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
+                            <a href="#initialState" title="src/app/data/logs/reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#initialState" title="src/app/modules/chart/data/reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../reducer.ts)</a>
@@ -245,10 +245,10 @@
                             <a href="#selectLogs" title="src/app/data/logs/selectors.ts" ><b>selectLogs</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
                         </li>
                         <li>
-                            <a href="#selectLogsState" title="src/app/data/logs/selectors.ts" ><b>selectLogsState</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
+                            <a href="#selectLogsState" title="src/app/data/plugins/selectors.ts" ><b>selectLogsState</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
                         </li>
                         <li>
-                            <a href="#selectLogsState" title="src/app/data/plugins/selectors.ts" ><b>selectLogsState</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
+                            <a href="#selectLogsState" title="src/app/data/logs/selectors.ts" ><b>selectLogsState</b>&nbsp;&nbsp;&nbsp;(src/.../selectors.ts)</a>
                         </li>
                         <li>
                             <a href="#selectMenuVisibility" title="src/app/modules/settings/data/settings.selectors.ts" ><b>selectMenuVisibility</b>&nbsp;&nbsp;&nbsp;(src/.../settings.selectors.ts)</a>
@@ -837,39 +837,6 @@
         </tbody>
     </table>
 </section>
-    <h3>src/environments/environment.dev.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="APP_CONFIG"></a>
-                    <span class="name">
-                        <span ><b>APP_CONFIG</b></span>
-                        <a href="#APP_CONFIG"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>{
-	production: false,
-	environment: &#x27;DEV&#x27;,
-	debug: 1
-}</code>
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-</section>
     <h3>src/environments/environment.prod.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -895,6 +862,39 @@
 	production: true,
 	environment: &#x27;APP&#x27;,
 	debug: 4
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.dev.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="APP_CONFIG"></a>
+                    <span class="name">
+                        <span ><b>APP_CONFIG</b></span>
+                        <a href="#APP_CONFIG"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+	production: false,
+	environment: &#x27;DEV&#x27;,
+	debug: 1
 }</code>
                     </td>
                 </tr>
@@ -2034,66 +2034,6 @@
         </tbody>
     </table>
 </section>
-    <h3>src/app/data/logs/reducer.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="initialState"></a>
-                    <span class="name">
-                        <span ><b>initialState</b></span>
-                        <a href="#initialState"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/LogsState.html" target="_self" >LogsState</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>{
-	logs: []
-}</code>
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="profileReducer"></a>
-                    <span class="name">
-                        <span ><b>profileReducer</b></span>
-                        <a href="#profileReducer"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createReducer(
-	initialState,
-	on(LogsActions.addLog, (state: any, { log }) &#x3D;&gt; ({
-		...state,
-		logs: {
-			...state.logs,
-			log
-		}
-	}))
-)</code>
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-</section>
     <h3>src/app/data/plugins/reducer.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -2145,6 +2085,66 @@
 		loaded_keys: {
 			...state.loaded_keys,
 			plugin
+		}
+	}))
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/data/logs/reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialState"></a>
+                    <span class="name">
+                        <span ><b>initialState</b></span>
+                        <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/LogsState.html" target="_self" >LogsState</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+	logs: []
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="profileReducer"></a>
+                    <span class="name">
+                        <span ><b>profileReducer</b></span>
+                        <a href="#profileReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+	initialState,
+	on(LogsActions.addLog, (state: any, { log }) &#x3D;&gt; ({
+		...state,
+		logs: {
+			...state.logs,
+			log
 		}
 	}))
 )</code>
