@@ -200,6 +200,14 @@ import {MatListModule} from &#x27;@angular/material/list&#x27;;
 import {MatButtonModule} from &#x27;@angular/material/button&#x27;;
 import {FlexModule} from &#x27;@angular/flex-layout&#x27;;
 import {TranslateModule} from &#x27;@ngx-translate/core&#x27;;
+import {NgxDatatableModule} from &#x27;@swimlane/ngx-datatable&#x27;;
+import {ReactiveComponentModule} from &#x27;@ngrx/component&#x27;;
+import {PipesModule} from &#x27;app/pipes/pipes.module&#x27;;
+import {MatIconModule} from &#x27;@angular/material/icon&#x27;;
+import {HashRatePipe} from &#x27;app/pipes/crypto/hashrate.pipe&#x27;;
+import {MatToolbarModule} from &#x27;@angular/material/toolbar&#x27;;
+import {MatTooltipModule} from &#x27;@angular/material/tooltip&#x27;;
+import {MatMenuModule} from &#x27;@angular/material/menu&#x27;;
 
 const routes: Routes &#x3D; [
 	{
@@ -224,9 +232,17 @@ const routes: Routes &#x3D; [
 		MatListModule,
 		MatButtonModule,
 		FlexModule,
-		TranslateModule
+		TranslateModule,
+		NgxDatatableModule,
+		ReactiveComponentModule,
+		PipesModule,
+		MatIconModule,
+		MatToolbarModule,
+		MatTooltipModule,
+		MatMenuModule
 	],
-	exports: [RouterModule]
+	exports: [RouterModule],
+	providers: [HashRatePipe]
 })
 export class BlockchainModule {
 }
