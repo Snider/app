@@ -145,6 +145,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#inputChanged" >inputChanged</a>
+                            </li>
+                            <li>
                                     <span class="modifier">Async</span>
                                 <a href="#submit" >submit</a>
                             </li>
@@ -234,6 +237,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="inputChanged"></a>
+                    <span class="name">
+                        <span ><b>inputChanged</b></span>
+                        <a href="#inputChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>inputChanged()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/modules/auth/login.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="submit"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
@@ -252,8 +292,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/modules/auth/login.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/modules/auth/login.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -405,13 +445,23 @@ export class LoginComponent {
 	constructor(private authService: AuthService, private router: Router) {
 	}
 
+	inputChanged(){
+		// Reset error after inputs are changed
+		this.error &#x3D; &#x27;&#x27;;
+	}
+
 	async submit() {
-		await this.authService.login(this.username.value, this.password.value);
-		if (this.authService.getAuthStatus()) {
-			this.router.navigateByUrl(&#x27;/&#x27;);
-		} else {
+		this.authService.login(this.username.value, this.password.value)
+		.then(() &#x3D;&gt; {
+			if (this.authService.getAuthStatus()) {
+				this.router.navigateByUrl(&#x27;/&#x27;);
+			} else {
+				this.error &#x3D; &#x27;Login Failed, try again.&#x27;;
+			}
+		})
+		.catch(() &#x3D;&gt; {
 			this.error &#x3D; &#x27;Login Failed, try again.&#x27;;
-		}
+		})
 	}
 }
 </code></pre>
@@ -425,11 +475,11 @@ export class LoginComponent {
             &lt;div *ngIf&#x3D;&quot;error.length &gt; 0&quot;&gt;{{error}}&lt;/div&gt;
             &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
                 &lt;mat-label&gt;Username&lt;/mat-label&gt;
-                &lt;input [formControl]&#x3D;&quot;username&quot; matInput type&#x3D;&quot;text&quot;&gt;
+                &lt;input [formControl]&#x3D;&quot;username&quot; (keyup)&#x3D;&quot;inputChanged()&quot; matInput type&#x3D;&quot;text&quot;&gt;
             &lt;/mat-form-field&gt;
             &lt;mat-form-field appearance&#x3D;&quot;standard&quot;&gt;
                 &lt;mat-label&gt;Password&lt;/mat-label&gt;
-                &lt;input [formControl]&#x3D;&quot;password&quot; matInput type&#x3D;&quot;password&quot;&gt;
+                &lt;input [formControl]&#x3D;&quot;password&quot; (keyup)&#x3D;&quot;inputChanged()&quot; matInput type&#x3D;&quot;password&quot;&gt;
             &lt;/mat-form-field&gt;
 
             &lt;button (click)&#x3D;&quot;submit()&quot; mat-button&gt;Login&lt;/button&gt;
@@ -467,7 +517,7 @@ export class LoginComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div style="padding: 16px;">    <mat-card>        <mat-card-title>Login</mat-card-title>        <mat-card-content>            <div *ngIf="error.length > 0">{{error}}</div>            <mat-form-field appearance="standard">                <mat-label>Username</mat-label>                <input [formControl]="username" matInput type="text">            </mat-form-field>            <mat-form-field appearance="standard">                <mat-label>Password</mat-label>                <input [formControl]="password" matInput type="password">            </mat-form-field>            <button (click)="submit()" mat-button>Login</button>        </mat-card-content>    </mat-card></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div style="padding: 16px;">    <mat-card>        <mat-card-title>Login</mat-card-title>        <mat-card-content>            <div *ngIf="error.length > 0">{{error}}</div>            <mat-form-field appearance="standard">                <mat-label>Username</mat-label>                <input [formControl]="username" (keyup)="inputChanged()" matInput type="text">            </mat-form-field>            <mat-form-field appearance="standard">                <mat-label>Password</mat-label>                <input [formControl]="password" (keyup)="inputChanged()" matInput type="password">            </mat-form-field>            <button (click)="submit()" mat-button>Login</button>        </mat-card-content>    </mat-card></div></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PluginsComponent', 'selector': 'lthn-app-plugins'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
