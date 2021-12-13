@@ -535,14 +535,14 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>[
-		{ prop: &#x27;height&#x27;, name: &#x27;Height&#x27;, default: true},
-		{ prop: &#x27;difficulty&#x27;, name: &#x27;Difficulty&#x27;, default: true },
-		{ prop: &#x27;hash&#x27;, name: &#x27;Hash&#x27;, default: true  },
-		{ prop: &#x27;orphan_status&#x27;, name: &#x27;Valid&#x27;, default: true },
-		{ prop: &#x27;reward&#x27;, name: &#x27;Reward&#x27;, default: true },
-		{ prop: &#x27;timestamp&#x27;, name: &#x27;Timestamp&#x27;, default: true },
+		{ prop: &#x27;height&#x27;, name: &#x27;plugin.lthn.chain.table.th.height&#x27;, default: true},
+		{ prop: &#x27;difficulty&#x27;, name: &#x27;plugin.lthn.chain.table.th.difficulty&#x27;, default: true },
+		{ prop: &#x27;hash&#x27;, name: &#x27;plugin.lthn.chain.table.th.hash&#x27;, default: true  },
+		{ prop: &#x27;orphan_status&#x27;, name: &#x27;plugin.lthn.chain.table.th.orphan_status&#x27;, default: true },
+		{ prop: &#x27;reward&#x27;, name: &#x27;plugin.lthn.chain.table.th.reward&#x27;, default: true },
+		{ prop: &#x27;timestamp&#x27;, name: &#x27;plugin.lthn.chain.table.th.timestamp&#x27;, default: true },
 	//	{ prop: &#x27;block_size&#x27;, name: &#x27;Block Size&#x27;, default: true },
-		{ prop: &#x27;depth&#x27;, name: &#x27;Depth&#x27;, default: true },
+		{ prop: &#x27;depth&#x27;, name: &#x27;plugin.lthn.chain.table.th.depth&#x27;, default: true },
 		//{ prop: &#x27;major_version&#x27;, name: &#x27;Block Major Version&#x27;, default: true },
 	//	{ prop: &#x27;minor_version&#x27;, name: &#x27;Block Minor Version&#x27;, default: false },
 	//	{ prop: &#x27;nonce&#x27;, name: &#x27;Block Nonce&#x27;, default: false },
@@ -810,14 +810,14 @@ export class BlockchainComponent implements OnInit, OnDestroy {
 	columns: any &#x3D; []
 
 	public allColumns &#x3D; [
-		{ prop: &#x27;height&#x27;, name: &#x27;Height&#x27;, default: true},
-		{ prop: &#x27;difficulty&#x27;, name: &#x27;Difficulty&#x27;, default: true },
-		{ prop: &#x27;hash&#x27;, name: &#x27;Hash&#x27;, default: true  },
-		{ prop: &#x27;orphan_status&#x27;, name: &#x27;Valid&#x27;, default: true },
-		{ prop: &#x27;reward&#x27;, name: &#x27;Reward&#x27;, default: true },
-		{ prop: &#x27;timestamp&#x27;, name: &#x27;Timestamp&#x27;, default: true },
+		{ prop: &#x27;height&#x27;, name: &#x27;plugin.lthn.chain.table.th.height&#x27;, default: true},
+		{ prop: &#x27;difficulty&#x27;, name: &#x27;plugin.lthn.chain.table.th.difficulty&#x27;, default: true },
+		{ prop: &#x27;hash&#x27;, name: &#x27;plugin.lthn.chain.table.th.hash&#x27;, default: true  },
+		{ prop: &#x27;orphan_status&#x27;, name: &#x27;plugin.lthn.chain.table.th.orphan_status&#x27;, default: true },
+		{ prop: &#x27;reward&#x27;, name: &#x27;plugin.lthn.chain.table.th.reward&#x27;, default: true },
+		{ prop: &#x27;timestamp&#x27;, name: &#x27;plugin.lthn.chain.table.th.timestamp&#x27;, default: true },
 	//	{ prop: &#x27;block_size&#x27;, name: &#x27;Block Size&#x27;, default: true },
-		{ prop: &#x27;depth&#x27;, name: &#x27;Depth&#x27;, default: true },
+		{ prop: &#x27;depth&#x27;, name: &#x27;plugin.lthn.chain.table.th.depth&#x27;, default: true },
 		//{ prop: &#x27;major_version&#x27;, name: &#x27;Block Major Version&#x27;, default: true },
 	//	{ prop: &#x27;minor_version&#x27;, name: &#x27;Block Minor Version&#x27;, default: false },
 	//	{ prop: &#x27;nonce&#x27;, name: &#x27;Block Nonce&#x27;, default: false },
@@ -898,7 +898,7 @@ export class BlockchainComponent implements OnInit, OnDestroy {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid p-2&quot; fxLayoutGap&#x3D;&quot;8px&quot;&gt;
 &lt;mat-toolbar &gt;
   &lt;mat-toolbar-row&gt;
-    &lt;span class&#x3D;&quot;lthn-brand&quot;&gt;Blockchain Explorer&lt;/span&gt;
+    &lt;span class&#x3D;&quot;lthn-brand&quot;&gt;{{ &#x27;plugin.lthn.chain.table.title.blockchain-explorer&#x27; | translate }}&lt;/span&gt;
 
     &lt;span class&#x3D;&quot;flex-spacer&quot;&gt;&lt;/span&gt;
       &lt;ng-container *ngIf&#x3D;&quot;chainInfo | ngrxPush as info&quot;&gt;
@@ -916,8 +916,8 @@ export class BlockchainComponent implements OnInit, OnDestroy {
     &lt;/button&gt;
     &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
       &lt;button mat-menu-item *ngFor&#x3D;&quot;let col of allColumns&quot; (click)&#x3D;&quot;toggle(col)&quot;&gt;
-        &lt;input type&#x3D;&quot;checkbox&quot; [id]&#x3D;&quot;col.name&quot; (click)&#x3D;&quot;toggle(col)&quot; [checked]&#x3D;&quot;isChecked(col)&quot; disabled/&gt;&amp;nbsp;
-        &lt;label [attr.for]&#x3D;&quot;col.name&quot;&gt;{{ col.name }}&lt;/label&gt;
+        &lt;input type&#x3D;&quot;checkbox&quot; [id]&#x3D;&quot;col.prop&quot; (click)&#x3D;&quot;toggle(col)&quot; [checked]&#x3D;&quot;isChecked(col)&quot; disabled/&gt;&amp;nbsp;
+        &lt;label [attr.for]&#x3D;&quot;col.prop&quot;&gt;{{ col.name | translate }}&lt;/label&gt;
       &lt;/button&gt;
     &lt;/mat-menu&gt;
 
@@ -927,7 +927,7 @@ export class BlockchainComponent implements OnInit, OnDestroy {
 &lt;div class&#x3D;&quot;container-fluid p-2&quot;&gt;
 
     &lt;mat-card&gt;
-        &lt;mat-card-title&gt;Recent Blocks&lt;/mat-card-title&gt;
+        &lt;mat-card-title&gt;{{ &#x27;plugin.lthn.chain.table.title.recent-blocks&#x27; | translate }}&lt;/mat-card-title&gt;
         &lt;mat-card-content&gt;
             &lt;ngx-datatable
                     class&#x3D;&quot;material&quot;
@@ -941,7 +941,7 @@ export class BlockchainComponent implements OnInit, OnDestroy {
                     [limit]&#x3D;&quot;10&quot;
                     [sorts]&#x3D;&quot;[{ prop: &#x27;timestamp&#x27;, dir: &#x27;desc&#x27; }]&quot;
             &gt;
-                &lt;ngx-datatable-column *ngFor&#x3D;&quot;let col of columns&quot; [name]&#x3D;&quot;col.name&quot;&gt;
+                &lt;ngx-datatable-column *ngFor&#x3D;&quot;let col of columns&quot; [prop]&#x3D;&quot;col.prop&quot; [name]&#x3D;&quot;col.name | translate&quot;&gt;
 
                         &lt;ng-template   let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
                           &lt;span  *ngIf&#x3D;&quot;col.prop &#x3D;&#x3D;&#x3D; &#x27;difficulty&#x27;&quot;&gt;{{ value | hashrate}}&lt;/span&gt;
@@ -968,59 +968,6 @@ export class BlockchainComponent implements OnInit, OnDestroy {
         &lt;/mat-card-content&gt;
     &lt;/mat-card&gt;
 &lt;/div&gt;
-
-
-&lt;!--&lt;div fxLayout&#x3D;&quot;column&quot;&gt;--&gt;
-&lt;!--  &lt;div fxFlex&#x3D;&quot;100&quot; style&#x3D;&quot;padding: 12px 12px 3px 12px;&quot;&gt;--&gt;
-&lt;!--    &lt;div fxLayout&#x3D;&quot;row&quot;&gt;--&gt;
-&lt;!--      &lt;mat-card fxFlex&#x3D;&quot;100&quot;&gt;--&gt;
-&lt;!--        &lt;mat-card-title&gt;{{ &#x27;charts.network-hashrate.title&#x27; | translate }}&lt;/mat-card-title&gt;--&gt;
-&lt;!--        &lt;mat-card-subtitle&gt;--&gt;
-&lt;!--          {{ &#x27;charts.network-hashrate.subtitle&#x27; | translate }} &lt;a color&#x3D;&quot;accent&quot; href&#x3D;&quot;https://hashvault.pro&quot; mat-button&gt;HashVault--&gt;
-&lt;!--         {{ &#x27;names.mining-pool&#x27; | translate }}&lt;/a&gt;--&gt;
-&lt;!--        &lt;/mat-card-subtitle&gt;--&gt;
-&lt;!--        &lt;mat-card-content&gt;--&gt;
-&lt;!--          &lt;div lthnChart&#x3D;&quot;networkDifficulty&quot;&gt;&lt;/div&gt;--&gt;
-&lt;!--        &lt;/mat-card-content&gt;--&gt;
-&lt;!--      &lt;/mat-card&gt;--&gt;
-
-&lt;!--    &lt;/div&gt;--&gt;
-&lt;!--    &lt;mat-divider&gt;&lt;/mat-divider&gt;--&gt;
-&lt;!--    &lt;div&gt;--&gt;
-&lt;!--      &lt;mat-card&gt;--&gt;
-&lt;!--        &lt;mat-card-title&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.title&#x27; | translate }}&lt;/mat-card-title&gt;--&gt;
-&lt;!--        &lt;mat-card-content&gt;--&gt;
-&lt;!--          &lt;table *ngIf&#x3D;&quot;recentTxs&quot; style&#x3D;&quot;width: 100%;&quot;&gt;--&gt;
-&lt;!--            &lt;thead&gt;--&gt;
-&lt;!--            &lt;tr&gt;--&gt;
-&lt;!--              &lt;th&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.headings.age&#x27; | translate }}&lt;/th&gt;--&gt;
-&lt;!--              &lt;th&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.headings.hash&#x27; | translate }}&lt;/th&gt;--&gt;
-&lt;!--              &lt;th&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.headings.height&#x27; | translate }}&lt;/th&gt;--&gt;
-&lt;!--              &lt;th&gt;{{ &#x27;plugin.lthn.chain.table.recent-blocks.headings.time&#x27; | translate }}&lt;/th&gt;--&gt;
-&lt;!--            &lt;/tr&gt;--&gt;
-&lt;!--            &lt;/thead&gt;--&gt;
-
-&lt;!--            &lt;tbody&gt;--&gt;
-&lt;!--            &lt;tr *ngFor&#x3D;&quot;let block of recentTxs&quot;&gt;--&gt;
-&lt;!--              &lt;td&gt;{{block.age}}&lt;/td&gt;--&gt;
-&lt;!--              &lt;td&gt;--&gt;
-&lt;!--                &lt;a color&#x3D;&quot;accent&quot; href&#x3D;&quot;https://lethean.hashvault.pro/explorer/block/{{block.hash}}&quot;--&gt;
-&lt;!--                   mat-button--&gt;
-&lt;!--                   rel&#x3D;&quot;nofollow&quot;&gt;{{block.hash}}&lt;/a&gt;--&gt;
-&lt;!--              &lt;/td&gt;--&gt;
-&lt;!--              &lt;td&gt;--&gt;
-&lt;!--                {{block.height}}&lt;/td&gt;--&gt;
-&lt;!--              &lt;td&gt;{{block.timestamp * 1000 | date: &#x27;dd/MM/yyyy @ HH:mm:ss&#x27;}}&lt;/td&gt;--&gt;
-&lt;!--            &lt;/tr&gt;--&gt;
-&lt;!--            &lt;/tbody&gt;--&gt;
-&lt;!--          &lt;/table&gt;--&gt;
-&lt;!--        &lt;/mat-card-content&gt;--&gt;
-&lt;!--      &lt;/mat-card&gt;--&gt;
-&lt;!--    &lt;/div&gt;--&gt;
-
-&lt;!--  &lt;/div&gt;--&gt;
-&lt;!--&lt;/div&gt;--&gt;
-
 </code></pre>
     </div>
 
@@ -1070,7 +1017,7 @@ export class BlockchainComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid p-2" fxLayoutGap="8px"><mat-toolbar >  <mat-toolbar-row>    <span class="lthn-brand">Blockchain Explorer</span>    <span class="flex-spacer"></span>      <ng-container *ngIf="chainInfo | ngrxPush as info">          <div> <span class="lthn-brand">{{\'plugin.lthn.chain.words.height\' | translate }}:</span> {{info.height | number }}</div>          <div><span class="lthn-brand">{{\'plugin.lthn.chain.words.target_height\' | translate }}:</span> {{info.target_height | number}}</div>          <div><span class="lthn-brand">{{\'plugin.lthn.chain.words.grey_peerlist_size\' | translate }}:</span> {{info.grey_peerlist_size | number}}</div>          <span class="flex-spacer"></span>      </ng-container>    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">      <mat-icon>view_column</mat-icon>    </button>    <mat-menu #menu="matMenu">      <button mat-menu-item *ngFor="let col of allColumns" (click)="toggle(col)">        <input type="checkbox" [id]="col.name" (click)="toggle(col)" [checked]="isChecked(col)" disabled/>&nbsp;        <label [attr.for]="col.name">{{ col.name }}</label>      </button>    </mat-menu>  </mat-toolbar-row></mat-toolbar></div><div class="container-fluid p-2">    <mat-card>        <mat-card-title>Recent Blocks</mat-card-title>        <mat-card-content>            <ngx-datatable                    class="material"                    [rows]="(blocks | ngrxPush)?.headers"                    [loadingIndicator]="false"                    [columns]="columns"                    [columnMode]="ColumnMode.force"                    [headerHeight]="30"                    [footerHeight]="50"                    rowHeight="auto"                    [limit]="10"                    [sorts]="[{ prop: \'timestamp\', dir: \'desc\' }]"            >                <ngx-datatable-column *ngFor="let col of columns" [name]="col.name">                        <ng-template   let-value="value" ngx-datatable-cell-template>                          <span  *ngIf="col.prop === \'difficulty\'">{{ value | hashrate}}</span>                          <span  *ngIf="col.prop === \'height\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'hash\'" [innerHTML]="value | hashLink:\'txn\' | keepHtml"></span>                          <span  *ngIf="col.prop === \'orphan_status\'" >                            <mat-icon style="color: green" *ngIf="!value">done</mat-icon>                            <mat-icon style="color: red" *ngIf="value">close</mat-icon>                          </span>                          <span  *ngIf="col.prop === \'reward\'">{{ value | toCoin }}</span>                          <span  *ngIf="col.prop === \'timestamp\'">{{ value | timeAgo }}</span>                          <span  *ngIf="col.prop === \'block_size\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'depth\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'major_version\'">{{ value  }}</span>                          <span  *ngIf="col.prop === \'minor_version\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'nonce\'">{{ value  }}</span>                          <span  *ngIf="col.prop === \'num_txes\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'prev_hash\'">{{ value }}</span>                        </ng-template>                </ngx-datatable-column>            </ngx-datatable>        </mat-card-content>    </mat-card></div><!--<div fxLayout="column">--><!--  <div fxFlex="100" style="padding: 12px 12px 3px 12px;">--><!--    <div fxLayout="row">--><!--      <mat-card fxFlex="100">--><!--        <mat-card-title>{{ \'charts.network-hashrate.title\' | translate }}</mat-card-title>--><!--        <mat-card-subtitle>--><!--          {{ \'charts.network-hashrate.subtitle\' | translate }} <a color="accent" href="https://hashvault.pro" mat-button>HashVault--><!--         {{ \'names.mining-pool\' | translate }}</a>--><!--        </mat-card-subtitle>--><!--        <mat-card-content>--><!--          <div lthnChart="networkDifficulty"></div>--><!--        </mat-card-content>--><!--      </mat-card>--><!--    </div>--><!--    <mat-divider></mat-divider>--><!--    <div>--><!--      <mat-card>--><!--        <mat-card-title>{{ \'plugin.lthn.chain.table.recent-blocks.title\' | translate }}</mat-card-title>--><!--        <mat-card-content>--><!--          <table *ngIf="recentTxs" style="width: 100%;">--><!--            <thead>--><!--            <tr>--><!--              <th>{{ \'plugin.lthn.chain.table.recent-blocks.headings.age\' | translate }}</th>--><!--              <th>{{ \'plugin.lthn.chain.table.recent-blocks.headings.hash\' | translate }}</th>--><!--              <th>{{ \'plugin.lthn.chain.table.recent-blocks.headings.height\' | translate }}</th>--><!--              <th>{{ \'plugin.lthn.chain.table.recent-blocks.headings.time\' | translate }}</th>--><!--            </tr>--><!--            </thead>--><!--            <tbody>--><!--            <tr *ngFor="let block of recentTxs">--><!--              <td>{{block.age}}</td>--><!--              <td>--><!--                <a color="accent" href="https://lethean.hashvault.pro/explorer/block/{{block.hash}}"--><!--                   mat-button--><!--                   rel="nofollow">{{block.hash}}</a>--><!--              </td>--><!--              <td>--><!--                {{block.height}}</td>--><!--              <td>{{block.timestamp * 1000 | date: \'dd/MM/yyyy @ HH:mm:ss\'}}</td>--><!--            </tr>--><!--            </tbody>--><!--          </table>--><!--        </mat-card-content>--><!--      </mat-card>--><!--    </div>--><!--  </div>--><!--</div>--></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid p-2" fxLayoutGap="8px"><mat-toolbar >  <mat-toolbar-row>    <span class="lthn-brand">{{ \'plugin.lthn.chain.table.title.blockchain-explorer\' | translate }}</span>    <span class="flex-spacer"></span>      <ng-container *ngIf="chainInfo | ngrxPush as info">          <div> <span class="lthn-brand">{{\'plugin.lthn.chain.words.height\' | translate }}:</span> {{info.height | number }}</div>          <div><span class="lthn-brand">{{\'plugin.lthn.chain.words.target_height\' | translate }}:</span> {{info.target_height | number}}</div>          <div><span class="lthn-brand">{{\'plugin.lthn.chain.words.grey_peerlist_size\' | translate }}:</span> {{info.grey_peerlist_size | number}}</div>          <span class="flex-spacer"></span>      </ng-container>    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">      <mat-icon>view_column</mat-icon>    </button>    <mat-menu #menu="matMenu">      <button mat-menu-item *ngFor="let col of allColumns" (click)="toggle(col)">        <input type="checkbox" [id]="col.prop" (click)="toggle(col)" [checked]="isChecked(col)" disabled/>&nbsp;        <label [attr.for]="col.prop">{{ col.name | translate }}</label>      </button>    </mat-menu>  </mat-toolbar-row></mat-toolbar></div><div class="container-fluid p-2">    <mat-card>        <mat-card-title>{{ \'plugin.lthn.chain.table.title.recent-blocks\' | translate }}</mat-card-title>        <mat-card-content>            <ngx-datatable                    class="material"                    [rows]="(blocks | ngrxPush)?.headers"                    [loadingIndicator]="false"                    [columns]="columns"                    [columnMode]="ColumnMode.force"                    [headerHeight]="30"                    [footerHeight]="50"                    rowHeight="auto"                    [limit]="10"                    [sorts]="[{ prop: \'timestamp\', dir: \'desc\' }]"            >                <ngx-datatable-column *ngFor="let col of columns" [prop]="col.prop" [name]="col.name | translate">                        <ng-template   let-value="value" ngx-datatable-cell-template>                          <span  *ngIf="col.prop === \'difficulty\'">{{ value | hashrate}}</span>                          <span  *ngIf="col.prop === \'height\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'hash\'" [innerHTML]="value | hashLink:\'txn\' | keepHtml"></span>                          <span  *ngIf="col.prop === \'orphan_status\'" >                            <mat-icon style="color: green" *ngIf="!value">done</mat-icon>                            <mat-icon style="color: red" *ngIf="value">close</mat-icon>                          </span>                          <span  *ngIf="col.prop === \'reward\'">{{ value | toCoin }}</span>                          <span  *ngIf="col.prop === \'timestamp\'">{{ value | timeAgo }}</span>                          <span  *ngIf="col.prop === \'block_size\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'depth\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'major_version\'">{{ value  }}</span>                          <span  *ngIf="col.prop === \'minor_version\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'nonce\'">{{ value  }}</span>                          <span  *ngIf="col.prop === \'num_txes\'">{{ value | number }}</span>                          <span  *ngIf="col.prop === \'prev_hash\'">{{ value }}</span>                        </ng-template>                </ngx-datatable-column>            </ngx-datatable>        </mat-card-content>    </mat-card></div></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PluginsComponent', 'selector': 'lthn-app-plugins'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'BlockchainComponent'};

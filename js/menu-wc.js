@@ -461,6 +461,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/OpenComponent.html" data-type="entity-link" >OpenComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/PluginsComponent.html" data-type="entity-link" >PluginsComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/ProfileComponent.html" data-type="entity-link" >ProfileComponent</a>
                             </li>
                             <li class="link">
