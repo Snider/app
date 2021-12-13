@@ -293,14 +293,12 @@ import {FlexModule} from &#x27;@angular/flex-layout&#x27;;
 import {AppComponent} from &#x27;./app.component&#x27;;
 import {AppRoutingModule} from &#x27;./app-routing.module&#x27;;
 import {AuthModule} from &#x27;@module/auth/auth.module&#x27;;
-import {BlockchainService} from &#x27;@plugin/lthn/chain/blockchain.service&#x27;;
 import {TranslateLoader, TranslateModule} from &#x27;@ngx-translate/core&#x27;;
 import {TranslateHttpLoader} from &#x27;@ngx-translate/http-loader&#x27;;
-import {WalletService} from &#x27;@plugin/lthn/wallet/wallet.service&#x27;;
-import {FileSystemService} from &#x27;@service/filesystem/file-system.service&#x27;;
 import {ConsoleModule} from &#x27;@plugin/console/console.module&#x27;;
 import {PluginsModule} from &#x27;@plugin/plugins.module&#x27;;
 import {NotifierModule} from &#x27;angular-notifier&#x27;;
+import {BlockUIModule} from &#x27;ng-block-ui&#x27;;
 
 export function HttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http);
@@ -309,8 +307,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
+		CommonModule,
 		BrowserModule.withServerTransition({appId: &#x27;lthn-data-sync&#x27;}),
-		BrowserTransferStateModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
 		TranslateModule.forRoot({
@@ -322,7 +320,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 			}
 		}),
 		AppRoutingModule,
-		CommonModule,
+
 		DataModule,
 		StatusModule,
 		MatSidenavModule,
@@ -340,6 +338,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		NotifierModule.withConfig({
 			// Custom options in here
 		}),
+		BlockUIModule.forRoot()
 
 	],
 	providers: [],
@@ -351,25 +350,6 @@ export function HttpLoaderFactory(http: HttpClient) {
  * Application shell/bootstrap
  */
 export class AppModule {
-
-	/**
-	 * Start blockchain &amp; wallet service automatically on start
-	 *
-	 * @param fs
-	 * @param {BlockchainService} chain
-	 * @param {WalletRpcService} wallet
-	 */
-	constructor(private fs: FileSystemService, private chain: BlockchainService, private wallet: WalletService) {
-		this.fs.listFiles(&#x27;/cli&#x27;).then((dat: any) &#x3D;&gt; {
-			if(dat.length &gt; 2){
-				this.chain.startDaemon().then((data) &#x3D;&gt; {
-					console.log(&quot;blockchain started&quot;)
-					this.wallet.startWallet().then((data) &#x3D;&gt; console.log(&#x27;wallet started&#x27;))
-				})
-			}
-
-		});
-	}
 }
 </code></pre>
     </div>
