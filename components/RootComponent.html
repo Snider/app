@@ -72,6 +72,7 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
 
@@ -139,10 +140,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#disableConsole" >disableConsole</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#downloadingCLI" >downloadingCLI</a>
                             </li>
                             <li>
@@ -150,11 +147,12 @@
                                 <a href="#hasCLI" >hasCLI</a>
                             </li>
                             <li>
-                                <a href="#platformId" >platformId</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#posts" >posts</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sub" >sub</a>
                             </li>
                         </ul>
                     </td>
@@ -173,7 +171,10 @@
                                 <a href="#downloadCLI" >downloadCLI</a>
                             </li>
                             <li>
-                                    <span class="modifier">Async</span>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
@@ -214,7 +215,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/modules/root.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/modules/root.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -331,8 +332,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/app/modules/root.component.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/modules/root.component.ts:75</a></div>
                 </td>
             </tr>
 
@@ -352,26 +353,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
+                    <a name="ngOnDestroy"></a>
                     <span class="name">
-                        <span class="modifier">Async</span>
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Public</span>
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>ngOnInit()</code>
+                    <code>ngOnDestroy()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/modules/root.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/modules/root.component.ts:39</a></div>
                 </td>
             </tr>
 
@@ -380,7 +381,44 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/modules/root.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                 </td>
@@ -407,8 +445,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/app/modules/root.component.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/modules/root.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -444,8 +482,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/modules/root.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/app/modules/root.component.ts:71</a></div>
                 </td>
             </tr>
 
@@ -481,8 +519,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/app/modules/root.component.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/modules/root.component.ts:92</a></div>
                 </td>
             </tr>
 
@@ -518,8 +556,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="81"
-                            class="link-to-prism">src/app/modules/root.component.ts:81</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/modules/root.component.ts:84</a></div>
                 </td>
             </tr>
 
@@ -555,8 +593,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/modules/root.component.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/modules/root.component.ts:88</a></div>
                 </td>
             </tr>
 
@@ -598,7 +636,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/modules/root.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/root.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -625,7 +663,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/modules/root.component.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/root.component.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -646,32 +684,6 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>ColumnMode</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/modules/root.component.ts:27</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="disableConsole"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>disableConsole</b></span>
-                        <a href="#disableConsole"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>true</code>
                     </td>
                 </tr>
                     <tr>
@@ -741,41 +753,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="platformId"></a>
-                    <span class="name">
-                        <span ><b>platformId</b></span>
-                        <a href="#platformId"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" >Object</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @Inject(PLATFORM_ID)<br />
-                        </code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/root.component.ts:24</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="posts"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -804,13 +781,40 @@
 
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sub"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>sub</b></span>
+                        <a href="#sub"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/modules/root.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Inject, OnInit, PLATFORM_ID} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Inject, OnDestroy, OnInit, PLATFORM_ID} from &#x27;@angular/core&#x27;;
 import {Client} from &#x27;@hiveio/dhive&#x27;;
 import {Router} from &#x27;@angular/router&#x27;;
 import {FileSystemService} from &#x27;@service/filesystem/file-system.service&#x27;;
@@ -820,7 +824,7 @@ import { isPlatformServer} from &#x27;@angular/common&#x27;;
 import {select, Store} from &#x27;@ngrx/store&#x27;;
 import {ChainSetGetInfo, getChainBlocks, getChainInfo} from &#x27;@plugin/lthn/chain/data&#x27;;
 import {ChainGetInfo} from &#x27;@plugin/lthn/chain/interfaces/props/get_info&#x27;;
-import {interval, Observable} from &#x27;rxjs&#x27;;
+import {interval, Observable, Subscription} from &#x27;rxjs&#x27;;
 import { ColumnMode } from &#x27;@swimlane/ngx-datatable&#x27;;
 import {BlockHeader} from &#x27;@plugin/lthn/chain/interfaces/types/blockHeader&#x27;;
 
@@ -828,16 +832,15 @@ import {BlockHeader} from &#x27;@plugin/lthn/chain/interfaces/types/blockHeader&
 	selector: &#x27;lthn-root&#x27;,
 	templateUrl: &#x27;./root.component.html&#x27;
 })
-export class RootComponent implements OnInit {
+export class RootComponent implements OnInit, OnDestroy {
 	public posts: any &#x3D; [];
 
 	public hasCLI: boolean;
 	public downloadingCLI: boolean;
-	@Inject(PLATFORM_ID) platformId: Object
-	public disableConsole &#x3D; true
 	public chainInfo: Observable&lt;ChainGetInfo&gt;;
 	ColumnMode &#x3D; ColumnMode;
 	public blocks: Observable&lt;{ headers: BlockHeader[]}&gt;;
+	private sub: Subscription[];
 
 	constructor(
 		private router: Router,
@@ -846,10 +849,14 @@ export class RootComponent implements OnInit {
 		private wallet: WalletService,
 		private store: Store
 	) {
-		this.disableConsole &#x3D; isPlatformServer(this.platformId)
+
 	}
 
-	async ngOnInit() {
+	public ngOnDestroy() {
+		this.sub.forEach((s) &#x3D;&gt; s.unsubscribe())
+	}
+
+	ngOnInit() {
 		this.fileSystem.listFiles(&#x27;/users&#x27;).then((dat: any) &#x3D;&gt; {
 			if (dat.length &gt; 0) {
 				this.renderAppView();
@@ -860,12 +867,12 @@ export class RootComponent implements OnInit {
 		this.fileSystem.listFiles(&#x27;/cli&#x27;).then((dat: any) &#x3D;&gt; {
 			this.hasCLI &#x3D; dat.length &gt; 0;
 			this.chain.getInfo()
-			interval(15000).subscribe(n &#x3D;&gt; this.chain.getInfo());
+			this.sub[&#x27;interval&#x27;] &#x3D; interval(1000).subscribe(n &#x3D;&gt; this.chain.getInfo());
 
 		});
 
-		this.store.pipe(select(getChainInfo)).subscribe((data) &#x3D;&gt; {
-			if(data) this.chain.getBlocks(data.height-25, data.height-1)
+		this.sub[&#x27;info&#x27;] &#x3D; this.store.pipe(select(getChainInfo)).subscribe((data) &#x3D;&gt; {
+			if(data) this.chain.getBlocks(data.height-10, data.height-1)
 		})
 	}
 
@@ -917,135 +924,137 @@ export class RootComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid p-2&quot; fxLayoutGap&#x3D;&quot;8px&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid p-2&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutGap&#x3D;&quot;8px&quot;&gt;
 
+    &lt;ng-container *ngIf&#x3D;&quot;chainInfo | ngrxPush as info&quot;&gt;
+        Loading
+    &lt;/ng-container&gt;
 
-        &lt;mat-card fxFlex&#x3D;&quot;30&quot;&gt;
-
-            &lt;ng-container *ngIf&#x3D;&quot;!hasCLI&quot;&gt;
-                &lt;mat-card-title *ngIf&#x3D;&quot;!downloadingCLI&quot;&gt;{{ &#x27;words.states.not_installed&#x27; | translate }}&lt;/mat-card-title&gt;
-                &lt;mat-card-title *ngIf&#x3D;&quot;downloadingCLI&quot;&gt;{{ &#x27;words.states.installing&#x27; | translate }}&lt;/mat-card-title&gt;
-                &lt;mat-card-content&gt;
-                    &lt;p *ngIf&#x3D;&quot;!downloadingCLI&quot;&gt;{{ &#x27;words.states.not_installed_desc&#x27; | translate }}&lt;/p&gt;
-                    &lt;p *ngIf&#x3D;&quot;downloadingCLI&quot;&gt;{{ &#x27;words.states.installing_desc&#x27; | translate }}&lt;/p&gt;
-                    &lt;button *ngIf&#x3D;&quot;!downloadingCLI&quot; (click)&#x3D;&quot;downloadCLI()&quot; color&#x3D;&quot;accent&quot; mat-button&gt;{{ &#x27;button.install-blockchain&#x27; | translate }}&lt;/button&gt;
-                    &lt;mat-progress-spinner *ngIf&#x3D;&quot;downloadingCLI&quot; color&#x3D;&quot;accent&quot; mode&#x3D;&quot;indeterminate&quot;&gt;&lt;/mat-progress-spinner&gt;
-
-
-                &lt;/mat-card-content&gt;
-            &lt;/ng-container&gt;
-            &lt;ng-container *ngIf&#x3D;&quot;hasCLI&quot;&gt;
-                &lt;mat-card-title&gt;Lethean Blockchain&lt;/mat-card-title&gt;
-                &lt;mat-card-content  *ngIf&#x3D;&quot;chainInfo | ngrxPush as info&quot;&gt;
-                    &lt;div fxLayout&#x3D;&quot;column, wrap&quot; fxLayoutGap&#x3D;&quot;18px&quot;&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.height&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.height | number }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;50&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.tx_pool&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.tx_pool_size }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.alt_blocks&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.alt_blocks_count }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.difficulty&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.difficulty | number }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.grey_peerlist_size&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.grey_peerlist_size }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.incoming_connections_count&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.incoming_connections_count }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.outgoing_connections_count&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.outgoing_connections_count }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.status&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.status }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.target&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.target }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.target_height&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.target_height | number}} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.testnet&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.testnet }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.top_block_hash&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line [innerHTML]&#x3D;&quot;info.top_block_hash | hashLink | keepHtml&quot; &gt; &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.tx_count&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.tx_count | number }} &lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div fxFlex&#x3D;&quot;33&quot;&gt;
-                            &lt;div mat-line&gt;{{&#x27;plugin.lthn.chain.words.white_peerlist_size&#x27; | translate }}&lt;/div&gt;
-                            &lt;div mat-line&gt; {{info.white_peerlist_size }} &lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/mat-card-content&gt;
-            &lt;/ng-container&gt;
-        &lt;/mat-card&gt;
-
-        &lt;mat-card fxFlex&#x3D;&quot;69&quot;&gt;
-            &lt;mat-card-title&gt;Recent Blocks&lt;/mat-card-title&gt;
+    &lt;mat-card fxFlex&#x3D;&quot;100&quot;&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;!hasCLI&quot;&gt;
+            &lt;mat-card-title *ngIf&#x3D;&quot;!downloadingCLI&quot;&gt;{{ &#x27;words.states.not_installed&#x27; | translate }}&lt;/mat-card-title&gt;
+            &lt;mat-card-title *ngIf&#x3D;&quot;downloadingCLI&quot;&gt;{{ &#x27;words.states.installing&#x27; | translate }}&lt;/mat-card-title&gt;
             &lt;mat-card-content&gt;
-                &lt;ngx-datatable
-                        class&#x3D;&quot;material&quot;
-                        [rows]&#x3D;&quot;(blocks | ngrxPush)?.headers&quot;
-                        [loadingIndicator]&#x3D;&quot;true&quot;
-                        [columnMode]&#x3D;&quot;ColumnMode.force&quot;
-                        [headerHeight]&#x3D;&quot;30&quot;
-                        [virtualization]&#x3D;&quot;true&quot;
-                        [footerHeight]&#x3D;&quot;50&quot;
-                        [rowHeight]&#x3D;&quot;25&quot;
-                        [limit]&#x3D;&quot;10&quot;
-                        [trackByProp]&#x3D;&quot;&#x27;timestamp&#x27;&quot;
-                        [sorts]&#x3D;&quot;[{ prop: &#x27;timestamp&#x27;, dir: &#x27;desc&#x27; }]&quot;
-                &gt;
-                    &lt;ngx-datatable-column name&#x3D;&quot;Height&quot;&gt;&lt;/ngx-datatable-column&gt;
-                    &lt;ngx-datatable-column name&#x3D;&quot;Difficulty&quot;&gt;
-                        &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
-                            {{ value | hashrate:true}}
-                        &lt;/ng-template&gt;
-                    &lt;/ngx-datatable-column&gt;
-                    &lt;ngx-datatable-column name&#x3D;&quot;Hash&quot;&gt;
-                        &lt;ng-template let-value&#x3D;&quot;value&quot;  ngx-datatable-cell-template&gt;
-                            &lt;span [innerHTML]&#x3D;&quot;value | hashLink:&#x27;txn&#x27; | keepHtml&quot;&gt;&lt;/span&gt;
-                        &lt;/ng-template&gt;
-                    &lt;/ngx-datatable-column&gt;
-                    &lt;ngx-datatable-column name&#x3D;&quot;Orphan Status&quot;&gt;
-                        &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
-                            &lt;mat-icon style&#x3D;&quot;color: green&quot; *ngIf&#x3D;&quot;!value&quot;&gt;done&lt;/mat-icon&gt;
-                            &lt;mat-icon style&#x3D;&quot;color: red&quot; *ngIf&#x3D;&quot;value&quot;&gt;close&lt;/mat-icon&gt;
-                        &lt;/ng-template&gt;
-                    &lt;/ngx-datatable-column&gt;
-                    &lt;ngx-datatable-column name&#x3D;&quot;Reward&quot;&gt;
-                        &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
-                            {{ value | toCoin | number:&#x27;1.0-8&#x27;}}
-                        &lt;/ng-template&gt;
-                    &lt;/ngx-datatable-column&gt;
-                    &lt;ngx-datatable-column name&#x3D;&quot;Timestamp&quot;&gt;
-                        &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
-                            {{ value | timeAgo }}
-                        &lt;/ng-template&gt;
-                    &lt;/ngx-datatable-column&gt;
-                &lt;/ngx-datatable&gt;
+                &lt;p *ngIf&#x3D;&quot;!downloadingCLI&quot;&gt;{{ &#x27;words.states.not_installed_desc&#x27; | translate }}&lt;/p&gt;
+                &lt;p *ngIf&#x3D;&quot;downloadingCLI&quot;&gt;{{ &#x27;words.states.installing_desc&#x27; | translate }}&lt;/p&gt;
+                &lt;button *ngIf&#x3D;&quot;!downloadingCLI&quot; (click)&#x3D;&quot;downloadCLI()&quot; color&#x3D;&quot;accent&quot;
+                        mat-button&gt;{{ &#x27;button.install-blockchain&#x27; | translate }}&lt;/button&gt;
+                &lt;mat-progress-spinner *ngIf&#x3D;&quot;downloadingCLI&quot; color&#x3D;&quot;accent&quot; mode&#x3D;&quot;indeterminate&quot;&gt;&lt;/mat-progress-spinner&gt;
+
+
             &lt;/mat-card-content&gt;
-        &lt;/mat-card&gt;
-    &lt;/div&gt;
+        &lt;/ng-container&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;hasCLI&quot;&gt;
+            &lt;mat-card-title&gt;Lethean Blockchain&lt;/mat-card-title&gt;
+            &lt;mat-card-content *ngIf&#x3D;&quot;chainInfo | ngrxPush as info&quot;&gt;
+                &lt;div fxLayout&#x3D;&quot;column, wrap&quot; fxLayoutGap&#x3D;&quot;18px&quot;&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.height&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.height | number }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.tx_pool&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.tx_pool_size }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.alt_blocks&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.alt_blocks_count }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.difficulty&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.difficulty | number }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.grey_peerlist_size&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.grey_peerlist_size }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.incoming_connections_count&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.incoming_connections_count }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.outgoing_connections_count&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.outgoing_connections_count }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.status&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.status }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.target&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.target }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.target_height&#x27; | translate }}:&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.target_height | number}} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.testnet&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.testnet }} &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.tx_count&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.tx_count | number }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;30&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.white_peerlist_size&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div class&#x3D;&quot;lthn-brand&quot;&gt; {{info.white_peerlist_size }} &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div fxFlex&#x3D;&quot;40&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between&quot;&gt;
+                        &lt;h5&gt;{{&#x27;plugin.lthn.chain.words.top_block_hash&#x27; | translate }}&lt;/h5&gt;
+                        &lt;div [innerHTML]&#x3D;&quot;info.top_block_hash | hashLink | keepHtml&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/mat-card-content&gt;
+        &lt;/ng-container&gt;
+    &lt;/mat-card&gt;
+
+    &lt;mat-card fxFlex&#x3D;&quot;100&quot;&gt;
+        &lt;mat-card-title&gt;Recent Blocks&lt;/mat-card-title&gt;
+        &lt;mat-card-content&gt;
+            &lt;ngx-datatable
+                    class&#x3D;&quot;material&quot;
+                    [rows]&#x3D;&quot;(blocks | ngrxPush)?.headers&quot;
+                    [loadingIndicator]&#x3D;&quot;true&quot;
+                    [columnMode]&#x3D;&quot;ColumnMode.force&quot;
+                    [headerHeight]&#x3D;&quot;30&quot;
+                    [rowHeight]&#x3D;&quot;25&quot;
+                    [trackByProp]&#x3D;&quot;&#x27;timestamp&#x27;&quot;
+                    [sorts]&#x3D;&quot;[{ prop: &#x27;timestamp&#x27;, dir: &#x27;desc&#x27; }]&quot;
+            &gt;
+                &lt;ngx-datatable-column name&#x3D;&quot;Height&quot;&gt;&lt;/ngx-datatable-column&gt;
+                &lt;ngx-datatable-column name&#x3D;&quot;Difficulty&quot;&gt;
+                    &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
+                        {{ value | hashrate:true}}
+                    &lt;/ng-template&gt;
+                &lt;/ngx-datatable-column&gt;
+                &lt;ngx-datatable-column name&#x3D;&quot;Hash&quot;&gt;
+                    &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
+                        &lt;span [innerHTML]&#x3D;&quot;value | hashLink:&#x27;txn&#x27; | keepHtml&quot;&gt;&lt;/span&gt;
+                    &lt;/ng-template&gt;
+                &lt;/ngx-datatable-column&gt;
+                &lt;ngx-datatable-column name&#x3D;&quot;Orphan Status&quot;&gt;
+                    &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
+                        &lt;mat-icon style&#x3D;&quot;color: green&quot; *ngIf&#x3D;&quot;!value&quot;&gt;done&lt;/mat-icon&gt;
+                        &lt;mat-icon style&#x3D;&quot;color: red&quot; *ngIf&#x3D;&quot;value&quot;&gt;close&lt;/mat-icon&gt;
+                    &lt;/ng-template&gt;
+                &lt;/ngx-datatable-column&gt;
+                &lt;ngx-datatable-column name&#x3D;&quot;Reward&quot;&gt;
+                    &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
+                        {{ value | toCoin | number:&#x27;1.0-8&#x27;}}
+                    &lt;/ng-template&gt;
+                &lt;/ngx-datatable-column&gt;
+                &lt;ngx-datatable-column name&#x3D;&quot;Timestamp&quot;&gt;
+                    &lt;ng-template let-value&#x3D;&quot;value&quot; ngx-datatable-cell-template&gt;
+                        {{ value | timeAgo }}
+                    &lt;/ng-template&gt;
+                &lt;/ngx-datatable-column&gt;
+            &lt;/ngx-datatable&gt;
+        &lt;/mat-card-content&gt;
+    &lt;/mat-card&gt;
+
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -1075,7 +1084,7 @@ export class RootComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid p-2" fxLayoutGap="8px">        <mat-card fxFlex="30">            <ng-container *ngIf="!hasCLI">                <mat-card-title *ngIf="!downloadingCLI">{{ \'words.states.not_installed\' | translate }}</mat-card-title>                <mat-card-title *ngIf="downloadingCLI">{{ \'words.states.installing\' | translate }}</mat-card-title>                <mat-card-content>                    <p *ngIf="!downloadingCLI">{{ \'words.states.not_installed_desc\' | translate }}</p>                    <p *ngIf="downloadingCLI">{{ \'words.states.installing_desc\' | translate }}</p>                    <button *ngIf="!downloadingCLI" (click)="downloadCLI()" color="accent" mat-button>{{ \'button.install-blockchain\' | translate }}</button>                    <mat-progress-spinner *ngIf="downloadingCLI" color="accent" mode="indeterminate"></mat-progress-spinner>                </mat-card-content>            </ng-container>            <ng-container *ngIf="hasCLI">                <mat-card-title>Lethean Blockchain</mat-card-title>                <mat-card-content  *ngIf="chainInfo | ngrxPush as info">                    <div fxLayout="column, wrap" fxLayoutGap="18px">                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.height\' | translate }}</div>                            <div mat-line> {{info.height | number }} </div>                        </div>                        <div fxFlex="50">                            <div mat-line>{{\'plugin.lthn.chain.words.tx_pool\' | translate }}</div>                            <div mat-line> {{info.tx_pool_size }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.alt_blocks\' | translate }}</div>                            <div mat-line> {{info.alt_blocks_count }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.difficulty\' | translate }}</div>                            <div mat-line> {{info.difficulty | number }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.grey_peerlist_size\' | translate }}</div>                            <div mat-line> {{info.grey_peerlist_size }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.incoming_connections_count\' | translate }}</div>                            <div mat-line> {{info.incoming_connections_count }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.outgoing_connections_count\' | translate }}</div>                            <div mat-line> {{info.outgoing_connections_count }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.status\' | translate }}</div>                            <div mat-line> {{info.status }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.target\' | translate }}</div>                            <div mat-line> {{info.target }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.target_height\' | translate }}</div>                            <div mat-line> {{info.target_height | number}} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.testnet\' | translate }}</div>                            <div mat-line> {{info.testnet }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.top_block_hash\' | translate }}</div>                            <div mat-line [innerHTML]="info.top_block_hash | hashLink | keepHtml" > </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.tx_count\' | translate }}</div>                            <div mat-line> {{info.tx_count | number }} </div>                        </div>                        <div fxFlex="33">                            <div mat-line>{{\'plugin.lthn.chain.words.white_peerlist_size\' | translate }}</div>                            <div mat-line> {{info.white_peerlist_size }} </div>                        </div>                    </div>                </mat-card-content>            </ng-container>        </mat-card>        <mat-card fxFlex="69">            <mat-card-title>Recent Blocks</mat-card-title>            <mat-card-content>                <ngx-datatable                        class="material"                        [rows]="(blocks | ngrxPush)?.headers"                        [loadingIndicator]="true"                        [columnMode]="ColumnMode.force"                        [headerHeight]="30"                        [virtualization]="true"                        [footerHeight]="50"                        [rowHeight]="25"                        [limit]="10"                        [trackByProp]="\'timestamp\'"                        [sorts]="[{ prop: \'timestamp\', dir: \'desc\' }]"                >                    <ngx-datatable-column name="Height"></ngx-datatable-column>                    <ngx-datatable-column name="Difficulty">                        <ng-template let-value="value" ngx-datatable-cell-template>                            {{ value | hashrate:true}}                        </ng-template>                    </ngx-datatable-column>                    <ngx-datatable-column name="Hash">                        <ng-template let-value="value"  ngx-datatable-cell-template>                            <span [innerHTML]="value | hashLink:\'txn\' | keepHtml"></span>                        </ng-template>                    </ngx-datatable-column>                    <ngx-datatable-column name="Orphan Status">                        <ng-template let-value="value" ngx-datatable-cell-template>                            <mat-icon style="color: green" *ngIf="!value">done</mat-icon>                            <mat-icon style="color: red" *ngIf="value">close</mat-icon>                        </ng-template>                    </ngx-datatable-column>                    <ngx-datatable-column name="Reward">                        <ng-template let-value="value" ngx-datatable-cell-template>                            {{ value | toCoin | number:\'1.0-8\'}}                        </ng-template>                    </ngx-datatable-column>                    <ngx-datatable-column name="Timestamp">                        <ng-template let-value="value" ngx-datatable-cell-template>                            {{ value | timeAgo }}                        </ng-template>                    </ngx-datatable-column>                </ngx-datatable>            </mat-card-content>        </mat-card>    </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid p-2" fxLayout="column" fxLayoutGap="8px">    <ng-container *ngIf="chainInfo | ngrxPush as info">        Loading    </ng-container>    <mat-card fxFlex="100">        <ng-container *ngIf="!hasCLI">            <mat-card-title *ngIf="!downloadingCLI">{{ \'words.states.not_installed\' | translate }}</mat-card-title>            <mat-card-title *ngIf="downloadingCLI">{{ \'words.states.installing\' | translate }}</mat-card-title>            <mat-card-content>                <p *ngIf="!downloadingCLI">{{ \'words.states.not_installed_desc\' | translate }}</p>                <p *ngIf="downloadingCLI">{{ \'words.states.installing_desc\' | translate }}</p>                <button *ngIf="!downloadingCLI" (click)="downloadCLI()" color="accent"                        mat-button>{{ \'button.install-blockchain\' | translate }}</button>                <mat-progress-spinner *ngIf="downloadingCLI" color="accent" mode="indeterminate"></mat-progress-spinner>            </mat-card-content>        </ng-container>        <ng-container *ngIf="hasCLI">            <mat-card-title>Lethean Blockchain</mat-card-title>            <mat-card-content *ngIf="chainInfo | ngrxPush as info">                <div fxLayout="column, wrap" fxLayoutGap="18px">                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.height\' | translate }}</h5>                        <div class="lthn-brand"> {{info.height | number }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.tx_pool\' | translate }}</h5>                        <div class="lthn-brand"> {{info.tx_pool_size }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.alt_blocks\' | translate }}</h5>                        <div class="lthn-brand"> {{info.alt_blocks_count }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.difficulty\' | translate }}</h5>                        <div class="lthn-brand"> {{info.difficulty | number }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.grey_peerlist_size\' | translate }}</h5>                        <div class="lthn-brand"> {{info.grey_peerlist_size }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.incoming_connections_count\' | translate }}</h5>                        <div class="lthn-brand"> {{info.incoming_connections_count }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.outgoing_connections_count\' | translate }}</h5>                        <div class="lthn-brand"> {{info.outgoing_connections_count }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.status\' | translate }}</h5>                        <div class="lthn-brand"> {{info.status }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.target\' | translate }}</h5>                        <div class="lthn-brand"> {{info.target }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.target_height\' | translate }}:</h5>                        <div class="lthn-brand"> {{info.target_height | number}} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.testnet\' | translate }}</h5>                        <div class="lthn-brand"> {{info.testnet }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.tx_count\' | translate }}</h5>                        <div class="lthn-brand"> {{info.tx_count | number }} </div>                    </div>                    <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.white_peerlist_size\' | translate }}</h5>                        <div class="lthn-brand"> {{info.white_peerlist_size }} </div>                    </div>                    <div fxFlex="40" fxLayout="row" fxLayoutAlign="space-between">                        <h5>{{\'plugin.lthn.chain.words.top_block_hash\' | translate }}</h5>                        <div [innerHTML]="info.top_block_hash | hashLink | keepHtml"></div>                    </div>                </div>            </mat-card-content>        </ng-container>    </mat-card>    <mat-card fxFlex="100">        <mat-card-title>Recent Blocks</mat-card-title>        <mat-card-content>            <ngx-datatable                    class="material"                    [rows]="(blocks | ngrxPush)?.headers"                    [loadingIndicator]="true"                    [columnMode]="ColumnMode.force"                    [headerHeight]="30"                    [rowHeight]="25"                    [trackByProp]="\'timestamp\'"                    [sorts]="[{ prop: \'timestamp\', dir: \'desc\' }]"            >                <ngx-datatable-column name="Height"></ngx-datatable-column>                <ngx-datatable-column name="Difficulty">                    <ng-template let-value="value" ngx-datatable-cell-template>                        {{ value | hashrate:true}}                    </ng-template>                </ngx-datatable-column>                <ngx-datatable-column name="Hash">                    <ng-template let-value="value" ngx-datatable-cell-template>                        <span [innerHTML]="value | hashLink:\'txn\' | keepHtml"></span>                    </ng-template>                </ngx-datatable-column>                <ngx-datatable-column name="Orphan Status">                    <ng-template let-value="value" ngx-datatable-cell-template>                        <mat-icon style="color: green" *ngIf="!value">done</mat-icon>                        <mat-icon style="color: red" *ngIf="value">close</mat-icon>                    </ng-template>                </ngx-datatable-column>                <ngx-datatable-column name="Reward">                    <ng-template let-value="value" ngx-datatable-cell-template>                        {{ value | toCoin | number:\'1.0-8\'}}                    </ng-template>                </ngx-datatable-column>                <ngx-datatable-column name="Timestamp">                    <ng-template let-value="value" ngx-datatable-cell-template>                        {{ value | timeAgo }}                    </ng-template>                </ngx-datatable-column>            </ngx-datatable>        </mat-card-content>    </mat-card></div></div>'
     var COMPONENTS = [{'name': 'AddComponent', 'selector': 'lthn-wallet-add'},{'name': 'AppComponent', 'selector': 'lthn-app'},{'name': 'BackupComponent', 'selector': 'lthn-app-backup'},{'name': 'BlockchainComponent', 'selector': 'lthn-chain'},{'name': 'ConsoleComponent', 'selector': 'lthn-app-console'},{'name': 'LoginComponent', 'selector': 'lthn-login'},{'name': 'LogsComponent', 'selector': 'lthn-app-logs'},{'name': 'ModalComponent', 'selector': 'modal'},{'name': 'NewComponent', 'selector': 'lthn-wallet-new'},{'name': 'NoDaemonRunningDialog', 'selector': 'lthn-app-status-no-daemon'},{'name': 'OpenComponent', 'selector': 'lthn-wallet-open'},{'name': 'PluginsComponent', 'selector': 'lthn-app-plugins'},{'name': 'PostComponent', 'selector': 'lthn-app-post'},{'name': 'ProfileComponent', 'selector': 'lthn-user-profile'},{'name': 'RestoreComponent', 'selector': 'lthn-wallet-restore'},{'name': 'RootComponent', 'selector': 'lthn-root'},{'name': 'SettingsComponent', 'selector': 'lthn-settings'},{'name': 'SettingsComponent', 'selector': 'lthn-app-settings'},{'name': 'StatusComponent', 'selector': 'lthn-app-status'},{'name': 'TransactionsComponent', 'selector': 'lthn-wallet-transactions'},{'name': 'UserComponent', 'selector': 'lthn-user'},{'name': 'VpnComponent', 'selector': 'lthn-vpn'},{'name': 'WalletComponent', 'selector': 'lthn-app-wallet'}];
     var DIRECTIVES = [{'name': 'ChartDirective', 'selector': '[lthnChart]'}];
     var ACTUAL_COMPONENT = {'name': 'RootComponent'};

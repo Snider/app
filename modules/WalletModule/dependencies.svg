@@ -14,13 +14,13 @@
 <title>cluster_WalletModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 1101,-230.8 1101,-32.8 8,-32.8"/>
 </g>
-<g id="clust10" class="cluster">
-<title>cluster_WalletModule_exports</title>
-<polygon fill="none" stroke="black" points="180,-170.8 180,-222.8 886,-222.8 886,-170.8 180,-170.8"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_WalletModule_declarations</title>
 <polygon fill="none" stroke="black" points="266,-40.8 266,-92.8 1093,-92.8 1093,-40.8 266,-40.8"/>
+</g>
+<g id="clust10" class="cluster">
+<title>cluster_WalletModule_exports</title>
+<polygon fill="none" stroke="black" points="180,-170.8 180,-222.8 886,-222.8 886,-170.8 180,-170.8"/>
 </g>
 <g id="clust9" class="cluster">
 <title>cluster_WalletModule_imports</title>
