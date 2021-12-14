@@ -458,9 +458,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/BackupComponent.html" data-type="entity-link" >BackupComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/ModalComponent.html" data-type="entity-link" >ModalComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="components/OpenComponent.html" data-type="entity-link" >OpenComponent</a>
                             </li>
                             <li class="link">
@@ -536,9 +533,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/FileSystemWebService.html" data-type="entity-link" >FileSystemWebService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="injectables/ModalComponent.html" data-type="entity-link" >ModalComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/NetworkHashrateChart.html" data-type="entity-link" >NetworkHashrateChart</a>
