@@ -1,0 +1,53 @@
+<div class="container-fluid m-2">
+    <mat-card>
+        <mat-card-title>Blockchain Transaction</mat-card-title>
+        <mat-card-content *ngIf="transaction">
+            <code>{{ transaction | json}}</code>
+
+            <div fxLayout="column, wrap" fxLayoutGap="18px">
+                <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">
+                    <h5>{{'plugin.lthn.chain.tx.version' | translate }}</h5>
+                    <div class="lthn-brand"> {{transaction.version }} </div>
+                </div>
+                <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">
+                    <h5>{{'plugin.lthn.chain.tx.unlock_time' | translate }}</h5>
+                    <div class="lthn-brand"> {{transaction.unlock_time }} </div>
+                </div>
+                <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">
+                    <h5>{{'plugin.lthn.chain.tx.status' | translate }}</h5>
+                    <div class="lthn-brand"> {{transaction.status }} </div>
+                </div>
+                <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">
+                    <h5>{{'plugin.lthn.chain.tx.minted-block' | translate }}</h5>
+                    <div class="lthn-brand"> {{transaction.vin[0].gen.height }} </div>
+                </div>
+                <div fxFlex="30" fxLayout="row" fxLayoutAlign="space-between">
+                    <h5>{{'plugin.lthn.chain.tx.amount' | translate }}</h5>
+                    <div class="lthn-brand"> {{transaction.vout[0].amount }} </div>
+                </div>
+
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card>
+        <mat-card-title>Outputs</mat-card-title>
+        <mat-card-content>
+            <table>
+                <thead>
+                <tr>
+                    <th>{{'plugin.lthn.chain.tx.confidential-address' | translate }}</th>
+                    <th>{{ 'plugin.lthn.chain.tx.amount' | translate }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let out of transaction.vout">
+                        <td class="lthn-brand"> {{out.target.key }} </td>
+                        <td class="lthn-brand"> {{out.amount | toCoin }} </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </mat-card-content>
+    </mat-card>
+</div>

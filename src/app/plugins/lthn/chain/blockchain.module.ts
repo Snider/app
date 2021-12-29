@@ -16,6 +16,7 @@ import {HashRatePipe} from 'app/pipes/crypto/hashrate.pipe';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
+import { TxnComponent } from './components/txn.component';
 
 const routes: Routes = [
 	{
@@ -27,11 +28,21 @@ const routes: Routes = [
 			description: 'view.chain.description',
 			robots: false
 		}
+	},
+	{
+		path: 'txn/:id',
+		component: TxnComponent,
+		data: {
+			title: 'view.chain.txn.title',
+			heading: 'view.chain.txn.heading',
+			description: 'view.chain.txn.description',
+			robots: false
+		}
 	}
 ];
 
 @NgModule({
-	declarations: [BlockchainComponent],
+	declarations: [BlockchainComponent, TxnComponent],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),

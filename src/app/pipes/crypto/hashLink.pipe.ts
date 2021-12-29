@@ -5,7 +5,7 @@ export class HashLinkPipe implements PipeTransform {
   constructor() {}
 
   transform(content, type: string = 'txn') {
-    let url = `/chain/explorer/${type}/${content}`;
+    let url = `/chain/${type}/${content}`;
 
     return content === undefined
       ? "¯\\_(ツ)_/¯"

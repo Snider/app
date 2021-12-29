@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {rpcBody} from '@service/json-rpc';
 import {ChainSetBlocks, ChainSetGetInfo, ChainSetTransactions} from '@plugin/lthn/chain/data';
 import {Store} from '@ngrx/store';
+import {Transactions} from '@plugin/lthn/chain/interfaces/props/transactions';
 
 @Injectable({
 	providedIn: 'root'
@@ -88,9 +89,15 @@ export class BlockchainService {
 			.then((dat) => dat);
 	}
 
-	chainRpc(method: string, params: any) {
+	chainRpc(method: string, params: any, non_rpc: boolean = false) {
+		if(!non_rpc){
+			return this.http
+				.post<any>('https://localhost:36911/daemon/chain/json_rpc', JSON.stringify(rpcBody(method)(params)));
+		}
+
 		return this.http
-			.post<any>('https://localhost:36911/daemon/chain/json_rpc', JSON.stringify(rpcBody(method)(params)));
+			.post<any>('https://localhost:36911/daemon/chain/json_rpc', JSON.stringify({jsonpath: method, request: params}));
+
 	}
 
 	getInfo(){
@@ -99,14 +106,9 @@ export class BlockchainService {
 		})
 	}
 
-	getTransactions(txsHashes: string[], decodeAsJson: boolean = true){
+	getTransactions(txsHashes: string[], decodeAsJson: boolean = true) {
 
-		this.chainRpc('get_transaction', { txs_hashes: txsHashes, decode_as_json: decodeAsJson }).subscribe((data) => {
-			if (decodeAsJson && data.hasOwnProperty("txs_as_json")) {
-				data.txs_as_json = JSON.parse(data.txs_as_json);
-			}
-			this.store.dispatch(ChainSetTransactions({transactions: data.result}))
-		})
+		return this.chainRpc('gettransactions', {txs_hashes: txsHashes, decode_as_json: decodeAsJson}, true)
 	}
 
 	getBlocks(start_height: number, end_height: number){
