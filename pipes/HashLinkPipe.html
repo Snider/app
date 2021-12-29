@@ -259,7 +259,7 @@ export class HashLinkPipe implements PipeTransform {
   constructor() {}
 
   transform(content, type: string &#x3D; &#x27;txn&#x27;) {
-    let url &#x3D; &#x60;/chain/explorer/${type}/${content}&#x60;;
+    let url &#x3D; &#x60;/chain/${type}/${content}&#x60;;
 
     return content &#x3D;&#x3D;&#x3D; undefined
       ? &quot;¯\\_(ツ)_/¯&quot;
